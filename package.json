@@ -1,6 +1,10 @@
 {
   "name": "app",
   "private": "true",
+  "scripts": {
+    "lint": "eslint --ext .js . --max-warnings=0",
+    "vite:install": "yarn"
+  },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.1",
     "@hotwired/turbo-rails": "^7.3.0",

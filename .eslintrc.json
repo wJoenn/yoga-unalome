@@ -3,7 +3,10 @@
     "browser": true,
     "es2021": true
   },
-  "extends": "airbnb-base",
+  "extends": [
+    "airbnb-base",
+    "plugin:import/recommended"
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -19,8 +22,10 @@
     "arrow-parens": "off",
     "class-methods-use-this": "off",
     "comma-dangle": "off",
+    "max-len": ["error", 120],
     "no-param-reassign": "off",
     "no-plusplus": "off",
+    "object-curly-newline": "off",
     "prefer-destructuring": "off",
     "quotes": ["error", "double"],
     "semi": "off"
