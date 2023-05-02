@@ -31,7 +31,7 @@ RSpec.describe Session, type: :model do
     end
 
     it "requires the start time to not be sooner than now" do
-      test_wrong_session(start_time: 1.day.ago, end_time: 23.hour.ago, address:, capacity:)
+      test_wrong_session(start_time: 1.day.ago, end_time: 23.hours.ago, address:, capacity:)
     end
   end
 end
