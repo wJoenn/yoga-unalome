@@ -6,8 +6,8 @@ def test_wrong_session(params = {})
 end
 
 RSpec.describe Session, type: :model do
-  let!(:start_time) { Time.current }
-  let!(:end_time) { 1.hour.from_now }
+  let!(:start_time) { 1.hour.from_now }
+  let!(:end_time) { 2.hours.from_now }
   let!(:address) { "Louvain La Neuve" }
   let!(:capacity) { 9 }
   let!(:session) { Session.create(start_time:, end_time:, address:, capacity:) }
