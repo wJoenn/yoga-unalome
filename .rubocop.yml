@@ -29,6 +29,9 @@ Lint/MissingSuper:
 
 Metrics/AbcSize:
   Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
 Metrics/ClassLength:
   CountAsOne: ["array", "hash", "heredoc"]
 Metrics/CyclomaticComplexity:
