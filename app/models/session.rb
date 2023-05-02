@@ -1,6 +1,7 @@
 class Session < ApplicationRecord
   validates :start_time, :end_time, :address, :capacity, presence: true
-  validate :available_time_span
+  validate :available_time_span, if: :presence_confirmed?
+  validate :start_time_before_end_time, if: :presence_confirmed?
 
   private
 
@@ -22,5 +23,15 @@ class Session < ApplicationRecord
     ending = ending.to_i.fdiv(60 * 30).floor
 
     (start..ending).to_a
+  end
+
+  def presence_confirmed?
+    start_time.present? && end_time.present?
+  end
+
+  def start_time_before_end_time
+    return if end_time > start_time
+
+    errors.add(:end_time, "cannot be sooner than the start")
   end
 end
