@@ -20,7 +20,7 @@ jobs:
           postgresql user: test
           postgresql password: password
       - name: Build app
-        run:
+        run: |
           bundle install --jobs 4 --retry 3
           bundle exec rails db:create RAILS_ENV=test
           bundle exec rails db:migrate RAILS_ENV=test
