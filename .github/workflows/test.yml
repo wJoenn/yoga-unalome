@@ -1,0 +1,20 @@
+---
+name: test
+on:
+  pull_request:
+  push:
+    branches: [master]
+jobs:
+  rspec:
+    # Ruby static code analyzer and formatter
+    # https://github.com/rubocop/rubocop
+    name: Rspec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Run RSpec
+        run: rspec
