@@ -25,5 +25,13 @@ RSpec.describe Session, type: :model do
     it "requires to have a different time span than other sessions" do
       test_wrong_session(start_time:, end_time:, address:, capacity:)
     end
+
+    it "requires the end time to be later than the start time" do
+      test_wrong_session(start_time: 1.hour.from_now, end_time: Time.current, address:, capacity:)
+    end
+
+    it "requires the start time to not be sooner than now" do
+      test_wrong_session(start_time: 1.day.ago, end_time: 23.hour.ago, address:, capacity:)
+    end
   end
 end
