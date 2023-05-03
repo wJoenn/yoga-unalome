@@ -1,0 +1,79 @@
+.banner {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+//----------------------nav-----------------------//
+
+
+
+
+
+.logo {
+  margin-right: 50px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 400px;
+}
+
+ul li {
+  list-style: none;
+  padding: 40px ;
+  position: relative;
+  bottom: 10px;
+}
+
+li:not(:first-child)::before {
+  content: "*";
+  position: absolute;
+  left: -5px;
+  top: 46px;
+  color: #fff;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  font-size: 20px;
+  font-size: 18px;
+}
+
+
+
+
+
+//---------------------------------text-----------------------------//
+
+
+
+.text {
+  margin: 80px 0px 0px 170px;
+  h1 {
+    max-width: 300px;
+    font-size: 50px;
+    font-family: $headers-font;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+
+  p{
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+}
