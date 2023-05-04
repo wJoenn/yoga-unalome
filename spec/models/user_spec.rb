@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "instance methods" do
-    it "sets the valur of ;admin to false by default" do
+    it "sets the value of admin to false by default" do
       expect(user.admin?).to be_falsy
     end
 
