@@ -1,0 +1,14 @@
+button, .btn {
+  background-color: #222222;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: $padding;
+  width: max-content;
+}
+
+.btn-green {
+  background-color: $green;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
