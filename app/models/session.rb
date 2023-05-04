@@ -1,4 +1,6 @@
 class Session < ApplicationRecord
+  has_many :bookings, dependent: :destroy
+
   validates :start_time, :end_time, :address, :capacity, presence: true
   validate :available_time_span, if: :presence_confirmed?
   validate :start_time_before_end_time, if: :presence_confirmed?
