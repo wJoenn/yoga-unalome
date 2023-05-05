@@ -26,7 +26,7 @@ jobs:
           postgresql password: password
       - name: Build app
         run: |
-          corepack enabled
+          npm install -g yarn
           yarn install
           bundle install --jobs 4 --retry 3
           rails db:create RAILS_ENV=test
@@ -40,3 +40,6 @@ jobs:
         env:
           DATABASE_URL: 'postgres://test:password@localhost/application_test'
           PATH: $PATH:./bin
+      - name: Uninstall Yarn
+        if: always()
+        run: npm uninstall -g yarn
