@@ -17,9 +17,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '17'
+          node-version: '16'
           cache: 'yarn'
-        run: corepack enable
       - name: Set up PostgreSQL
         uses: Harmon758/postgresql-action@v1.0.0
         with:
@@ -27,8 +26,9 @@ jobs:
           postgresql password: password
       - name: Build app
         run: |
-          bundle install --jobs 4 --retry 3
+          corepack enabled
           yarn install
+          bundle install --jobs 4 --retry 3
           rails db:create RAILS_ENV=test
           rails db:migrate RAILS_ENV=test
         env:
