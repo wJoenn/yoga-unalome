@@ -22,6 +22,7 @@ jobs:
       - name: Build app
         run: |
           bundle install --jobs 4 --retry 3
+          yarn install
           rails db:create RAILS_ENV=test
           rails db:migrate RAILS_ENV=test
         env:
