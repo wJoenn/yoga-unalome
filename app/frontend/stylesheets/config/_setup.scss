@@ -1,7 +1,9 @@
-// body {
-//   background-color: #181a1b;
-//   color: lightgrey;
-// }
+
+ body {
+  background-color: #181a1b;
+  color: lightgrey;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +27,7 @@ body {
   height: 1px;
   min-height: 100vh;
 }
+
 
 h1, h2, h3 {
   font-family: $headers-font;
