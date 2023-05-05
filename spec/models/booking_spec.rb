@@ -6,7 +6,9 @@ def test_wrong_booking(params = {})
 end
 
 RSpec.describe Booking, type: :model do
-  let(:session) { Session.create(start_time: 1.hour.from_now, end_time: 2.hours.from_now, address: "Almaty", capacity: 7)}
+  let(:session) do
+    Session.create(start_time: 1.hour.from_now, end_time: 2.hours.from_now, address: "Almaty", capacity: 7)
+  end
   let(:user) { User.create(email: "user@example.com", password: "password", first_name: "louis", last_name: "ramos") }
   let!(:booking) { Booking.create(user_id: user.id, session_id: session.id, canceled: false) }
 
