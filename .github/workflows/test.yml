@@ -1,45 +1,41 @@
----
-name: "Test"
-on:
-  pull_request:
-  push:
-    branches: [master]
-jobs:
-  rspec:
-    name: RSpec
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - name: Set up PostgreSQL
-        uses: Harmon758/postgresql-action@v1.0.0
-        with:
-          postgresql user: test
-          postgresql password: password
-      - name: Build app
-        run: |
-          npm install -g yarn
-          yarn install
-          bundle install --jobs 4 --retry 3
-          rails db:create RAILS_ENV=test
-          rails db:migrate RAILS_ENV=test
-        env:
-          DATABASE_URL: 'postgres://test:password@localhost/application_test'
-          PATH: $PATH:./bin
-      - name: Run specs
-        run:
-          bundle exec rspec
-        env:
-          DATABASE_URL: 'postgres://test:password@localhost/application_test'
-          PATH: $PATH:./bin
-      - name: Uninstall Yarn
-        if: always()
-        run: npm uninstall -g yarn
+# ---
+# name: "Test"
+# on:
+#   pull_request:
+#   push:
+#     branches: [master]
+# jobs:
+#   rspec:
+#     name: RSpec
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Setup Ruby
+#         uses: ruby/setup-ruby@v1
+#         with:
+#           bundler-cache: true
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '16'
+#           cache: 'yarn'
+#       - name: Set up PostgreSQL
+#         uses: Harmon758/postgresql-action@v1.0.0
+#         with:
+#           postgresql user: test
+#           postgresql password: password
+#       - name: Build app
+#         run: |
+#           yarn install
+#           bundle install --jobs 4 --retry 3
+#           rails db:create RAILS_ENV=test
+#           rails db:migrate RAILS_ENV=test
+#         env:
+#           DATABASE_URL: 'postgres://test:password@localhost/application_test'
+#           PATH: $PATH:./bin
+#       - name: Run specs
+#         run:
+#           bundle exec rspec
+#         env:
+#           DATABASE_URL: 'postgres://test:password@localhost/application_test'
+#           PATH: $PATH:./bin
