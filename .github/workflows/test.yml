@@ -22,12 +22,14 @@ jobs:
       - name: Build app
         run: |
           bundle install --jobs 4 --retry 3
-          bundle exec rails db:create RAILS_ENV=test
-          bundle exec rails db:migrate RAILS_ENV=test
+          rails db:create RAILS_ENV=test
+          rails db:migrate RAILS_ENV=test
         env:
           DATABASE_URL: 'postgres://test:password@localhost/application_test'
+          PATH: $PATH:./bin
       - name: Run specs
         run:
-          bundle exec rspec
+          rspec
         env:
           DATABASE_URL: 'postgres://test:password@localhost/application_test'
+          PATH: $PATH:./bin
