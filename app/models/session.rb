@@ -8,6 +8,7 @@ class Session < ApplicationRecord
 
   def available_time_span
     sessions = Session.where("start_time > ?", Time.current)
+    sessions = sessions.reject { |session| session.id == id }
     return unless sessions.any?
 
     times = sessions.pluck(:start_time, :end_time).map do |range|
