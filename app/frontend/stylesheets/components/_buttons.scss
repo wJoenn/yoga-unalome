@@ -5,10 +5,14 @@ button, .btn {
   color: white;
   cursor: pointer;
   padding: $padding;
-  width: max-content;
 }
 
-.btn-green {
+.btn-green1 {
+  background-color: #7f8ea8;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-green2 {
   background-color: $green;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
