@@ -35,27 +35,33 @@ export default class extends Controller {
     this.#updateButtons()
   }
 
-  #createHtml(currentDay, numberOfDays, previousMonth, nextMonth, date) {
+  #createHtml(currentDay, numberOfDays, previousMonth, date) {
     this.daysTarget.innerHTML = ""
 
-    // We add one day for each visible day of the previous month
+    // We add one empty li for each day of the previous month in the first week
     const numberOfDaysLastMonth = this.#getNumberOfDays(date, 0)
     for (let i = numberOfDaysLastMonth; i > numberOfDaysLastMonth - previousMonth; i--) {
-      const html = `<li class="off">${i}</li$>`
+      const html = "<li class='off'></li$>"
       this.daysTarget.insertAdjacentHTML("afterBegin", html)
     }
 
-    // Then one day for each day of the month and we add a class of current for today
+    // Then one day for each day of the month and we add a class of "off" to days that have passed
     for (let i = 1; i <= numberOfDays; i++) {
-      const html = `<li${i === currentDay ? " class='current'" : ""}>${i}</li$>`
+      const html = `<li${i < currentDay ? " class='off'" : ""}>${i}</li$>`
       this.daysTarget.insertAdjacentHTML("beforeEnd", html)
     }
+  }
 
-    // Then we add one day for each visible day of next month
-    for (let i = 1; i <= nextMonth; i++) {
-      const html = `<li class="off">${i}</li$>`
-      this.daysTarget.insertAdjacentHTML("beforeEnd", html)
-    }
+  #getFirstDay(date) {
+    const year = date.getFullYear()
+    const month = date.getMonth()
+
+    // getDay return the day of the week, it's different from getDate which return the day of the month
+    // Also getDay returns sundays as 0 but in belgium sunday is 7, that's why I change that.
+    let weekDay = new Date(year, month, 1).getDay()
+    weekDay = weekDay === 0 ? 7 : weekDay
+
+    return weekDay
   }
 
   #getNumberOfDays(date, offset) {
@@ -63,22 +69,6 @@ export default class extends Controller {
     const month = date.getMonth() + offset
 
     return new Date(year, month, 0).getDate()
-  }
-
-  #getDay(date, day) {
-    const year = date.getFullYear()
-    let month = date.getMonth()
-
-    // When day is 0 it's because we want the last day of the month so as for #getNumberOfDays we need to increment the
-    // current month by 1.
-    if (day === 0) month++
-
-    // getDay return the day of the week, it's different from getDate which return the day of the month
-    // Also getDay returns sundays as 0 but in belgium sunday is 7, that's why I change that.
-    let weekDay = new Date(year, month, day).getDay()
-    weekDay = weekDay === 0 ? 7 : weekDay
-
-    return weekDay
   }
 
   #updateButtons() {
@@ -93,12 +83,11 @@ export default class extends Controller {
     // number of the previous' month. Just need to use the next month and we'll get the last day of the current one.
     const numberOfDays = this.#getNumberOfDays(date, 1)
 
-    // We'll need those numbers to display greyed out days for the previous and next month if they're in the same
-    // week other days in the current month.
-    const visibleDaysOfPreviousMonth = this.#getDay(date, 1) - 1
-    const visibleDayOfNextMonth = 7 - this.#getDay(date, 0)
+    // We'll need this number to position the first day of the month in the correct column
+    const firstDayOfTheMonth = this.#getFirstDay(date)
+    const daysBeforeFirstDay = firstDayOfTheMonth - 1
 
-    this.#createHtml(currentDay, numberOfDays, visibleDaysOfPreviousMonth, visibleDayOfNextMonth, date)
+    this.#createHtml(currentDay, numberOfDays, daysBeforeFirstDay, date)
   }
 
   #updateMonth(offset) {
