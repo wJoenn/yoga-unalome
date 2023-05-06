@@ -18,7 +18,7 @@ export default class extends Controller {
   }
 
   handleClick(event) {
-    const offset = event.target.dataset.offset
+    const offset = event.currentTarget.dataset.offset
     this.previousTarget.disabled = false
     this.nextTarget.disabled = false
 
