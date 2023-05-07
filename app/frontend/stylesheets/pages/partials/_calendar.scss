@@ -13,7 +13,6 @@
     opacity: 0.5;
     position: absolute;
     right: 50%;
-    // top: 50%;
     translate: 50% -20%;
     width: 130%;
     z-index: -20;
@@ -56,7 +55,7 @@
     }
 
     .off {
-      color: rgba(0, 0, 0, 0.5);
+      color: #00000080;
       cursor: not-allowed;
     }
   }

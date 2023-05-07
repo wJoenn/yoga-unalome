@@ -35,7 +35,7 @@ export default class extends Controller {
     this.#updateButtons()
   }
 
-  #createHtml(currentDay, numberOfDays, previousMonth, date) {
+  #createHtml(numberOfDays, previousMonth, date) {
     this.daysTarget.innerHTML = ""
 
     // We add one empty li for each day of the previous month in the first week
@@ -47,7 +47,8 @@ export default class extends Controller {
 
     // Then one day for each day of the month and we add a class of "off" to days that have passed
     for (let i = 1; i <= numberOfDays; i++) {
-      const html = `<li${i < currentDay ? " class='off'" : ""}>${i}</li$>`
+      const htmlClass = this.#getHtmlClass(i)
+      const html = `<li class="${htmlClass}">${i}</li$>`
       this.daysTarget.insertAdjacentHTML("beforeEnd", html)
     }
   }
@@ -64,6 +65,14 @@ export default class extends Controller {
     return weekDay
   }
 
+  #getHtmlClass(day) {
+    const dayDate = new Date(this.today.getFullYear(), this.month, day)
+    let htmlClass = ""
+    if (dayDate < this.today) htmlClass = "off"
+
+    return htmlClass
+  }
+
   #getNumberOfDays(date, offset) {
     const year = date.getFullYear()
     const month = date.getMonth() + offset
@@ -77,8 +86,6 @@ export default class extends Controller {
   }
 
   #updateDays(date) {
-    const currentDay = this.today.getDate()
-
     // The way to get how many days are in a month is just to create a new Date with a day of 0 and that gives you the
     // number of the previous' month. Just need to use the next month and we'll get the last day of the current one.
     const numberOfDays = this.#getNumberOfDays(date, 1)
@@ -87,7 +94,7 @@ export default class extends Controller {
     const firstDayOfTheMonth = this.#getFirstDay(date)
     const daysBeforeFirstDay = firstDayOfTheMonth - 1
 
-    this.#createHtml(currentDay, numberOfDays, daysBeforeFirstDay, date)
+    this.#createHtml(numberOfDays, daysBeforeFirstDay, date)
   }
 
   #updateMonth(offset) {
