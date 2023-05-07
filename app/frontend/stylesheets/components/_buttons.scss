@@ -5,10 +5,12 @@ button, .btn {
   color: white;
   cursor: pointer;
   padding: $padding;
-  width: max-content;
+}
+
+.btn-blue {
+  background-color: $blue;
 }
 
 .btn-green {
   background-color: $green;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
