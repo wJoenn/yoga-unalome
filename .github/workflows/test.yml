@@ -1,0 +1,33 @@
+---
+name: "Test"
+on:
+  pull_request:
+  push:
+    branches: [master]
+jobs:
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Set up PostgreSQL
+        uses: Harmon758/postgresql-action@v1.0.0
+        with:
+          postgresql user: test
+          postgresql password: password
+      - name: Build app
+        run: |
+          bundle install --jobs 4 --retry 3
+          bundle exec rails db:create RAILS_ENV=test
+          bundle exec rails db:migrate RAILS_ENV=test
+        env:
+          DATABASE_URL: 'postgres://test:password@localhost/application_test'
+      - name: Run specs
+        run:
+          bundle exec rspec
+        env:
+          DATABASE_URL: 'postgres://test:password@localhost/application_test'

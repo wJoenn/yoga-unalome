@@ -1,7 +1,9 @@
+
 // body {
 //   background-color: #181a1b;
 //   color: lightgrey;
 // }
+
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +28,8 @@ body {
   min-height: 100vh;
 }
 
+
 h1, h2, h3 {
+h1, h2 {
   font-family: $headers-font;
 }

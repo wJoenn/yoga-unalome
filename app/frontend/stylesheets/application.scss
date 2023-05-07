@@ -1,9 +1,14 @@
 // Config files
+
 @import "config/fonts";
 @import "config/colors";
+
+@import "config/variables";
 @import "config/setup";
 
 // External libraries
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
 
 // Your CSS Partials
 @import "pages/index";
