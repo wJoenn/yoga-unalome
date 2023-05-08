@@ -10,18 +10,30 @@ RSpec.describe Booking, type: :model do
     Session.create(start_time: 1.hour.from_now, end_time: 2.hours.from_now, address: "Almaty", capacity: 7)
   end
   let(:user) { User.create(email: "user@example.com", password: "password", first_name: "louis", last_name: "ramos") }
-  let!(:booking) { Booking.create(user_id: user.id, session_id: session.id, canceled: false) }
+  let!(:booking) { Booking.create(user:, session:) }
 
   describe "validation" do
-    it "should persist a valid booking" do
+    it "requires a user and a session" do
       expect(booking.persisted?).to be_truthy
+
+      test_wrong_booking(session:)
+      test_wrong_booking(user:)
+    end
+  end
+
+  describe "association" do
+    it "belongs to a Session" do
+      expect(booking.session).to be_a Session
     end
 
-    it "requires a user_id, a session_id, and a canceled status" do
-      booking.destroy
-      test_wrong_booking(user_id: nil, session_id: session.id, canceled: false)
-      test_wrong_booking(user_id: user.id, session_id: nil, canceled: false)
-      test_wrong_booking(user_id: user.id, session_id: session.id, canceled: nil)
+    it "belongs to a User" do
+      expect(booking.user).to be_a User
+    end
+  end
+
+  describe "instance methods" do
+    it "sets the booking as not canceled by default" do
+      expect(booking.canceled?).to be_falsy
     end
   end
 end
