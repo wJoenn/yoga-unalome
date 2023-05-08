@@ -35,6 +35,15 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "association" do
+    it "has many Bookings" do
+      session = Session.create(start_time: 1.hour.from_now, end_time: 2.hours.from_now, address: "Almaty", capacity: 7)
+      2.times { Booking.create(user:, session:) }
+
+      expect(user.bookings).to all be_a Booking
+    end
+  end
+
   describe "instance methods" do
     it "sets the value of admin to false by default" do
       expect(user.admin?).to be_falsy
