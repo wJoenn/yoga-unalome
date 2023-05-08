@@ -28,7 +28,16 @@ body {
   min-height: 100vh;
 }
 
-
 h1, h2, h3 {
   font-family: $headers-font;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+  width: 1200px;
 }

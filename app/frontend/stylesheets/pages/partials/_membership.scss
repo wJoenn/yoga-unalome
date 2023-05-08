@@ -1,0 +1,81 @@
+#membership {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  h2 {
+    font-size: 70px;
+    font-weight: 400;
+  }
+
+  .decoration {
+    position: absolute;
+    z-index: 10;
+
+    &#left {
+      height: 400px;
+      left: -50px;
+      top: -70px;
+      transform: rotateY(180deg);
+      width: 300px;
+    }
+
+    &#middle {
+      bottom: 20px;
+      left: 50%;
+      translate: -50% 0;
+      width: 300px;
+    }
+
+    &#right {
+      right: -80px;
+      top: -50px;
+      transform: rotateY(180deg);
+      width: 300px;
+    }
+  }
+
+  .membership-card {
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    justify-content: space-between;
+    padding: 40px;
+
+    &:first-of-type i {
+      color: $blue;
+    }
+
+    button {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      text-align: center;
+
+      i {
+        color: $green;
+        margin-right: 10px;
+      }
+    }
+
+    .title {
+      align-items: center;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      font-size: 30px;
+      width: max-content;
+    }
+  }
+
+  .membership-cards {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 530px 530px;
+    position: relative;
+  }
+}
