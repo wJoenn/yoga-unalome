@@ -5,6 +5,6 @@ class Booking < ApplicationRecord
   validates :canceled, inclusion: { in: [true, false] }
 
   def canceled?
-    cenceled
+    canceled
   end
 end
