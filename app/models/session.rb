@@ -1,4 +1,6 @@
 class Session < ApplicationRecord
+  has_many :bookings, dependent: :destroy
+
   validates :start_time, :end_time, :address, :capacity, presence: true
   validate :available_time_span, if: :presence_confirmed?
   validate :start_time_before_end_time, if: :presence_confirmed?
@@ -8,6 +10,7 @@ class Session < ApplicationRecord
 
   def available_time_span
     sessions = Session.where("start_time > ?", Time.current)
+    sessions = sessions.reject { |session| session.id == id }
     return unless sessions.any?
 
     times = sessions.pluck(:start_time, :end_time).map do |range|
