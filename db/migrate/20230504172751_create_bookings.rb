@@ -7,6 +7,5 @@ class CreateBookings < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-    change_column :bookings, :canceled, :boolean, null: false, default: false
   end
 end
