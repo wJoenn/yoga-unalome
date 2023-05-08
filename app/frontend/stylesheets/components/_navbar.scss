@@ -1,0 +1,42 @@
+
+.navbar {
+  margin-left: 300px;
+  display: flex;
+  // justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 120px;
+}
+
+ul {
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  max-width: 400px;
+}
+
+ul li {
+  list-style: none;
+  padding: 40px ;
+  position: relative;
+  bottom: 10px;
+}
+
+li:not(:first-child)::before {
+  content: "*";
+  position: absolute;
+  left: -5px;
+  top: 46px;
+  color: #fff;
+}
+
+ul li a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  font-size: 20px;
+  font-size: 18px;
+}

@@ -2,57 +2,13 @@
   height: 90vh;
   background-image: url("../../images/banner.jpg");
   background-size: cover;
-  background-position: center -320px;
+  background-position: center -260px;
 }
 
 
 
 
 //----------------------nav-----------------------//
-
-
-
-
-
-.logo {
-  margin-right: 50px;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-ul {
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-  max-width: 400px;
-}
-
-ul li {
-  list-style: none;
-  padding: 40px ;
-  position: relative;
-  bottom: 10px;
-}
-
-li:not(:first-child)::before {
-  content: "*";
-  position: absolute;
-  left: -5px;
-  top: 46px;
-  color: #fff;
-}
-
-ul li a {
-  text-decoration: none;
-  color: #fff;
-  position: relative;
-  font-size: 20px;
-  font-size: 18px;
-}
 
 
 
@@ -65,16 +21,17 @@ ul li a {
 .text {
   margin: 80px 0px 0px 170px;
   h1 {
-    max-width: 300px;
-    font-size: 50px;
+    max-width: 280px;
+    font-size: 40px;
     font-family: $headers-font;
     margin-bottom: 30px;
     color: #fff;
   }
 
   p{
+    font-size: 15px;
     font-weight: bold;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 }
