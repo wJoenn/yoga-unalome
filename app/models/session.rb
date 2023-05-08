@@ -6,10 +6,18 @@ class Session < ApplicationRecord
   validate :start_time_before_end_time, if: :presence_confirmed?
   validate :not_sooner_than_now, if: :presence_confirmed?
 
+  def self.coming
+    Session.where("start_time > ?", Time.current)
+  end
+
+  def day
+    start_time.to_date
+  end
+
   private
 
   def available_time_span
-    sessions = Session.where("start_time > ?", Time.current)
+    sessions = Session.coming
     sessions = sessions.reject { |session| session.id == id }
     return unless sessions.any?
 
