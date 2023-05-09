@@ -1,4 +1,4 @@
-class Session < ApplicationRecord
+class Event < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   validates :start_time, :duration, :address, :capacity, presence: true
@@ -9,20 +9,20 @@ class Session < ApplicationRecord
   private
 
   def available_time_span
-    sessions = Session.where("start_time >= ?", Time.current)
-    sessions = sessions.reject { |session| session.id == id }
-    return unless sessions.any?
+    events = Event.where("start_time >= ?", Time.current)
+    events = events.reject { |event| event.id == id }
+    return unless events.any?
 
-    times = sessions.pluck(:start_time, :duration).map do |session|
-      session_start = session.first
-      session_end = session_start + (session.last * 60)
+    times = events.pluck(:start_time, :duration).map do |event|
+      event_start = event.first
+      event_end = event_start + (event.last * 60)
 
-      hour_range(session_start, session_end)
+      hour_range(event_start, event_end)
     end
 
     return unless times.flatten.intersect?(hour_range(start_time, end_time))
 
-    errors.add(:start_time, :taken, message: "You already have a session at that time")
+    errors.add(:start_time, :taken, message: "You already have an event at that time")
   end
 
   def end_time

@@ -6,24 +6,24 @@ def test_wrong_booking(params = {})
 end
 
 RSpec.describe Booking, type: :model do
-  let(:session) do
-    Session.create(start_time: 1.hour.from_now, duration: 90, address: "Almaty", capacity: 7)
+  let(:event) do
+    Event.create(start_time: 1.hour.from_now, duration: 90, address: "Almaty", capacity: 7)
   end
   let(:user) { User.create(email: "user@example.com", password: "password", first_name: "louis", last_name: "ramos") }
-  let!(:booking) { Booking.create(user:, session:) }
+  let!(:booking) { Booking.create(user:, event:) }
 
   describe "validation" do
-    it "requires a user and a session" do
+    it "requires a User and an Event" do
       expect(booking.persisted?).to be_truthy
 
-      test_wrong_booking(session:)
+      test_wrong_booking(event:)
       test_wrong_booking(user:)
     end
   end
 
   describe "association" do
-    it "belongs to a Session" do
-      expect(booking.session).to be_a Session
+    it "belongs to an Event" do
+      expect(booking.event).to be_a Event
     end
 
     it "belongs to a User" do
