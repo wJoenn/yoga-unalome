@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
 
   describe "association" do
     it "has many Bookings" do
-      session = Session.create(start_time: 1.hour.from_now, end_time: 2.hours.from_now, address: "Almaty", capacity: 7)
+      session = Session.create(start_time: 1.hour.from_now, duration: 90, address: "Almaty", capacity: 7)
       2.times { Booking.create(user:, session:) }
 
       expect(user.bookings).to all be_a Booking

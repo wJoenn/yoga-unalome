@@ -7,7 +7,7 @@ end
 
 RSpec.describe Booking, type: :model do
   let(:session) do
-    Session.create(start_time: 1.hour.from_now, end_time: 2.hours.from_now, address: "Almaty", capacity: 7)
+    Session.create(start_time: 1.hour.from_now, duration: 90, address: "Almaty", capacity: 7)
   end
   let(:user) { User.create(email: "user@example.com", password: "password", first_name: "louis", last_name: "ramos") }
   let!(:booking) { Booking.create(user:, session:) }

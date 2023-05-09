@@ -2,10 +2,10 @@ require "rails_helper"
 
 RSpec.describe SessionsController, type: :request do
   let!(:start_time) { 1.hour.from_now }
-  let!(:end_time) { 2.hours.from_now }
+  let!(:duration) { 90 }
   let!(:address) { "Louvain La Neuve" }
   let!(:capacity) { 9 }
-  let!(:session) { Session.create(start_time:, end_time:, address:, capacity:) }
+  let!(:session) { Session.create(start_time:, duration:, address:, capacity:) }
   let!(:count) { Session.count }
   let!(:user) { User.create(email: "user@example.com", password: "password", first_name: "Louis", last_name: "Ramos") }
 
@@ -32,14 +32,14 @@ RSpec.describe SessionsController, type: :request do
     end
 
     it "creates a new instance of Session with proper params" do
-      params = { session: { start_time: 3.hours.from_now, end_time: 4.hours.from_now, address:, capacity: } }
+      params = { session: { start_time: 3.hours.from_now, duration: 90, address:, capacity: } }
       post(sessions_path, params:)
 
       expect(Session.count).to eq(count + 1)
     end
 
     it "returns a http status of 422 with unproper params" do
-      params = { session: { start_time: nil, end_time: nil, address: nil, capacity: nil } }
+      params = { session: { start_time: nil, duration: nil, address: nil, capacity: nil } }
       post(sessions_path, params:)
 
       expect(response).to have_http_status(:unprocessable_entity)
@@ -59,7 +59,7 @@ RSpec.describe SessionsController, type: :request do
     end
 
     it "returns a http status of 422 with unproper params" do
-      patch(session_path(session), params: { session: { start_time: 2.hours.from_now, end_time: 1.hour.from_now } })
+      patch(session_path(session), params: { session: { start_time: 1.hour.ago } })
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
