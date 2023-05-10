@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @booking = @event.bookings.new(booking_params)
 
     if @booking.save
-      redirect_to root_path #notice: "Booking was created succesfully!"
+      redirect_to root_path
     else
       render "pages/home", status: :unprocessable_entity
     end
@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to root_path #notice: "Booking was updated succesfully!"
+      redirect_to root_path
     else
       render "pages/home", status: :unprocessable_entity
     end
