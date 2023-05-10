@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     @booking = @session.bookings.new(booking_params)
 
     if @booking.save
-      redirect_to root_path, notice: 'Booking was created succesfully!'
+      redirect_to root_path, notice: "Booking was created succesfully!"
     else
       render "pages/home", status: :unprocessable_entity
     end
@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
-      redirect_to root_path, notice: 'Booking was updated succesfully!'
+      redirect_to root_path, notice: "Booking was updated succesfully!"
     else
       render "pages/home", status: :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
 
   def cancelation
     if @booking.canceled?
-      @booking.update(status: 'canceled')
+      @booking.update(status: "canceled")
     end
   end
 
