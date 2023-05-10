@@ -12,7 +12,7 @@ RSpec.describe Event, type: :model do
   let!(:capacity) { 9 }
   let!(:event) { Event.create(start_time:, duration:, address:, capacity:) }
 
-  describe "validations" do
+  describe "validation" do
     it "requires a starting time, an ending time, an address and a capacity" do
       expect(event.persisted?).to be_truthy
 
@@ -36,26 +36,12 @@ RSpec.describe Event, type: :model do
     end
   end
 
-  describe "associations" do
+  describe "association" do
     it "has many Bookings" do
       user = User.create(email: "user@example.com", password: "password", first_name: "louis", last_name: "ramos")
       2.times { Booking.create(user:, event:) }
 
       expect(event.bookings).to all be_a Booking
-    end
-  end
-
-  describe "#self.coming" do
-    it "returns a ActiveRecord relation array of Event" do
-      coming_events = Event.coming
-      expect(coming_events).to all be_an Event
-    end
-  end
-
-  describe "#day" do
-    it "returns the event's start_time as a date" do
-      expect(event.start_time).not_to be_a Date
-      expect(event.day).to be_a Date
     end
   end
 end

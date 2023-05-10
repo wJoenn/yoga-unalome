@@ -50,14 +50,6 @@
       z-index: -10;
     }
 
-    .session:nth-child(3n)::before {
-      background-color: #DCD0B3;
-    }
-
-    .session:nth-child(3n + 1)::before {
-      background-color: rgba(104, 148, 137, 0.4);
-    }
-
     .current {
       color: $green;
     }
