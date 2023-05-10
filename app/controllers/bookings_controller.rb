@@ -1,9 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_session
+  before_action :set_event
   before_action :set_booking, only: %i[update cancelation]
 
   def create
-    @booking = @session.bookings.new(booking_params)
+    @booking = @event.bookings.new(booking_params)
 
     if @booking.save
       redirect_to root_path #notice: "Booking was created succesfully!"
@@ -34,8 +34,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def set_session
-    @session = Session.find(params[:session_id])
+  def set_event
+    @event = Event.find(params[:event_id])
   end
 
   def booking_params
