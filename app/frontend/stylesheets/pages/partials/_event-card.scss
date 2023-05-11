@@ -1,0 +1,42 @@
+.event-cards {
+  display: flex;
+  width: 350%;
+}
+
+.event-cards-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.event-cards-content h3 {
+  font-size: 22px;
+  padding-right: 20px;
+}
+
+.yoga-type {
+  text-align: center;
+}
+
+.yoga-type h3 {
+  font-size: 26px;
+}
+
+.yoga-type p {
+  font-size: 18px;
+}
+
+.fa-solid {
+  color: $blue;
+  text-align: center;
+  font-size: 26px;
+  padding-left: 20px;
+}
+
+.fa-solid:hover {
+  color: $green;
+}
