@@ -38,7 +38,7 @@
       width: 80%;
     }
 
-    .session::before {
+    .event::before {
       aspect-ratio: 1/1;
       background-color: rgba(127, 142, 168, 0.7);
       border-radius: 50%;
@@ -50,11 +50,11 @@
       z-index: -10;
     }
 
-    .session:nth-child(3n)::before {
+    .event:nth-child(3n)::before {
       background-color: #DCD0B3;
     }
 
-    .session:nth-child(3n + 1)::before {
+    .event:nth-child(3n + 1)::before {
       background-color: rgba(104, 148, 137, 0.4);
     }
 

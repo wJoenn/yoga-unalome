@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["month", "days", "previous", "next"]
 
   static values = {
-    sessions: Array
+    events: Array
   }
 
   connect() {
@@ -75,8 +75,8 @@ export default class extends Controller {
 
     if (dayDate < this.today) {
       htmlClass = "off"
-    } else if (this.sessionsValue.includes(dayDate.toISOString().slice(0, 10))) {
-      htmlClass = "session"
+    } else if (this.eventsValue.includes(dayDate.toISOString().slice(0, 10))) {
+      htmlClass = "event"
     }
 
     return htmlClass
