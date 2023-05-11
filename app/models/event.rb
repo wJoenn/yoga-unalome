@@ -1,8 +1,10 @@
 class Event < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
+  monetize :price_cents
+
   validates :start_time, :duration, :address, :capacity, presence: true
-  validates :duration, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :duration, :price_cents, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validate :available_time_span, if: :presence_confirmed?
   validate :not_sooner_than_now, if: :presence_confirmed?
 
