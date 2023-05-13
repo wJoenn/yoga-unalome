@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.top-wave {
+  background-image: url("../images/wave.png");
+  height: 25vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+footer {
+  background-color: #DCD0B3;
+  height: 35vh;
+  width: 100%;
+  position: relative;
+}
+
+.content {
+  padding: 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 2rem;
+}
+
+.black-logo {
+  position: absolute;
+  left: 80px;
+  bottom: 130px;
+}
+
+.content-links li {
+  margin-bottom: 30px;
+  padding-left: 200px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 26px;
+}
+
+.social-icons a {
+  padding-right: 30px;
+}
+
+footer .content-copyright {
+  text-align: center;
+  padding-top: 40px;
+}
