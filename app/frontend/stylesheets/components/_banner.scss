@@ -1,12 +1,13 @@
 .banner {
-  height: 90vh;
+  height: 100vh;
   background-image: url("../../images/photos/banner.jpg");
   background-size: cover;
   background-position: center -260px;
 
   .text {
-    display: inline-flex;
-    gap: 30px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 60px;
 
     h1 {
       max-width: 280px;
@@ -19,6 +20,10 @@
       font-size: 15px;
       font-weight: bold;
       color: #fff;
+    }
+
+    .btn {
+      max-width: 100px;
     }
   }
 }
