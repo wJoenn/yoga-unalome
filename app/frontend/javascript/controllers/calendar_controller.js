@@ -4,6 +4,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["month", "days", "previous", "next"]
 
+  static values = {
+    events: Array
+  }
+
   connect() {
     this.today = new Date()
 
@@ -68,7 +72,12 @@ export default class extends Controller {
   #getHtmlClass(day) {
     const dayDate = new Date(this.today.getFullYear(), this.month, day)
     let htmlClass = ""
-    if (dayDate < this.today) htmlClass = "off"
+
+    if (dayDate < this.today) {
+      htmlClass = "off"
+    } else if (this.eventsValue.includes(dayDate.toISOString().slice(0, 10))) {
+      htmlClass = "event"
+    }
 
     return htmlClass
   }

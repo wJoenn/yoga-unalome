@@ -1,8 +1,7 @@
 
 .navbar {
-  margin-left: 300px;
+  justify-content: center;
   display: flex;
-  // justify-content: space-around;
   align-items: center;
 
       .logo {
@@ -10,33 +9,25 @@
       }
 
       ul {
-        margin: auto;
         display: flex;
         justify-content: space-around;
-        max-width: 400px;
-      }
-
-      ul li {
-        list-style: none;
-        padding: 40px ;
-        position: relative;
-        bottom: 10px;
-      }
-
-      li:not(:first-child)::before {
-        content: "*";
-        position: absolute;
-        left: -5px;
-        top: 46px;
-        color: #fff;
+        align-items: center;
+        padding: 60px ;
+        gap: 30px;
       }
 
       ul li a {
         margin-left: 20px;
-        text-decoration: none;
         color: #fff;
         position: relative;
         font-size: 20px;
-        font-size: 18px;
+        display: flex;
+        align-items: center;
+      }
+
+      span {
+        margin-top: 12px;
+        color: #fff;
+        font-size: 20px;
       }
 }

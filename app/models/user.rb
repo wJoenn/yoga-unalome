@@ -6,9 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
-  before_save :capitalize_name
+  before_save :capitalize_name, unless: :admin?
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, presence: true, unless: :admin?
 
   def admin?
     admin
