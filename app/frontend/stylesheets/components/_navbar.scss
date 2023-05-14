@@ -4,30 +4,30 @@
   display: flex;
   align-items: center;
 
-      .logo {
-        margin-right: 120px;
-      }
+    .logo {
+      margin-right: 120px;
+    }
 
-      ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 60px ;
-        gap: 30px;
-      }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 60px ;
+      gap: 30px;
+    }
 
-      ul li a {
-        margin-left: 20px;
-        color: #fff;
-        position: relative;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-      }
+    ul li a {
+      margin-left: 20px;
+      color: #fff;
+      position: relative;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
 
-      span {
-        margin-top: 12px;
-        color: #fff;
-        font-size: 20px;
-      }
+    span {
+      margin-top: 12px;
+      color: #fff;
+      font-size: 20px;
+    }
 }
