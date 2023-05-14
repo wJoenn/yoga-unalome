@@ -2,28 +2,27 @@
   height: 100vh;
   background-image: url("../../images/photos/banner.jpg");
   background-size: cover;
-  background-position: center -260px;
+  // background-position: center -260px;
 
   .text {
-    display: grid;
-    grid-auto-flow: row;
-    grid-row-gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #fff;
 
     h1 {
       max-width: 280px;
       font-size: 40px;
       padding: 5px;
-      color: #fff;
     }
 
     p{
       font-size: 15px;
       font-weight: bold;
-      color: #fff;
     }
 
-    .btn {
-      max-width: 100px;
+    button {
+      width: max-content;
     }
   }
 }
