@@ -7,7 +7,7 @@
     margin-right: 120px;
   }
 
-  ul {
+  nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -15,7 +15,8 @@
     gap: 30px;
   }
 
-  ul li a {
+
+  nav li a {
     margin-left: 20px;
     color: #fff;
     position: relative;
