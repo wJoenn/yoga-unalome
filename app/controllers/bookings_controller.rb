@@ -7,13 +7,13 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      render "pages/home", status: :unprocessable_entity
+      redirect_to root_path
     end
   end
 
   def cancel_booking
     @booking.update(canceled: true)
-    render "pages/home", status: :unprocessable_entity
+    redirect_back fallback_location: root_path
   end
 
   private
@@ -23,6 +23,6 @@ class BookingsController < ApplicationController
   end
 
   def set_event
-    @event = Event.find(params[:session_id])
+    @event = Event.find(params[:event_id])
   end
 end
