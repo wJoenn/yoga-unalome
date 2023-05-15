@@ -6,16 +6,19 @@
 .top-wave {
   background-image: url("../images/wave-green.png");
   height: 25vh;
+  background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
+  position: relative;
 }
+
 
 footer {
   background-color: #85B6AA;
-  height: 35vh;
+  height: 60vh;
   width: 100%;
-  position: relative;
+  position: absolute;
   overflow: hidden;
 
 }
@@ -34,6 +37,7 @@ footer {
 
 .content-logo {
   grid-area: content-logo;
+  z-index: 10;
 }
 
 .content-links {
@@ -51,7 +55,7 @@ footer {
 
 .black-logo {
   position: absolute;
-  left: 170px;
+  left: 160px;
   bottom: 130px;
 }
 
@@ -59,6 +63,7 @@ footer {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-top: 10px;
 }
 
 .content-links li {
@@ -74,6 +79,7 @@ footer {
   border-radius: 15px;
   background: #AFB791;
   transition: background 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .btn-contact:hover {
@@ -97,7 +103,7 @@ footer {
 }
 
 .footer-container .plant-bottom {
-  position:absolute;
+  position: absolute;
   right: -80px;
   bottom: -140px;
   transform: rotate(30deg);
