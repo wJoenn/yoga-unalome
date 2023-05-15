@@ -3,12 +3,14 @@
     <ul>
       <li>
         <div class="event-cards-content">
-          <h3>8</h3>
-          <div class="yoga-type">
-            <h3>Soft Vinyasa</h3>
-            <p>Wavre 10:00 - 11:30</p>
-          </div>
-          <i class="fa-solid fa-circle-arrow-right"></i>
+          <% @events.each do |event| %>
+            <h3><%= event.day.day %></h3>
+            <div class="yoga-type">
+              <h3>Soft Vinyasa</h3>
+              <p><%= "#{event.day.strftime("%a")} " "#{event.start_time.strftime("%I:%M")} - #{event.end_time.strftime("%I:%M")}" %></p>
+            </div>
+            <i class="fa-solid fa-circle-arrow-right"></i>
+          <% end %>
         </div>
       </li>
       <li>

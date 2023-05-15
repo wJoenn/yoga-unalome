@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @events = Event.coming.map(&:day).to_json
+    @events = Event.all
   end
 end

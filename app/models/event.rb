@@ -14,6 +14,10 @@ class Event < ApplicationRecord
     start_time.to_date
   end
 
+  def end_time
+    start_time + (duration * 60)
+  end
+
   private
 
   def available_time_span
@@ -31,10 +35,6 @@ class Event < ApplicationRecord
     return unless times.flatten.intersect?(hour_range(start_time, end_time))
 
     errors.add(:start_time, :taken, message: "You already have an event at that time")
-  end
-
-  def end_time
-    start_time + (duration * 60)
   end
 
   def hour_range(start, ending)
