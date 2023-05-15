@@ -2,6 +2,7 @@
   height: 100vh;
   background-image: url("../../images/photos/banner.jpg");
   background-size: cover;
+  display: flex;
 
   .text {
     display: flex;
@@ -22,6 +23,7 @@
 
     button {
       width: max-content;
+      background-color: $green;
     }
   }
 }
