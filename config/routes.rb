@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :sessions, only: %i[create update destroy] do
-    resources :bookings, only: %i[create update] do
-      patch :cancelation, on: :member
+  resources :events, only: %i[create update destroy] do
+    resources :bookings, only: %i[create] do
+      patch :cancel_booking, on: :member
     end
   end
 end

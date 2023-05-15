@@ -1,29 +1,19 @@
 class BookingsController < ApplicationController
-  before_action :set_session
-  before_action :set_booking, only: %i[update cancelation]
+  before_action :set_event
+  before_action :set_booking, only: %i[cancel_booking]
 
   def create
-    @booking = @session.bookings.new(booking_params)
+    @booking = @event.bookings.new(params[:booking])
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to root_path, notice: "Booking was created succesfully!"
-    else
       render "pages/home", status: :unprocessable_entity
     end
   end
 
-  def update
-    if @booking.update(booking_params)
-      redirect_to root_path, notice: "Booking was updated succesfully!"
-    else
-      render "pages/home", status: :unprocessable_entity
-    end
-  end
-
-  def cancelation
-    if @booking.canceled?
-      @booking.update(status: "canceled")
-    end
+  def cancel_booking
+    @booking.update(canceled: true)
+    render "pages/home", status: :unprocessable_entity
   end
 
   private
@@ -32,11 +22,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def set_session
-    @session = Session.find(params[:session_id])
-  end
-
-  def booking_params
-    params.require(:booking).permit(:canceled)
+  def set_event
+    @event = Event.find(params[:session_id])
   end
 end
