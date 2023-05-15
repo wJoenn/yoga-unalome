@@ -4,7 +4,7 @@
 }
 
 .top-wave {
-  background-image: url("../images/wave.png");
+  background-image: url("../images/wave-green.png");
   height: 25vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,44 +12,93 @@
 }
 
 footer {
-  background-color: #DCD0B3;
+  background-color: #85B6AA;
   height: 35vh;
   width: 100%;
   position: relative;
+  overflow: hidden;
+
 }
 
-.content {
-  padding: 1.5rem 4rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-gap: 2rem;
+.footer-container {  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 100px 1fr 1fr 120px;
+  gap: 5px 2px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "content-logo content-links"
+    "content-logo content-socials"
+    "content-logo content-socials"
+    "content-logo content-copyright";
+}
+
+.content-logo {
+  grid-area: content-logo;
+}
+
+.content-links {
+  grid-area: content-links;
+}
+
+.content-socials {
+  grid-area: content-socials;
+}
+
+.content-copyright {
+  grid-area: content-copyright;
+  align-self: end;
 }
 
 .black-logo {
   position: absolute;
-  left: 80px;
+  left: 170px;
   bottom: 130px;
 }
 
+.content-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .content-links li {
-  margin-bottom: 30px;
-  padding-left: 200px;
-  font-size: 18px;
+  display: inline-flex;
+  margin-right: 40px;
+  font-size: 24px;
   font-weight: bolder;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  font-size: 26px;
+.content-links .btn-contact {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 15px;
+  background: #AFB791;
+  transition: background 0.3s ease;
 }
 
-.social-icons a {
-  padding-right: 30px;
+.btn-contact:hover {
+  background: #C68A59;
+  color: white;
 }
 
-footer .content-copyright {
-  text-align: center;
-  padding-top: 40px;
+.content-socials h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.content-socials a {
+  font-size: 30px;
+  margin-right: 20px;
+  color: #DCD0B3;
+}
+
+.footer-container {
+  white-space: nowrap;
+}
+
+.footer-container .plant-bottom {
+  position:absolute;
+  right: -80px;
+  bottom: -140px;
+  transform: rotate(30deg);
 }
