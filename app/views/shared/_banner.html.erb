@@ -1,4 +1,4 @@
-<div class="banner"">
+<div class="banner">
     <nav>
         <div class="logo">
           <%= vite_image_tag "images/logos/logo_text_white.png", width: "180px" %>
@@ -8,7 +8,7 @@
           <ul>
             <li><a href="#">About</a></li>
             <li><a href="#">Sessions</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" id="contact-btn">Contact</a></li>
             <li><a href="#">Videos</a></li>
           </ul>
         </div>
@@ -19,5 +19,69 @@
         <p>DISCOVER YOURSELF, DISCOVER YOGA</p>
         <button class="btn btn-gradient">Start now</button>
     </div>
-
 </div>
+
+<!-- I know, bad style. Should be moved to js-file later -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var popup = $("#contact-popup");
+    var closeBtn = $("#contact-popup .close");
+
+    $("#contact-btn").click(function(event){
+      event.preventDefault();
+      popup.show();
+    });
+
+    closeBtn.click(function(){
+      popup.hide();
+    });
+
+    $(window).click(function(event){
+      if ($(event.target).is(popup)) {
+        popup.hide();
+      }
+    });
+  });
+</script>
+
+<!-- I know, bad style. Should be moved to scss-file later -->
+
+<style>
+  #contact-popup {
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: none;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+  }
+
+  #contact-popup .content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  #contact-popup .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  #contact-popup .close:hover,
+  #contact-popup .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>

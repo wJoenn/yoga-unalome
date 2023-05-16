@@ -26,5 +26,11 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    <div id="contact-popup">
+      <div class="content">
+        <span class="close">&times;</span>
+        <%= render 'contacts/form' %>
+      </div>
+    </div>
   </body>
 </html>
