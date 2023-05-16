@@ -18,15 +18,17 @@
   padding-right: 20px;
 }
 
-.yoga-type {
-  text-align: center;
+.yoga-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.yoga-type h3 {
+.yoga-info h3 {
   font-size: 26px;
 }
 
-.yoga-type p {
+.yoga-info p {
   font-size: 18px;
 }
 
