@@ -1,37 +1,37 @@
-<div id="calendar" data-controller="calendar" data-calendar-events-value="<%= @events %>">
-  <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
+  <div id="calendar" data-controller="calendar" data-calendar-events-value="<%= @events %>">
+    <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
 
-  <div class="month">
-    <div></div>
-    <button
-      class="left"
-      data-action="click->calendar#handleClick"
-      data-calendar-target="previous"
-      data-offset="-1"
-    >
-      <i class="fa-solid fa-chevron-left"></i>
-    </button>
-    <span data-calendar-target="month"></span>
-    <button
-      class="right"
-      data-action="click->calendar#handleClick"
-      data-calendar-target="next"
-      data-offset="1"
-    >
-      <i class="fa-solid fa-chevron-right"></i>
-    </button>
-    <div></div>
+    <div class="month">
+      <div></div>
+      <button
+        class="left"
+        data-action="click->calendar#handleClick"
+        data-calendar-target="previous"
+        data-offset="-1"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <span data-calendar-target="month"></span>
+      <button
+        class="right"
+        data-action="click->calendar#handleClick"
+        data-calendar-target="next"
+        data-offset="1"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+      <div></div>
+    </div>
+
+    <ul class="week">
+      <li>M</li>
+      <li>Tu</li>
+      <li>W</li>
+      <li>Th</li>
+      <li>F</li>
+      <li>Sa</li>
+      <li>Su</li>
+    </ul>
+
+    <ul class="days" data-calendar-target="days"></ul>
   </div>
-
-  <ul class="week">
-    <li>M</li>
-    <li>Tu</li>
-    <li>W</li>
-    <li>Th</li>
-    <li>F</li>
-    <li>Sa</li>
-    <li>Su</li>
-  </ul>
-
-  <ul class="days" data-calendar-target="days"></ul>
-</div>

@@ -10,4 +10,13 @@
     flex-direction: column;
     margin: 50px 0;
   }
+
+  .cal-event-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
 }

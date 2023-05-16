@@ -1,14 +1,14 @@
 .event-cards {
   display: flex;
-  margin-left: auto;
+  margin-left: 30px;
 }
 
 .event-cards-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, .5);
-  border-radius: 12px;
+  background: rgba(227, 225, 225, 0.25);
+  border-radius: 15px;
   padding: 15px;
   margin-bottom: 15px;
 }
@@ -25,7 +25,7 @@
 }
 
 .yoga-info h3 {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .yoga-info p {
