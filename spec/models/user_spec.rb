@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
 
   describe "association" do
     it "has many Bookings" do
-      event = Event.create(start_time: 1.hour.from_now, duration: 90, address: "Almaty", capacity: 7)
+      event = Event.create(start_time: 1.hour.from_now, duration: 90, address: "LLN", capacity: 9, price: 12)
       2.times { Booking.create(user:, event:) }
 
       expect(user.bookings).to all be_a Booking
