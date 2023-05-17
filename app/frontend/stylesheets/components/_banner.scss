@@ -4,8 +4,15 @@
   background-size: cover;
   display: flex;
 
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
   .text {
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
     gap: 30px;
     color: #fff;
