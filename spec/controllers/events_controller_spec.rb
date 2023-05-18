@@ -5,7 +5,8 @@ RSpec.describe EventsController, type: :request do
   let!(:duration) { 90 }
   let!(:address) { "Louvain La Neuve" }
   let!(:capacity) { 9 }
-  let!(:event) { Event.create(start_time:, duration:, address:, capacity:) }
+  let!(:price) { 12 }
+  let!(:event) { Event.create(start_time:, duration:, address:, capacity:, price:) }
   let!(:count) { Event.count }
   let!(:user) { User.create(email: "user@example.com", password: "password", admin: true) }
 
@@ -32,14 +33,14 @@ RSpec.describe EventsController, type: :request do
     end
 
     it "creates a new instance of Event with proper params" do
-      params = { event: { start_time: 3.hours.from_now, duration: 90, address:, capacity: } }
+      params = { event: { start_time: 3.hours.from_now, duration: 90, address:, capacity:, price: } }
       post(events_path, params:)
 
       expect(Event.count).to eq(count + 1)
     end
 
     it "returns a http status of 422 with unproper params" do
-      params = { event: { start_time: nil, duration: nil, address: nil, capacity: nil } }
+      params = { event: { start_time: nil, duration: nil, address: nil, capacity: nil, price: nil } }
       post(events_path, params:)
 
       expect(response).to have_http_status(:unprocessable_entity)
