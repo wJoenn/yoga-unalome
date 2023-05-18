@@ -41,13 +41,13 @@
   font-size: 18px;
 }
 
-.fa-solid {
+.fa-solid.fa-circle-arrow-right {
   color: $blue;
   text-align: center;
   font-size: 26px;
   padding-left: 20px;
 }
 
-.fa-solid:nth-child(3n+1) {
+.fa-solid.fa-circle-arrow-right:nth-child(3n) {
   color: $green;
 }
