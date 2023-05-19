@@ -1,6 +1,7 @@
 #event-card-container {
   height: 500px;
   overflow-y:scroll;
+
 }
 
 .event-cards {
@@ -48,10 +49,28 @@
   padding-left: 20px;
 }
 
-.event-cards-content:nth-child(2n) .fa-solid.fa-circle-arrow-right {
-  color: $green; /* Set the desired color for every second icon */
+li:nth-child(3n) .fa-solid.fa-circle-arrow-right {
+  color: $green; /* Set the desired color for every 1st icon */
 }
 
-.event-cards-content:nth-child(2n + 1) .fa-solid.fa-circle-arrow-right {
-  color: $beige; /* Set the desired color for every third icon */
+li:nth-child(3n+1) .fa-solid.fa-circle-arrow-right {
+  color: $beige; /* Set the desired color for every second icon */
+}
+
+li:nth-child(3n+2) .fa-solid.fa-circle-arrow-right {
+  color: $blue; /* Set the desired color for every third icon */
+}
+
+#event-card-container::-webkit-scrollbar {
+  width: 15px;  /* width of the entire scrollbar */
+}
+
+#event-card-container::-webkit-scrollbar-track {
+  background: transparent;        /* color of the tracking area */
+}
+
+#event-card-container::-webkit-scrollbar-thumb {
+  background-color: rgba(132, 130, 130, 0.25);  /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid white;  /* creates padding around scroll thumb */
 }
