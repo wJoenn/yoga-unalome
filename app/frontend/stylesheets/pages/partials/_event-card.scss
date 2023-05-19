@@ -50,7 +50,7 @@
 }
 
 li:nth-child(3n) .fa-solid.fa-circle-arrow-right {
-  color: $green; /* Set the desired color for every 1st icon */
+  color: $blue; /* Set the desired color for every 1st icon */
 }
 
 li:nth-child(3n+1) .fa-solid.fa-circle-arrow-right {
@@ -58,7 +58,7 @@ li:nth-child(3n+1) .fa-solid.fa-circle-arrow-right {
 }
 
 li:nth-child(3n+2) .fa-solid.fa-circle-arrow-right {
-  color: $blue; /* Set the desired color for every third icon */
+  color: $green; /* Set the desired color for every third icon */
 }
 
 #event-card-container::-webkit-scrollbar {
