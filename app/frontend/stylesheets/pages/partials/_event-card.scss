@@ -42,12 +42,16 @@
 }
 
 .fa-solid.fa-circle-arrow-right {
-  color: $blue;
+  color: $blue; /* Set the color */
   text-align: center;
   font-size: 26px;
   padding-left: 20px;
 }
 
-.fa-solid.fa-circle-arrow-right:nth-child(3n) {
-  color: $green;
+.event-cards-content:nth-child(2n) .fa-solid.fa-circle-arrow-right {
+  color: $green; /* Set the desired color for every second icon */
+}
+
+.event-cards-content:nth-child(2n + 1) .fa-solid.fa-circle-arrow-right {
+  color: $beige; /* Set the desired color for every third icon */
 }
