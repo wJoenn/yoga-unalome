@@ -3,16 +3,16 @@
   background-image: url("../../images/photos/banner.jpg");
   background-size: cover;
   display: flex;
+  justify-content: space-between;
 
   .container {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .text {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
     gap: 30px;
     color: #fff;
