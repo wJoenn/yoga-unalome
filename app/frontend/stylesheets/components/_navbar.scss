@@ -1,32 +1,21 @@
 .navbar {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  gap: 60px;
+  height: 180px;
+  justify-content: center;
 
   .logo {
-    margin-right: 120px;
+    width: 180px;
   }
 
   nav {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 60px ;
-    gap: 30px;
-  }
-
-  nav a {
-    margin-left: 20px;
-    color: #fff;
-    position: relative;
     font-size: 20px;
-    display: flex;
-    align-items: center;
-  }
+    gap: 50px;
 
-  span {
-    margin-top: 12px;
-    color: #fff;
-    font-size: 20px;
+    span {
+      cursor: default;
+    }
   }
 }

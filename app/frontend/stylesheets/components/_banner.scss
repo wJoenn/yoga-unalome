@@ -1,36 +1,38 @@
 .banner {
-  height: 100vh;
   background-image: url("../../images/photos/banner.jpg");
+  background-position: center;
   background-size: cover;
-  display: flex;
-  justify-content: space-between;
+  color: white;
+  height: 100vh;
+  height: 100svh;
 
   .container {
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: space-between;
-  }
 
-  .text {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: #fff;
-
-    h1 {
-      max-width: 280px;
-      font-size: 40px;
-      padding: 5px;
+    .empty {
+      height: 180px;
     }
 
-    p{
-      font-size: 15px;
-      font-weight: bold;
-    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      font-size: 30px;
+      gap: 30px;
 
-    button {
-      width: max-content;
-      background-color: $green;
+      button {
+        width: max-content;
+      }
+
+      h1 {
+        max-width: 400px;
+      }
+
+      p {
+        font-weight: bold;
+      }
     }
   }
 }
