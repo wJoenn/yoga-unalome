@@ -9,7 +9,11 @@
 
     <div class="field">
       <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "current-password" %>
+
+      <div class="password" data-controller="toggle-hidden-password">
+        <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
+        <i class="fa-solid fa-eye" data-action="click->toggle-hidden-password#togglePassword"></i>
+      </div>
     </div>
 
     <div class="check">
