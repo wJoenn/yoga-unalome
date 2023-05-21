@@ -28,7 +28,7 @@ form {
     justify-content: center;
 
     span {
-      cursor: pointer;
+      cursor: pointer !important;
       color: $green;
       font-weight: 600;
     }
@@ -42,7 +42,6 @@ form {
   }
 
   .field {
-    // border: 1px solid black;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
