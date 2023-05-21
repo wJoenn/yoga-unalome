@@ -1,3 +1,22 @@
-<div id="modal" data-user-form-modal-target="modal" data-action="click->user-form-modal#hideForm">
+<div id="modal" class="hidden" data-user-form-modal-target="modal" data-action="mousedown->user-form-modal#hideForm">
+  <%= form_with model: User.new, scope: :user, url: session_path(:user), data: { turbo: false, user_form_modal_target: "form" } do |f| %>
+    <h2>Welcome back</h2>
 
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="check">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+
+    <%= f.submit "Log in", class: "btn btn-green" %>
+  <% end %>
 </div>
