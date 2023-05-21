@@ -1,29 +1,51 @@
-<h2>Sign up</h2>
+<div class="banner">
+  <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
+    <%= form_with model: resource, scope: resource_name, url: registration_path(resource_name), data: { turbo: false } do |f| %>
+      <h2>Om Shanti</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="field">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+        <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("First") } %></span>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="field">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+        <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Last") } %></span>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autocomplete: "email" %>
+        <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Email") } %></span>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+
+        <div class="password" data-controller="toggle-hidden-password">
+          <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
+          <i class="fa-solid fa-eye" data-action="click->toggle-hidden-password#togglePassword"></i>
+        </div>
+
+        <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Password") && !m.match?("confirmation") } %></span>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "Confirm password" %>
+
+        <div class="password" data-controller="toggle-hidden-password">
+          <%= f.password_field :password_confirmation, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
+          <i class="fa-solid fa-eye" data-action="click->toggle-hidden-password#togglePassword"></i>
+        </div>
+
+        <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("confirmation") } %></span>
+      </div>
+
+      <%= f.submit "Sign up", class: "btn btn-green" %>
+
+      <p class="redirect">Already have an account ? <%= link_to "Log in", new_user_session_path %></p>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -1,6 +1,6 @@
 <div class="banner">
   <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
-    <%= form_with model: User.new, scope: :user, url: session_path(:user), data: { turbo: false, user_form_modal_target: "form" } do |f| %>
+    <%= form_with model: resource, scope: resource_name, url: session_path(resource_name), data: { turbo: false } do |f| %>
       <h2>Welcome back</h2>
 
       <div class="field">
