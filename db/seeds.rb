@@ -10,6 +10,6 @@ if Rails.env.development?
   for i in 1..6 do
     time = i * 100
     start_time = time.hours.from_now
-    Event.create(start_time:, duration:, address:, capacity:, title:, price:, title:)
+    Event.create(start_time:, duration:, address:, capacity:, price:, title:)
   end
 end
