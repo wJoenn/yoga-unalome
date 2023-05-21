@@ -9,3 +9,6 @@ application.register("calendar", CalendarController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import UserFormModalController from "./user_form_modal_controller"
+application.register("user-form-modal", UserFormModalController)

@@ -11,7 +11,16 @@
       <span>✾</span>
       <a href="#">Contact</a>
       <span>✾</span>
-      <%= link_to "Account", dashboard_path %>
+
+      <% if current_user %>
+        <%= link_to "Account", dashboard_path %>
+      <% else %>
+        <div data-controller="user-form-modal">
+          <button data-action="click->user-form-modal#showForm">Log in</button>
+
+          <%= render "shared/sign_in" %>
+        </div>
+      <% end %>
     </nav>
   </div>
 </div>

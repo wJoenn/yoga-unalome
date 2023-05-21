@@ -1,0 +1,16 @@
+#modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 100vh;
+  height: 100svh;
+  justify-content: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+  &.visible {
+    display: flex;
+  }
+}
