@@ -7,6 +7,7 @@ form {
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  position: relative;
   width: 400px;
 
   h2 {
@@ -26,6 +27,14 @@ form {
     display: flex;
     gap: 10px;
     padding: $padding;
+  }
+
+  .close {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
   }
 
   .error {
