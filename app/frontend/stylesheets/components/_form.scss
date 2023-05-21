@@ -11,7 +11,7 @@ form {
 
   h2 {
     border-bottom: 1px solid #e3e3e3;
-    font-size: 30px !important;
+    font-size: 30px;
     padding-bottom: 10px;
     text-align: center;
     width: 100%;
@@ -21,16 +21,19 @@ form {
     font-size: 0.8rem;
   }
 
-  p {
+  .redirect {
     display: flex;
     font-size: 16px;
     gap: 10px;
     justify-content: center;
 
-    span {
-      cursor: pointer !important;
+    a {
       color: $green;
       font-weight: 600;
+
+      &:hover {
+        color: $green;
+      }
     }
   }
 
@@ -47,6 +50,7 @@ form {
     flex-direction: column;
     gap: 5px;
     padding: $padding;
+    transition: box-shadow 0.3s ease;
     width: 100%;
 
     &:has(input:focus) {

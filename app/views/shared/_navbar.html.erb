@@ -15,11 +15,7 @@
       <% if current_user %>
         <%= link_to "Account", dashboard_path %>
       <% else %>
-        <div data-controller="user-form-modal">
-          <button data-action="click->user-form-modal#showForm">Log in</button>
-
-          <%= render "shared/sign_in" %>
-        </div>
+        <%= link_to "Log in", new_user_session_path %>
       <% end %>
     </nav>
   </div>
