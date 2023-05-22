@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :events, only: %i[create update destroy] do
     resources :bookings, only: %i[create] do
-      patch :cancel_booking, on: :member
+      patch :cancel, as: :cancel_booking, on: :member
     end
   end
 end

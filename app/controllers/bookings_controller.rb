@@ -1,15 +1,16 @@
 class BookingsController < ApplicationController
-  before_action :set_event
-  before_action :set_booking, only: %i[cancel_booking]
+  before_action :set_booking, only: %i[cancel]
 
   def create
-    @booking = @event.bookings.new(params[:booking])
+    @event = Event.find(params[:event_id])
+    @booking = @event.bookings.new
     @booking.user = current_user
 
     redirect_to root_path if @booking.save
   end
 
-  def cancel_booking
+  def cancel
+    @booking = Booking.find(params[:id])
     @booking.update(canceled: true)
     redirect_back fallback_location: root_path
   end
@@ -18,9 +19,5 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
-  end
-
-  def set_event
-    @event = Event.find(params[:event_id])
   end
 end

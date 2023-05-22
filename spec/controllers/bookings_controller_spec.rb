@@ -1,7 +1,9 @@
 require "rails_helper"
 
-RSpec.describe "Bookings", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+RSpec.describe BookingsController, type: :request do
+  describe "#create" do
+    it "creates a new instance of Booking with proper params" do
+      params = { event: { start_time: 3.hours.from_now, duration: 90, address:, capacity: } }
+    end
   end
 end
