@@ -38,16 +38,26 @@
       width: 80%;
     }
 
-    .session::before {
-      aspect-ratio: 1/1;
-      background-color: rgba(127, 142, 168, 0.7);
-      border-radius: 50%;
-      content: "";
-      position: absolute;
-      right: 3px;
-      top: -3px;
-      width: 100%;
-      z-index: -10;
+    .event {
+      &.event-0::before {
+        background-color: #DCD0B3;
+      }
+
+      &.event-1::before {
+        background-color: rgba(104, 148, 137, 0.4);
+      }
+
+      &::before {
+        aspect-ratio: 1/1;
+        background-color: rgba(127, 142, 168, 0.7);
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        right: 3px;
+        top: -3px;
+        width: 100%;
+        z-index: -10;
+      }
     }
 
     .current {

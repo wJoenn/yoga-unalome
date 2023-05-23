@@ -26,7 +26,11 @@ h1, h2, h3 {
   font-family: $headers-font;
 }
 
-ul {
+img {
+  max-width: 100%;
+}
+
+nav, ul {
   list-style: none;
 }
 

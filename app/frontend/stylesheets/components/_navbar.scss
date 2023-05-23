@@ -1,0 +1,21 @@
+.navbar {
+  align-items: center;
+  display: flex;
+  gap: 60px;
+  height: 180px;
+  justify-content: center;
+
+  .logo {
+    width: 180px;
+  }
+
+  nav {
+    display: flex;
+    font-size: 20px;
+    gap: 50px;
+
+    span {
+      cursor: default;
+    }
+  }
+}

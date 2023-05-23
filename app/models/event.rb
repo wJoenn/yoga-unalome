@@ -1,15 +1,25 @@
 class Event < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
+  monetize :price_cents
+
   validates :start_time, :duration, :address, :capacity, presence: true
-  validates :duration, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :duration, :price_cents, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validate :available_time_span, if: :presence_confirmed?
   validate :not_sooner_than_now, if: :presence_confirmed?
+
+  def self.coming
+    Event.where("start_time > ?", Time.current)
+  end
+
+  def day
+    start_time.to_date
+  end
 
   private
 
   def available_time_span
-    events = Event.where("start_time >= ?", Time.current)
+    events = Event.coming
     events = events.reject { |event| event.id == id }
     return unless events.any?
 
