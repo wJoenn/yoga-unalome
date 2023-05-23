@@ -4,6 +4,7 @@ button, .btn {
   border-radius: 10px;
   color: white;
   cursor: pointer;
+  font: inherit;
   padding: $padding;
 }
 
