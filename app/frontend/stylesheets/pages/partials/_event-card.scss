@@ -17,15 +17,16 @@
   border-radius: 15px;
   padding: 15px;
   margin-bottom: 15px;
-}
 
-.event-cards-content:hover {
-  background: rgba(132, 130, 130, 0.25);
-}
 
-.event-cards-content h3 {
-  font-size: 22px;
-  padding-right: 20px;
+  &:hover {
+    background: rgba(132, 130, 130, 0.25);
+  }
+
+  h3 {
+    font-size: 22px;
+    padding-right: 20px;
+  }
 }
 
 .yoga-info {
