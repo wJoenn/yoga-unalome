@@ -1,42 +1,48 @@
-#wave {
-  //   background-color: red;
+footer {
+  height: 35vh;
+  position: relative;
+  margin-top: 250px;
+
+  #wave {
+      // background-color: red;
     width: 110vw;
-    position: relative;
-    bottom: 0;
+    position: absolute;
+    bottom: 300px;
     z-index: -1;
   }
-
-  footer {
-    margin-top: -50px;
-    background-color: #85B6AA;
-    height: 35vh;
-    position: relative;
-    overflow: hidden;
-
-    .content-copyright {
-      position: absolute;
-      bottom: 0;
-      padding: 20px 0;
-      font-size: 14px;
-      width: 100%;
-      text-align: center;
-    }
-  }
+}
 
 .footer-container {
-  display: flex;
-  justify-content: center;
+  margin-top: -50px;
+  background-color: #85B6AA;
+  height: 35vh;
+  position: relative;
+  overflow: hidden;
 
-  .footer-content {
+  .content-copyright {
+    position: absolute;
+    bottom: 0;
+    padding: 20px 0;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-contents {
     display: flex;
-    flex-direction: column;
-    padding-left: 15%;
+    justify-content: center;
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      padding-left: 15%;
+    }
   }
 }
 
 .f-deco {
   position: absolute;
-  z-index: 10;
+  z-index: 1;
 
   &#black-logo {
     left: 130px;
@@ -53,45 +59,40 @@
 nav {
   padding-top: 40px;
   padding-bottom: 40px;
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    padding-top: 10px;
 
-    li {
-      display: inline-flex;
-      margin-right: 40px;
-      font-size: 24px;
-      font-weight: bolder;
+  a {
+    margin-right: 60px;
+    font-size: 24px;
+    font-weight: bolder;
+  }
 
-      a {
-        &.btn-contact {
-          color: white;
-          padding: 8px 24px;
-          border-radius: 15px;
-          background: #AFB791;
-          transition: background 0.3s ease;
-          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  .btn-contact {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 15px;
+    background: #AFB791;
+    transition: background 0.3s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 
-          &:hover {
-            background: #C68A59;
-          }
-        }
-      }
+    &:hover {
+      background: #C68A59;
     }
   }
 }
 
-.content-socials {
+.socials {
   h4 {
     margin-bottom: 20px;
     font-size: 18px;
   }
 
   a {
-    font-size: 30px;
-    margin-right: 20px;
+    font-size: 40px;
+    margin-right: 50px;
     color: #DCD0B3;
+
+    &:hover {
+      color: #C68A59;
+    }
   }
 }
