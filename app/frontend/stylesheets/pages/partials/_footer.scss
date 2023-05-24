@@ -1,12 +1,10 @@
 footer {
   height: 35vh;
   position: relative;
-  margin-top: 250px;
 
   #wave {
       // background-color: red;
     width: 110vw;
-    position: absolute;
     bottom: 300px;
     z-index: -1;
   }
@@ -42,7 +40,7 @@ footer {
 
 .f-deco {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
 
   &#black-logo {
     left: 130px;
@@ -66,6 +64,28 @@ nav {
     font-weight: bolder;
   }
 
+  #link {
+    position: relative;
+  }
+
+  #link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: -5px;
+    left: 0;
+    background-color: #C68A59;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  #link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
   .btn-contact {
     color: white;
     padding: 8px 24px;
@@ -79,6 +99,7 @@ nav {
     }
   }
 }
+
 
 .socials {
   h4 {
