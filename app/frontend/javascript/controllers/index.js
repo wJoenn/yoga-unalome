@@ -9,3 +9,9 @@ application.register("calendar", CalendarController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ToggleHiddenPasswordController from "./toggle_hidden_password_controller"
+application.register("toggle-hidden-password", ToggleHiddenPasswordController)
+
+import UserFormModalController from "./user_form_modal_controller"
+application.register("user-form-modal", UserFormModalController)
