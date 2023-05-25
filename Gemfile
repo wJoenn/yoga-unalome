@@ -44,6 +44,8 @@ gem "vite_rails"
 
 gem "devise"
 
+gem 'omniauth-facebook'
+
 gem 'money-rails', '~> 1.12'
 
 group :development, :test do
