@@ -1,0 +1,45 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label, form input, form textarea, form button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#contact-popup {
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: none;
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+#contact-popup .content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 800px;
+}
+
+#contact-popup .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#contact-popup .close:hover,
+#contact-popup .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
