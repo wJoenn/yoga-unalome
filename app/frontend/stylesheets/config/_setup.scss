@@ -20,13 +20,18 @@ body {
   font-family: $body-font;
   height: 1px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-family: $headers-font;
 }
 
-ul {
+img {
+  max-width: 100%;
+}
+
+nav, ul {
   list-style: none;
 }
 
@@ -34,4 +39,15 @@ ul {
   margin: 0 auto;
   max-width: 80%;
   width: 1200px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

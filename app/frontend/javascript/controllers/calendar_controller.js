@@ -5,11 +5,14 @@ export default class extends Controller {
   static targets = ["month", "days", "previous", "next"]
 
   static values = {
-    sessions: Array
+    events: Array
   }
 
   connect() {
     this.today = new Date()
+
+    // I'll need this to add an appropriate class on the events
+    this.counter = 0
 
     // I wanna block the next button after iterating through a few months because there's no point in booking a session
     // in 6 months, Chloe probably doesn't even know what she'll do by then anyway. That's why I'm storing the current
@@ -57,6 +60,17 @@ export default class extends Controller {
     }
   }
 
+  #formatDate(date) {
+    const options = { year: "numeric", month: "2-digit", day: "2-digit" }
+    date = date.toLocaleDateString("nl-BE", options)
+
+    // The date is currently of format dd/mm/yyyy but we want yyyy-mm-dd instead because that's the format of the dates
+    // in this.eventsValue
+    date = date.split("/").reverse().join("-")
+
+    return date
+  }
+
   #getFirstDay(date) {
     const year = date.getFullYear()
     const month = date.getMonth()
@@ -70,13 +84,15 @@ export default class extends Controller {
   }
 
   #getHtmlClass(day) {
-    const dayDate = new Date(this.today.getFullYear(), this.month, day)
+    let dayDate = new Date(this.today.getFullYear(), this.month, day)
+    dayDate = this.#formatDate(dayDate)
     let htmlClass = ""
 
     if (dayDate < this.today) {
       htmlClass = "off"
-    } else if (this.sessionsValue.includes(dayDate.toISOString().slice(0, 10))) {
-      htmlClass = "session"
+    } else if (this.eventsValue.includes(dayDate)) {
+      htmlClass = `event event-${this.counter % 3}`
+      this.counter++
     }
 
     return htmlClass
