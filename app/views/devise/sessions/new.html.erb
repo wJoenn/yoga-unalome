@@ -27,9 +27,11 @@
         <%= f.submit "Log in", class: "btn btn-green" %>
       <% end %>
 
+      <!--
       <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
         <i class="fa-brands fa-square-facebook"></i> Login with Facebook
       <% end %>
+      -->
       <p class="redirect">Don't have an account yet ? <%= link_to "Sign up", new_user_registration_path %></p>
     </div>
   </div>
