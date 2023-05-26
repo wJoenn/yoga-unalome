@@ -19,5 +19,5 @@ def add_uid_to_user(resource)
 end
 
 def uid?
-  params[:user].has_key?(:uid)
+  params[:user].key?(:uid)
 end
