@@ -1,31 +1,36 @@
 <div class="banner">
   <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
-    <%= form_with model: resource, scope: resource_name, url: session_path(resource_name), data: { turbo: false } do |f| %>
+    <div class="form">
       <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
       <h2>Welcome back</h2>
 
-      <div class="field">
-        <%= f.label :email %>
-        <%= f.email_field :email, autocomplete: "email" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password %>
-
-        <div class="password" data-controller="toggle-hidden-password">
-          <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
-          <i class="fa-solid fa-eye" data-action="click->toggle-hidden-password#togglePassword"></i>
+      <%= form_with model: resource, scope: resource_name, url: session_path(resource_name), data: { turbo: false } do |f| %>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autocomplete: "email" %>
         </div>
-      </div>
 
-      <div class="check">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
+        <div class="field">
+          <%= f.label :password %>
 
-      <%= f.submit "Log in", class: "btn btn-green" %>
+          <div class="password" data-controller="toggle-hidden-password">
+            <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
+            <i class="fa-solid fa-eye" data-action="click->toggle-hidden-password#togglePassword"></i>
+          </div>
+        </div>
 
+        <div class="check">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+
+        <%= f.submit "Log in", class: "btn btn-green" %>
+      <% end %>
+
+      <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
+        <i class="fa-brands fa-square-facebook"></i> Login with Facebook
+      <% end %>
       <p class="redirect">Don't have an account yet ? <%= link_to "Sign up", new_user_registration_path %></p>
-    <% end %>
+    </div>
   </div>
 </div>
