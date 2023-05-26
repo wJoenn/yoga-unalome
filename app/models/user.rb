@@ -20,16 +20,18 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    first_name, *last_name = auth.info.name.split
+    uid = auth.uid
     email = auth.info.email
-    user = User.where(email:).first
-    return user if user
+    user = User.find_by(email:)
+
+    if user
+      user.update(uid: nil) unless user.uid == uid
+      return user, uid
+    end
 
     password = Devise.friendly_token[0, 20]
-    last_name = last_name.join(" ")
-    provider = auth.provider
-    uid = auth.uid
-    User.create!(email:, password:, first_name:, last_name:, provider:, uid:)
+    first_name, *last_name = auth.info.name.split
+    User.create!(email:, password:, first_name:, last_name: last_name.join(" "), provider: auth.provider, uid:)
   end
 
   def full_name
