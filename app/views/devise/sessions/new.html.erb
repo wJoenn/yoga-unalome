@@ -4,6 +4,10 @@
       <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
       <h2>Welcome back</h2>
 
+      <% if alert %>
+        <p class="form-alert"><i class="fa-solid fa-triangle-exclamation"></i><%= alert %></p>
+      <% end %>
+
       <div class="field">
         <%= f.label :email %>
         <%= f.email_field :email, autocomplete: "email" %>
