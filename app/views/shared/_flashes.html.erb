@@ -1,13 +1,13 @@
 <% if notice %>
-  <div class="flash notice invisible">
-    <i class="fa-solid fa-xmark close"></i>
+  <div class="flash notice invisible" data-controller="flashes">
+    <i class="fa-solid fa-xmark close" data-action="click->flashes#hideFlash"></i>
     <p class="notice"><%= notice %></p>
   </div>
 <% end %>
 
 <% if alert %>
-  <div class="flash alert invisible">
-    <i class="fa-solid fa-xmark close"></i>
+  <div class="flash alert invisible" data-controller="flashes">
+    <i class="fa-solid fa-xmark close" data-action="click->flashes#hideFlash"></i>
     <p class="alert"><%= alert %></p>
   </div>
 <% end %>

@@ -7,6 +7,9 @@ import { application } from "./application"
 import CalendarController from "./calendar_controller"
 application.register("calendar", CalendarController)
 
+import FlashesController from "./flashes_controller"
+application.register("flashes", FlashesController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
