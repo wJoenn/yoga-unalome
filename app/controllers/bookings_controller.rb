@@ -6,11 +6,14 @@ class BookingsController < ApplicationController
     @booking = @event.bookings.new
     @booking.user = current_user
 
-    redirect_to root_path if @booking.save
+    if @booking.save
+      redirect_to root_path, notice: I18n.t(".success")
+    else
+      redirect_to root_path, alert: I18n.t(".error")
+    end
   end
 
   def cancel
-    @booking = Booking.find(params[:id])
     @booking.update(canceled: true)
     redirect_back fallback_location: root_path
   end
