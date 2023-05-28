@@ -1,77 +1,47 @@
-#event-card-container {
-  height: 500px;
-  overflow-y:scroll;
-
-}
-
-.event-cards {
-  display: flex;
-  margin-left: 30px;
-}
-
-.event-cards-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(227, 225, 225, 0.25);
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 15px;
-
-
-  &:hover {
-    background: rgba(132, 130, 130, 0.25);
-  }
-
-  h3 {
-    font-size: 22px;
-    padding-right: 20px;
-  }
-}
-
-.yoga-info {
+#events-cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
+  gap: 20px;
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
 
-.yoga-info h3 {
-  font-size: 24px;
-}
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: #d3d3d380;
+  }
 
-.yoga-info p {
-  font-size: 18px;
-}
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
 
-.fa-solid.fa-circle-arrow-right {
-  color: $blue; /* Set the color */
-  text-align: center;
-  font-size: 26px;
-  padding-left: 20px;
-}
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 5px;
+  }
 
-li:nth-child(3n) .fa-solid.fa-circle-arrow-right {
-  color: $blue; /* Set the desired color for every 1st icon */
-}
+  .event-card {
+    align-items: center;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    padding: 15px;
 
-li:nth-child(3n+1) .fa-solid.fa-circle-arrow-right {
-  color: $beige; /* Set the desired color for every second icon */
-}
+    &:nth-child(3n+1) i {
+      color: $beige;
+    }
 
-li:nth-child(3n+2) .fa-solid.fa-circle-arrow-right {
-  color: $green; /* Set the desired color for every third icon */
-}
+    &:nth-child(3n+2) i {
+      color: $green;
+    }
 
-#event-card-container::-webkit-scrollbar {
-  width: 15px;  /* width of the entire scrollbar */
-}
+    h3 {
+      font-size: 24px;
+    }
 
-#event-card-container::-webkit-scrollbar-track {
-  background: transparent;        /* color of the tracking area */
-}
-
-#event-card-container::-webkit-scrollbar-thumb {
-  background-color: rgba(132, 130, 130, 0.25);  /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid white;  /* creates padding around scroll thumb */
+    i {
+      color: $blue;
+      cursor: pointer;
+      font-size: 30px;
+    }
+  }
 }

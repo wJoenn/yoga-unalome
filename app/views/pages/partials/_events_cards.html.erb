@@ -1,19 +1,14 @@
+<ul id="events-cards">
+  <% @events.each do |event| %>
+    <li class="event-card">
+      <h3><%= event.day.day %></h3>
 
-<section id="event-card-container">
-  <div class="event-cards">
-    <ul>
-      <% @events.each do |event| %>
-        <li>
-          <div class="event-cards-content">
-            <h3><%= event.day.day %></h3>
-            <div class="yoga-info">
-              <h3><%= event.title %></h3>
-              <p><%= "#{event.day.strftime("%a")} " "#{event.start_time.strftime("%I:%M")} - #{event.end_time.strftime("%I:%M")}" %></p>
-            </div>
-            <i class="fa-solid fa-circle-arrow-right"></i>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</section>
+      <div>
+        <h3><%= event.title %></h3>
+        <p><%= "#{event.day.strftime("%a")} " "#{event.start_time.strftime("%I:%M")} - #{event.end_time.strftime("%I:%M")}" %></p>
+      </div>
+
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </li>
+  <% end %>
+</ul>
