@@ -11,9 +11,6 @@ export default class extends Controller {
   connect() {
     this.today = new Date()
 
-    // I'll need this to add an appropriate class on the events
-    this.counter = 0
-
     // I wanna block the next button after iterating through a few months because there's no point in booking a session
     // in 6 months, Chloe probably doesn't even know what she'll do by then anyway. That's why I'm storing the current
     // month in a variable
@@ -57,7 +54,7 @@ export default class extends Controller {
     // We add one empty li for each day of the previous month in the first week
     const numberOfDaysLastMonth = this.#getNumberOfDays(date, 0)
     for (let i = numberOfDaysLastMonth; i > numberOfDaysLastMonth - previousMonth; i--) {
-      const html = "<li class='off'></li$>"
+      const html = "<li></li>"
       this.daysTarget.insertAdjacentHTML("afterBegin", html)
     }
 
@@ -98,11 +95,11 @@ export default class extends Controller {
     dayDate = this.#formatDate(dayDate)
     let htmlClass = ""
 
-    if (dayDate < this.today) {
-      htmlClass = "off"
-    } else if (this.eventsValue.includes(dayDate)) {
-      htmlClass = `class="event event-${this.counter % 3}"`
-      this.counter++
+    if (dayDate === this.#formatDate(new Date())) htmlClass = "class='current'"
+
+    if (this.eventsValue.includes(dayDate)) {
+      const counter = this.eventsValue.indexOf(dayDate)
+      htmlClass = `class="event event-${counter % 3}"`
     }
 
     return htmlClass
@@ -113,11 +110,8 @@ export default class extends Controller {
     dayDate = this.#formatDate(dayDate)
     let htmlDataset = ""
 
-    if (dayDate < this.today) {
-      htmlDataset = ""
-    } else if (this.eventsValue.includes(dayDate)) {
+    if (this.eventsValue.includes(dayDate)) {
       htmlDataset = `data-action="click->calendar#scrollToEventCard" data-target="${dayDate}"`
-      this.counter++
     }
 
     return htmlDataset
