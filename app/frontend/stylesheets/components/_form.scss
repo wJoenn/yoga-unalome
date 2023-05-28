@@ -6,17 +6,6 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
-  position: relative;
-  width: 400px;
-
-  h2 {
-    border-bottom: 1px solid #e3e3e3;
-    font-size: 30px;
-    padding-bottom: 10px;
-    text-align: center;
-    width: 100%;
-  }
 
   label {
     font-size: 0.8rem;
@@ -27,14 +16,6 @@ form {
     display: flex;
     gap: 10px;
     padding: $padding;
-  }
-
-  .close {
-    cursor: pointer;
-    font-size: 20px;
-    position: absolute;
-    right: 15px;
-    top: 15px;
   }
 
   .error {
@@ -94,6 +75,38 @@ form {
       cursor: pointer;
       font-size: 1rem;
     }
+  }
+}
+
+.form {
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  width: 400px;
+
+  h2 {
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .close {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
   }
 
   .redirect {

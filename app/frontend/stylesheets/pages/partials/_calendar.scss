@@ -1,6 +1,8 @@
 #calendar {
   display: flex;
   flex-direction: column;
+  height: 500px;
+  justify-content: space-between;
   margin: 0 auto;
   position: relative;
   width: 600px;
@@ -28,7 +30,6 @@
     li {
       align-items: center;
       aspect-ratio: 1/1;
-      cursor: pointer;
       display: flex;
       font-size: 20px;
       font-weight: 500;
@@ -39,8 +40,12 @@
     }
 
     .event {
+      color: white;
+      cursor: pointer;
+      text-shadow: 0 0 5px rgba(0, 0,0, 0.5);
+
       &.event-0::before {
-        background-color: #DCD0B3;
+        background-color: #dcd0b3bd;
       }
 
       &.event-1::before {
@@ -62,11 +67,6 @@
 
     .current {
       color: $green;
-    }
-
-    .off {
-      color: #00000080;
-      cursor: not-allowed;
     }
   }
 
