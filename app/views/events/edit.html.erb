@@ -1,0 +1,18 @@
+<%= form_with model: @event do |f| %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :capacity %>
+  <%= f.number_field :capacity %>
+
+  <%= f.label :start_time %>
+  <%= f.datetime_field :start_time %>
+
+  <%= f.label :duration %>
+  <%= f.number_field :duration %>
+
+  <%= f.label :price_cents, "Price in cents" %>
+  <%= f.number_field :price_cents %>
+
+  <%= f.submit %>
+<% end %>

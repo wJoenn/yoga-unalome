@@ -1,10 +1,12 @@
 class EventsController < ApplicationController
   before_action :redirect_unless_admin
-  before_action :set_event, only: %i[update destroy]
+  before_action :set_event, only: %i[edit update destroy]
 
   def new
     @event = Event.new
   end
+
+  def edit() end
 
   def create
     @event = Event.new(event_params)
@@ -12,7 +14,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to root_path
     else
-      render "pages/home", status: :unprocessable_entity
+      render "events/new", status: :unprocessable_entity
     end
   end
 
@@ -20,7 +22,7 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to root_path
     else
-      render "pages/home", status: :unprocessable_entity
+      render "events/edit", status: :unprocessable_entity
     end
   end
 

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :events, only: %i[new create update destroy]
+  resources :events, only: %i[new edit create update destroy]
 end
