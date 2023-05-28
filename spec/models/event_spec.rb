@@ -11,38 +11,40 @@ RSpec.describe Event, type: :model do
   let!(:address) { "LLN" }
   let!(:capacity) { 9 }
   let!(:price) { 12 }
-  let!(:event) { Event.create(start_time:, duration:, address:, capacity:, price:) }
+  let!(:title) { "Vinyasa Flow" }
+  let!(:event) { Event.create(start_time:, duration:, address:, capacity:, price:, title:) }
 
   describe "validations" do
-    it "requires a starting time, an ending time, an address and a capacity" do
+    it "requires a starting time, a duration, an address, a capacity and a title" do
       expect(event.persisted?).to be_truthy
 
       Event.destroy_all
-      test_wrong_event(start_time:, duration:, capacity:, price:)
-      test_wrong_event(start_time:, address:, capacity:, price:)
-      test_wrong_event(duration:, address:, capacity:, price:)
-      test_wrong_event(duration:, address:, capacity:, price:)
+      test_wrong_event(start_time:, duration:, address:, capacity:, price:)
+      test_wrong_event(start_time:, duration:, address:, price:, title:)
+      test_wrong_event(start_time:, duration:, capacity:, price:, title:)
+      test_wrong_event(start_time:, address:, capacity:, price:, title:)
+      test_wrong_event(duration:, address:, capacity:, price:, title:)
     end
 
     it "requires to have a different time span than other events" do
-      test_wrong_event(start_time:, duration:, address:, capacity:, price:)
+      test_wrong_event(start_time:, duration:, address:, capacity:, price:, title:)
     end
 
     it "requires the start time to not be sooner than now" do
       Event.destroy_all
-      test_wrong_event(start_time: 1.day.ago, duration:, address:, capacity:, price:)
+      test_wrong_event(start_time: 1.day.ago, duration:, address:, capacity:, price:, title:)
     end
 
     it "requires to have a positive integer for duration" do
       Event.destroy_all
-      test_wrong_event(start_time:, duration: -90, address:, capacity:, price:)
-      test_wrong_event(start_time:, duration: 90.5, address:, capacity:, price:)
+      test_wrong_event(start_time:, duration: -90, address:, capacity:, price:, title:)
+      test_wrong_event(start_time:, duration: 90.5, address:, capacity:, price:, title:)
     end
 
     it "requires to have a positive integer for price" do
       Event.destroy_all
-      test_wrong_event(start_time:, duration:, address:, capacity:, price: -12)
-      test_wrong_event(start_time:, duration:, address:, capacity:, price_cents: 12.5)
+      test_wrong_event(start_time:, duration:, address:, capacity:, price: -12, title:)
+      test_wrong_event(start_time:, duration:, address:, capacity:, price_cents: 12.5, title:)
     end
   end
 

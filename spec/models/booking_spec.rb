@@ -7,7 +7,7 @@ end
 
 RSpec.describe Booking, type: :model do
   let(:event) do
-    Event.create(start_time: 1.hour.from_now, duration: 90, address: "LLN", capacity: 9, price: 12)
+    Event.create(start_time: 1.hour.from_now, duration: 90, address: "LLN", capacity: 9, price: 12, title: "Vinyasa")
   end
   let(:user) { User.create(email: "user@example.com", password: "password", first_name: "louis", last_name: "ramos") }
   let!(:booking) { Booking.create(user:, event:) }
