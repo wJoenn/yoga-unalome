@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
 
-  resources :events, only: %i[new create update destroy]
   get "user_dashboard/show", as: :dashboard
+
+  resources :events, only: %i[new create update destroy] do
+    resources :bookings, only: %i[create]
+  end
+
+  patch "/bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end
