@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     sessions: "users/sessions"
   }
 
+  get "user_dashboard/show", as: :dashboard
+
   resources :events, only: %i[create update destroy] do
     resources :bookings, only: %i[create]
   end
