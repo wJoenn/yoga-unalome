@@ -8,6 +8,16 @@ button, .btn {
   padding: $padding;
 }
 
+.btn-auth {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+
+  i {
+    color: #0071bb;
+  }
+}
+
 .btn-blue {
   background-color: $blue;
 }
