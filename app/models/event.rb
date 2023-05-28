@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   validate :available_time_span, if: :presence_confirmed?
   validate :not_sooner_than_now, if: :presence_confirmed?
 
-  def self.coming
+  def self.upcoming
     Event.where("start_time > ?", Time.current)
   end
 
@@ -23,7 +23,7 @@ class Event < ApplicationRecord
   private
 
   def available_time_span
-    events = Event.coming
+    events = Event.upcoming
     events = events.reject { |event| event.id == id }
     return unless events.any?
 

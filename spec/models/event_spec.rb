@@ -55,9 +55,9 @@ RSpec.describe Event, type: :model do
     end
   end
 
-  describe "#self.coming" do
+  describe "self#upcoming" do
     it "returns a ActiveRecord relation array of Event" do
-      coming_events = Event.coming
+      coming_events = Event.upcoming
       expect(coming_events).to all be_an Event
     end
   end
