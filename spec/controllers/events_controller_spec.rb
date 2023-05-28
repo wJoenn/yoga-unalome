@@ -6,7 +6,8 @@ RSpec.describe EventsController, type: :request do
   let!(:address) { "Louvain La Neuve" }
   let!(:capacity) { 9 }
   let!(:price) { 12 }
-  let!(:event) { Event.create(start_time:, duration:, address:, capacity:, price:) }
+  let!(:title) { "Vinyasa Flow" }
+  let!(:event) { Event.create(start_time:, duration:, address:, capacity:, price:, title:) }
   let!(:count) { Event.count }
   let!(:user) { User.create(email: "user@example.com", password: "password", admin: true) }
 
@@ -33,7 +34,7 @@ RSpec.describe EventsController, type: :request do
     end
 
     it "creates a new instance of Event with proper params" do
-      params = { event: { start_time: 3.hours.from_now, duration: 90, address:, capacity:, price: } }
+      params = { event: { start_time: 3.hours.from_now, duration: 90, address:, capacity:, price:, title: } }
       post(events_path, params:)
 
       expect(Event.count).to eq(count + 1)

@@ -3,23 +3,27 @@ class Event < ApplicationRecord
 
   monetize :price_cents
 
-  validates :start_time, :duration, :address, :capacity, presence: true
+  validates :start_time, :duration, :address, :capacity, :title, presence: true
   validates :duration, :price_cents, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validate :available_time_span, if: :presence_confirmed?
   validate :not_sooner_than_now, if: :presence_confirmed?
 
-  def self.coming
-    Event.where("start_time > ?", Time.current)
+  def self.upcoming
+    Event.where("start_time > ?", Time.current).order(:start_time)
   end
 
   def day
     start_time.to_date
   end
 
+  def end_time
+    start_time + (duration * 60)
+  end
+
   private
 
   def available_time_span
-    events = Event.coming
+    events = Event.upcoming
     events = events.reject { |event| event.id == id }
     return unless events.any?
 
@@ -33,10 +37,6 @@ class Event < ApplicationRecord
     return unless times.flatten.intersect?(hour_range(start_time, end_time))
 
     errors.add(:start_time, :taken, message: "You already have an event at that time")
-  end
-
-  def end_time
-    start_time + (duration * 60)
   end
 
   def hour_range(start, ending)

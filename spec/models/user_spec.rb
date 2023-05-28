@@ -11,6 +11,9 @@ RSpec.describe User, type: :model do
   let!(:first_name) { "louis" }
   let!(:last_name) { "ramos" }
   let!(:user) { User.create(email:, password:, first_name:, last_name:) }
+  let!(:event) do
+    Event.create(start_time: 1.hour.from_now, duration: 90, address: "LLN", capacity: 9, price: 12, title: "Vinyasa")
+  end
 
   describe "validation" do
     it "requires an email adress, a password, a first name and a last name" do
@@ -37,7 +40,6 @@ RSpec.describe User, type: :model do
 
   describe "association" do
     it "has many Bookings" do
-      event = Event.create(start_time: 1.hour.from_now, duration: 90, address: "LLN", capacity: 9, price: 12)
       2.times { Booking.create(user:, event:) }
 
       expect(user.bookings).to all be_a Booking
