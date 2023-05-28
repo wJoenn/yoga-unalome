@@ -5,6 +5,7 @@
   height: 500px;
   overflow: hidden;
   overflow-y: scroll;
+  padding: 10px;
 
   &:hover::-webkit-scrollbar-thumb {
     background-color: #d3d3d380;
@@ -21,17 +22,25 @@
 
   .event-card {
     align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
     display: flex;
     gap: 30px;
     justify-content: space-between;
     padding: 15px;
+    scroll-margin: 10px;
+    transition: box-shadow 0.3s ease;
+
+    &.active {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
 
     &:nth-child(3n+1) i {
       color: $beige;
     }
 
     &:nth-child(3n+2) i {
-      color: $green;
+      color: $blue;
     }
 
     h3 {
@@ -39,8 +48,7 @@
     }
 
     i {
-      color: $blue;
-      cursor: pointer;
+      color: $green;
       font-size: 30px;
     }
   }

@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="calendar"
 export default class extends Controller {
-  static targets = ["month", "days", "previous", "next"]
+  static targets = ["month", "days", "previous", "next", "card"]
 
   static values = {
     events: Array
@@ -24,7 +24,16 @@ export default class extends Controller {
     this.#buildCalendar(0)
   }
 
-  handleClick(event) {
+  scrollToEventCard(event) {
+    const target = event.currentTarget.dataset.target
+    const card = document.getElementById(target)
+
+    this.cardTargets.forEach(cardTarget => cardTarget.classList.remove("active"))
+    card.classList.add("active")
+    card.scrollIntoView({ behavior: "smooth" })
+  }
+
+  switchMonth(event) {
     const offset = event.currentTarget.dataset.offset
     this.previousTarget.disabled = false
     this.nextTarget.disabled = false
@@ -55,7 +64,8 @@ export default class extends Controller {
     // Then one day for each day of the month and we add a class of "off" to days that have passed
     for (let i = 1; i <= numberOfDays; i++) {
       const htmlClass = this.#getHtmlClass(i)
-      const html = `<li class="${htmlClass}">${i}</li$>`
+      const htmlDataset = this.#getHtmlDataset(i)
+      const html = `<li ${htmlClass} ${htmlDataset}>${i}</li$>`
       this.daysTarget.insertAdjacentHTML("beforeEnd", html)
     }
   }
@@ -91,11 +101,26 @@ export default class extends Controller {
     if (dayDate < this.today) {
       htmlClass = "off"
     } else if (this.eventsValue.includes(dayDate)) {
-      htmlClass = `event event-${this.counter % 3}`
+      htmlClass = `class="event event-${this.counter % 3}"`
       this.counter++
     }
 
     return htmlClass
+  }
+
+  #getHtmlDataset(day) {
+    let dayDate = new Date(this.today.getFullYear(), this.month, day)
+    dayDate = this.#formatDate(dayDate)
+    let htmlDataset = ""
+
+    if (dayDate < this.today) {
+      htmlDataset = ""
+    } else if (this.eventsValue.includes(dayDate)) {
+      htmlDataset = `data-action="click->calendar#scrollToEventCard" data-target="${dayDate}"`
+      this.counter++
+    }
+
+    return htmlDataset
   }
 
   #getNumberOfDays(date, offset) {
