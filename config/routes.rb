@@ -8,13 +8,9 @@ Rails.application.routes.draw do
 
   get "user_dashboard/show", as: :dashboard
 
-  resources :events, only: %i[create update destroy] do
+  resources :events, only: %i[new create update destroy] do
     resources :bookings, only: %i[create]
   end
 
-  resources :bookings, only: %i[] do
-    member do
-      patch :cancel, as: :cancel_booking
-    end
-  end
+  patch "/bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end
