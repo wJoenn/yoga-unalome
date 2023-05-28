@@ -9,7 +9,7 @@ class Event < ApplicationRecord
   validate :not_sooner_than_now, if: :presence_confirmed?
 
   def self.upcoming
-    Event.where("start_time > ?", Time.current)
+    Event.where("start_time > ?", Time.current).order(:start_time)
   end
 
   def day
