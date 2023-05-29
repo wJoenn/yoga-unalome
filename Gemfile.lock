@@ -284,6 +284,7 @@ GEM
       version_gem (~> 1.1, >= 1.1.1)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    stripe (8.5.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -345,6 +346,7 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
   stimulus-rails
+  stripe
   turbo-rails
   tzinfo-data
   vite_rails
