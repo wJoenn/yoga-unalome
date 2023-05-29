@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BookingConfirmationController from "./booking_confirmation_controller"
+application.register("booking-confirmation", BookingConfirmationController)
+
 import CalendarController from "./calendar_controller"
 application.register("calendar", CalendarController)
 

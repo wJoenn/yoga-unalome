@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[cancel]
 
+  def new() end
+
   def create
     @event = Event.find(params[:event_id])
     @booking = @event.bookings.new

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
-  before_action :redirect_unless_admin
-  before_action :set_event, only: %i[edit update destroy]
+  skip_before_action :authenticate_user!, only: :confirmation
+  before_action :redirect_unless_admin, only: %i[new edit create update destroy]
+  before_action :set_event, only: %i[edit update destroy confirmation]
 
   def new
     @event = Event.new
@@ -29,6 +30,10 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     redirect_to root_path
+  end
+
+  def confirmation
+    render partial: "shared/booking_confirmation", locals: { event: @event }, formats: %i[html]
   end
 
   private
