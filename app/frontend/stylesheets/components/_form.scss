@@ -19,7 +19,7 @@ form {
   }
 
   .error {
-    color: rgb(190, 62, 62);
+    color: $red;
     font-size: 0.8rem;
   }
 
@@ -33,7 +33,7 @@ form {
     width: 100%;
 
     &:has(input:focus) {
-      box-shadow: 0 0 10px #e3e3e3;
+      box-shadow: 0 0 10px #d3d3d3;
     }
 
     input {
@@ -46,6 +46,19 @@ form {
       &:focus {
         outline: none;
       }
+    }
+  }
+
+  .form-alert {
+    border: 1px solid $red;
+    border-radius: 10px;
+    color: $red;
+    display: flex;
+    gap: 10px;
+    padding: 1.5rem 2rem;
+
+    i {
+      transform: scale(1.3);
     }
   }
 
