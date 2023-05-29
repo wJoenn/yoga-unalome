@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create]
   end
 
-  patch "/bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
+  get "bookings/payment_canceled", to: "bookings#payment_canceled", as: :canceled_payment
+  get "bookings/payment_successful", to: "bookings#payment_successful", as: :successful_payment
+  patch "bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end

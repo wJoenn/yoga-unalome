@@ -31,6 +31,7 @@
 
 en:
   bookings:
-    create:
-      error: "An error occured"
+    payment_canceled:
+      cancel: "The payment was canceled"
+    payment_successful:
       success: "Event booked successfully"
