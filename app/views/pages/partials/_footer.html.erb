@@ -1,26 +1,29 @@
 <footer>
-  <%= vite_image_tag "images/wave-green.png", id: "wave" %>
+  <%= vite_image_tag "images/wave-green-nontransparent.png", id: "wave" %>
 
-  <div class="footer-container">
-    <%= vite_image_tag "images/logos/logo_text_black_clipped.png", id: "black-logo", class: "f-deco" %>
-    <%= vite_image_tag "images/illustrations/1010.png", id: "plant-bottom", class: "f-deco" %>
+  <div class="container">
+    <div class="footer-container">
+      <div class="footer-contents">
+        <%= vite_image_tag "images/logos/logo_text_black_clipped.png", id: "black-logo", class: "f-deco" %>
 
-    <div class="footer-contents">
-      <div class="footer-links">
-        <nav>
-          <a href="#" id="link">About</a>
-          <a href="#" id="link">Sessions</a>
-          <a class="btn-contact" href="#">Contact me</a>
-        </nav>
+        <div class="footer-links">
+          <nav>
+            <a href="#" id="link">About</a>
+            <a href="#" id="link">Sessions</a>
+            <a class="btn-contact" href="#">Contact me</a>
+          </nav>
 
-        <div class="socials">
-          <h4>Follow me:</h4>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" id="link"><i class="fa-brands fa-instagram"></i></a>
+          <div class="socials">
+            <h4>Follow me:</h4>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" id="link"><i class="fa-brands fa-instagram"></i></a>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <h4 class="content-copyright">Copyright © YogaUnalome 2023. All rights reserved.</h4>
+        <%= vite_image_tag "images/illustrations/101.png", id: "plant-bottom", class: "f-deco" %>
+      </div>
+
+      <h4 class="content-copyright">Copyright © YogaUnalome 2023. All rights reserved.</h4>
+    </div>
   </div>
 </footer>
