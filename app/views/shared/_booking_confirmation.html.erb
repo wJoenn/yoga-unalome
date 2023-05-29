@@ -18,7 +18,7 @@
   <p><%= event.capacity - event.bookings.count %> spots left</p>
 
   <div class="buttons">
-    <%= link_to "Book now", new_event_booking_path(event.id), class: "btn btn-blue" %>
+    <%= link_to "Book now", event_bookings_path(event.id), class: "btn btn-blue", data: { turbo_method: :post } %>
     <button class="btn-green">Become a member</button>
   </div>
 </div>

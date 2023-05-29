@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get :confirmation, as: :confirm_booking
     end
 
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[create]
   end
 
   patch "/bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
