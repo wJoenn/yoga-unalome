@@ -6,6 +6,7 @@ footer {
   z-index: -2;
 
   #wave {
+    background-color: white;
     width: 100vw;
     z-index: -3;
   }
@@ -35,11 +36,11 @@ footer {
       font-weight: bolder;
     }
 
-    #link {
+    .link {
       position: relative;
     }
 
-    #link::after {
+    .link::after {
       content: '';
       position: absolute;
       width: 100%;
@@ -52,7 +53,7 @@ footer {
       transition: transform 0.25s ease-out;
     }
 
-    #link:hover::after {
+    .link:hover::after {
       transform: scaleX(1);
       transform-origin: bottom left;
     }
