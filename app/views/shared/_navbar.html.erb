@@ -11,7 +11,12 @@
       <span>✾</span>
       <a href="#">Contact</a>
       <span>✾</span>
-      <a href="#">Videos</a>
+
+      <% if current_user %>
+        <%= link_to "Account", dashboard_path %>
+      <% else %>
+        <%= link_to "Log in", new_user_session_path %>
+      <% end %>
     </nav>
   </div>
 </div>

@@ -1,6 +1,6 @@
 #home {
   h2 {
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 600;
   }
 
@@ -10,4 +10,11 @@
     flex-direction: column;
     margin: 50px 0;
   }
+
+  .cal-event-cards {
+    display: flex;
+    gap: 50px;
+    margin: 50px 0;
+  }
+
 }

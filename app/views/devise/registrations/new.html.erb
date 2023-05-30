@@ -1,0 +1,54 @@
+<div class="banner">
+  <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
+    <div class="form">
+      <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
+      <h2>Aum Shanti</h2>
+
+      <%= form_with model: resource, scope: resource_name, url: registration_path(resource_name), data: { turbo: false } do |f| %>
+        <div class="field">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name %>
+          <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("First") } %></span>
+        </div>
+
+        <div class="field">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+          <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Last") } %></span>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autocomplete: "email" %>
+          <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Email") } %></span>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+
+          <div class="password" data-controller="toggle-hidden-password">
+            <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
+            <i class="fa-solid fa-eye" data-action="click->toggle-hidden-password#togglePassword"></i>
+          </div>
+
+          <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Password") && !m.match?("confirmation") } %></span>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, "Confirm password" %>
+
+          <div class="password" data-controller="toggle-hidden-password">
+            <%= f.password_field :password_confirmation, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
+            <i class="fa-solid fa-eye" data-action="click->toggle-hidden-password#togglePassword"></i>
+          </div>
+
+          <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("confirmation") } %></span>
+        </div>
+
+        <%= f.submit "Sign up", class: "btn btn-green" %>
+      <% end %>
+
+      <p class="redirect">Already have an account ? <%= link_to "Log in", new_user_session_path %></p>
+    </div>
+  </div>
+</div>
