@@ -60,10 +60,18 @@ footer {
         font-size: 40px;
         margin-right: 50px;
         color: $beige;
+      }
 
-        &:hover {
-          color: #C68A59;
-        }
+      .ig:hover {
+        background: linear-gradient(45deg, #6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .fb:hover {
+        background: linear-gradient(0deg, rgba(82,79,133,1) 15%, rgba(59,89,152,1) 58%, rgba(99,133,203,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
