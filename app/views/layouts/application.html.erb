@@ -12,12 +12,8 @@
   </head>
 
   <body>
-    <!--
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    -->
-
     <%= link_to "new event", new_event_path if admin_user? %>
+    <%= render "shared/flashes" %>
 
     <%= yield %>
     <div id="contact-popup">

@@ -1,11 +1,11 @@
-<div id="calendar" data-controller="calendar" data-calendar-events-value="<%= @events %>">
+<div id="calendar">
   <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
 
   <div class="month">
     <div></div>
     <button
       class="left"
-      data-action="click->calendar#handleClick"
+      data-action="click->calendar#switchMonth"
       data-calendar-target="previous"
       data-offset="-1"
     >
@@ -14,7 +14,7 @@
     <span data-calendar-target="month"></span>
     <button
       class="right"
-      data-action="click->calendar#handleClick"
+      data-action="click->calendar#switchMonth"
       data-calendar-target="next"
       data-offset="1"
     >

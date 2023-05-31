@@ -1,0 +1,14 @@
+<ul id="events-cards">
+  <% @events.each do |event| %>
+    <li id="<%= event.day %>" class="event-card" data-calendar-target="card">
+      <h3><%= event.day.day %></h3>
+
+      <div>
+        <h3><%= event.title %></h3>
+        <p><%= "#{event.day.strftime("%a")} " "#{event.start_time.strftime("%I:%M")} - #{event.end_time.strftime("%I:%M")}" %></p>
+      </div>
+
+      <i class="fa-solid fa-circle-arrow-right"></i>
+    </li>
+  <% end %>
+</ul>
