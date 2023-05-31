@@ -2,32 +2,28 @@
   <%= vite_image_tag "images/wave-green.png", id: "wave" %>
 
   <div class="container">
-    <div class="footer-container">
-      <div class="footer-contents">
+    <div class="footer-contents">
+      <%= vite_image_tag "images/logos/logo_text_black_clipped.png", id: "black-logo", class: "f-deco" %>
 
-        <%= vite_image_tag "images/logos/logo_text_black_clipped.png", id: "black-logo", class: "f-deco" %>
+      <div class="footer-links">
+        <nav>
+          <a href="#">About</a>
+          <a href="#">Sessions</a>
+          <a href="#">Contact me</a>
+        </nav>
 
-        <div class="footer-links">
-          <nav>
-            <a href="#" class="link">About</a>
-            <a href="#" class="link">Sessions</a>
-            <a class="btn-contact" href="#">Contact me</a>
-          </nav>
-
-          <div class="socials">
-            <h4>Follow me:</h4>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </div>
-
+        <div class="socials">
+          <h4>Follow me:</h4>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <div></div>
-      </div>
-
-      <div class="footer-bottom">
-        <h4 class="content-copyright">Copyright © YogaUnalome 2023. All rights reserved.</h4>
-        <%= vite_image_tag "images/illustrations/101.png", id: "plant-bottom", class: "f-deco" %>
       </div>
     </div>
+
+    <div class="footer-bottom">
+      <h4 class="content-copyright">Copyright © YogaUnalome 2023. All rights reserved.</h4>
+      <%= vite_image_tag "images/illustrations/101.png", id: "plant-bottom", class: "f-deco" %>
+    </div>
+
   </div>
 </footer>
