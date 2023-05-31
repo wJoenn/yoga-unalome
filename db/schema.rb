@@ -39,15 +39,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_120502) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.bigint "recipient_id_id", null: false
-    t.bigint "payer_id_id", null: false
+    t.bigint "recipient_id", null: false
+    t.bigint "payer_id", null: false
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "EUR", null: false
     t.string "communication"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["payer_id_id"], name: "index_transactions_on_payer_id_id"
-    t.index ["recipient_id_id"], name: "index_transactions_on_recipient_id_id"
+    t.index ["payer_id"], name: "index_transactions_on_payer_id"
+    t.index ["recipient_id"], name: "index_transactions_on_recipient_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -69,6 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_120502) do
 
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
-  add_foreign_key "transactions", "users", column: "payer_id_id"
-  add_foreign_key "transactions", "users", column: "recipient_id_id"
+  add_foreign_key "transactions", "users", column: "payer_id"
+  add_foreign_key "transactions", "users", column: "recipient_id"
 end
