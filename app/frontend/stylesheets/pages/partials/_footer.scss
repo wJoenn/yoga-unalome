@@ -1,0 +1,95 @@
+footer {
+  background-color: $green;
+  position: relative;
+  overflow: hidden;
+
+  #wave {
+    background-color: white;
+    width: 100%;
+  }
+
+  .footer-contents {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    #black-logo {
+      width: 250px;
+    }
+  }
+
+  .footer-links {
+    padding: 40px 0;
+
+    nav {
+      margin-bottom: 40px;
+      display: flex;
+      gap: 50px;
+      font-size: 1.2rem;
+      align-items: center;
+
+      a {
+        position: relative;
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 4px;
+          bottom: -8px;
+          left: 0;
+          background-color: $beige;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+      }
+    }
+
+    .socials {
+      h4 {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      a {
+        font-size: 40px;
+        margin-right: 50px;
+        color: $beige;
+      }
+
+      .ig:hover {
+        background: linear-gradient(45deg, #6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .fb:hover {
+        background: linear-gradient(0deg, rgba(82,79,133,1) 15%, rgba(59,89,152,1) 58%, rgba(99,133,203,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  .footer-bottom {
+    position: relative;
+
+    .content-copyright {
+      padding-bottom: 20px;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    #plant-bottom {
+      position: absolute;
+      width: 400px;
+      right: -100px;
+      bottom: -70px;
+    }
+  }
+}
