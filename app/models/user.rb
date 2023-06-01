@@ -1,12 +1,13 @@
 class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
-  has_many :payments, class_name: "Transaction", foreign_key: "payer_id", dependent: :nullify
-  has_many :receipts, class_name: "Transaction", foreign_key: "recipient_id", dependent: :nullify
+  has_many :payments, class_name: "Transaction", foreign_key: "payer_id", dependent: :nullify, inverse_of: :payer
+  has_many :receipts, class_name: "Transaction", foreign_key: "recipient_id", dependent: :nullify,
+    inverse_of: :recipient
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook]
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable,
+    omniauth_providers: %i[facebook]
 
   before_save :capitalize_name, unless: :admin?
 
