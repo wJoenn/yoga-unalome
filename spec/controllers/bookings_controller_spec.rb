@@ -1,16 +1,10 @@
 require "rails_helper"
 
 RSpec.describe BookingsController, type: :request do
-  # let(:event) do
-  #   Event.create(
-    #   start_time: 1.hour.from_now,
-    #   duration: 90,
-    #   address: "Louvain La Neuve",
-    #   capacity: 9,
-    #   title: "Vinyasa"
-    # )
-  # end
-  # let(:user) { User.create(email: "user@example.com", password: "password", admin: true) }
+  let(:event) do
+    Event.create(start_time: 1.hour.from_now, duration: 90, address: "Louvain La Neuve", capacity: 9, title: "Vinyasa")
+  end
+  let(:user) { User.create(email: "user@example.com", password: "password", admin: true) }
 
   # describe "#create" do
   #   before do
