@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/wJoenn/stimulus-rails.git
+  revision: 28a73bb09ea544e5e6474bac5f679d5cc0307b87
+  branch: main
+  specs:
+    stimulus-rails (1.2.1)
+      railties (>= 6.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -282,8 +290,6 @@ GEM
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
-    stimulus-rails (1.2.1)
-      railties (>= 6.0.0)
     stripe (8.5.0)
     thor (1.2.1)
     timeout (0.3.2)
@@ -345,7 +351,7 @@ DEPENDENCIES
   rubocop-rails
   selenium-webdriver
   simplecov
-  stimulus-rails
+  stimulus-rails!
   stripe
   turbo-rails
   tzinfo-data

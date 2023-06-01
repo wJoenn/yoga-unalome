@@ -37,7 +37,8 @@ gem "bootsnap", require: false
 gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+# Using fork until PR is merged https://github.com/hotwired/stimulus-rails/pull/119
+gem "stimulus-rails", github: "wJoenn/stimulus-rails", branch: "main"
 
 # Vite.js integration in Ruby web apps [https://vite-ruby.netlify.app/]
 gem "vite_rails"
