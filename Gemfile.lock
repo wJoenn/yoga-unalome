@@ -290,6 +290,7 @@ GEM
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
+    stripe (8.5.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -351,6 +352,7 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
   stimulus-rails!
+  stripe
   turbo-rails
   tzinfo-data
   vite_rails

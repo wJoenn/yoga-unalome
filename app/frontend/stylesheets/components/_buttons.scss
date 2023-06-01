@@ -4,8 +4,14 @@ button, .btn {
   border-radius: 10px;
   color: white;
   cursor: pointer;
+  display: inline-block;
   font: inherit;
   padding: $padding;
+  text-align: center;
+
+  &:hover {
+    color: white;
+  }
 }
 
 .btn-auth {

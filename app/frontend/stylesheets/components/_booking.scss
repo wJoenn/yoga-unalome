@@ -1,0 +1,48 @@
+.booking {
+  border: 1px solid $half-black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px $half-black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 250px;
+  padding: 20px;
+  position: relative;
+  width: max-content;
+
+  h2 {
+    color: $blue;
+    font-size: 30px !important;
+  }
+
+  span{
+    color: $half-black;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+
+    span{
+      color: $green;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .close {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .price {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+}
