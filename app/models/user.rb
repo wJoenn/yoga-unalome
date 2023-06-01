@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
+  has_many :payments, class_name: "Transaction", foreign_key: "payer_id", dependent: :nullify
+  has_many :receipts, class_name: "Transaction", foreign_key: "recipient_id", dependent: :nullify
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable

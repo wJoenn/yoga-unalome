@@ -39,8 +39,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_31_120502) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.bigint "recipient_id", null: false
-    t.bigint "payer_id", null: false
+    t.bigint "recipient_id"
+    t.bigint "payer_id"
+    t.string "recipient_name"
+    t.string "payer_name"
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "EUR", null: false
     t.string "communication"
