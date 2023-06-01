@@ -1,1 +1,30 @@
-<%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
+
+<div id="dashboard">
+  <div class="navbar">
+    <div class="logo">
+      <%= vite_image_tag "images/logos/logo_text_white.png" %>
+    </div>
+
+    <div class="links">
+      <nav>
+        <a href="#">About</a>
+        <span>✾</span>
+        <a href="#">Sessions</a>
+        <span>✾</span>
+        <a href="#">Contact</a>
+        <span>✾</span>
+
+        <% if current_user %>
+          <%= link_to "Account", dashboard_path %>
+        <% else %>
+          <%= link_to "Log in", new_user_session_path %>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+
+
+  <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
+
+  <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
+</div>

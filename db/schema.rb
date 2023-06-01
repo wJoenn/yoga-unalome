@@ -31,8 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_181423) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "duration"
-    t.integer "price_cents", default: 0, null: false
     t.string "title"
+    t.integer "price_cents", default: 0, null: false
   end
 
   create_table "users", force: :cascade do |t|
