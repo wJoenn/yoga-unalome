@@ -1,5 +1,5 @@
+<div id="user-dashboard">
 
-<div id="dashboard">
   <div class="navbar">
     <div class="logo">
       <%= vite_image_tag "images/logos/logo_text_white.png" %>
@@ -21,10 +21,42 @@
         <% end %>
       </nav>
     </div>
+      <div class="log-out">
+        <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
+      </div>
   </div>
 
+  <div class="user-dashboard-container">
+    <div class="user-profile-container">
+      <div class="user-profile-info">
+        <h2>Hello, <%= current_user.first_name %></h2>
+        <%= vite_image_tag "images/illustrations/10.png", class: "profile-icon" %>
+        <h3>10 classes attended</h3>
+      </div>
+    </div>
+
+    <div class="user-options-container">
+      <div class="user-options-boxes">
+        <div class="user-options-info">
+          <i class="fa-solid fa-calendar-days"></i>
+          <h3>Upcoming Classes</h3>
+        </div>
+        <div class="user-options-info">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <h3>Past Bookings</h3>
+        </div>
+        <div class="user-options-info">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <h3>Edit Profile</h3>
+        </div>
+        <div class="user-options-info">
+          <i class="fa-solid fa-gear"></i>
+          <h3>Account Settings</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
 
-  <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
 </div>
