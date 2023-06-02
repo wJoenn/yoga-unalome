@@ -9,12 +9,19 @@
     display: flex;
     flex-direction: column;
     margin: 50px 0;
-  }
 
-  .cal-event-cards {
-    display: flex;
-    gap: 50px;
-    margin: 50px 0;
-  }
+    .cal-event-cards {
+      display: flex;
+      gap: 50px;
+      margin: 50px 0;
+      position: relative;
 
+      > div:last-child {
+        left: calc(100% + 10px);
+        position: absolute;
+        top: 0;
+        z-index: 20;
+      }
+    }
+  }
 }
