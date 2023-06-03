@@ -11,6 +11,10 @@ RSpec.describe EventsController, type: :request do
   let!(:count) { Event.count }
   let!(:user) { User.create(email: "user@example.com", password: "password", admin: true) }
 
+  before(:each) do
+    user.confirm
+  end
+
   describe "#authenticate_user!" do
     it "requires authentification for #create" do
       post events_path
