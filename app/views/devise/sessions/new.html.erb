@@ -37,6 +37,11 @@
         <% end %>
       <% end %>
 
+
+      <% if alert&.match?("confirm") %>
+        <p class="redirect"><%= link_to "Resend confirmation instructions", new_confirmation_path(resource_name) %></p>
+      <% end %>
+
       <p class="redirect">Don't have an account yet ? <%= link_to "Sign up", new_user_registration_path %></p>
     </div>
   </div>
