@@ -3,14 +3,14 @@
   margin: 0;
 
   .log-out {
-    margin: 0;
+    margin-left: 20px;
     text-align: right;
   }
 
   .navbar {
     background: $green;
-    margin-top: 20px;
-    height: 110px;
+    margin-top: 25px;
+    height: 100px;
   }
 
   .logo {
@@ -31,23 +31,48 @@
 
   .user-dashboard-container {
     display: flex;
-    align-items: center;
+    // align-items: center;
     justify-content: center;
-    width: 1200px;
     margin: auto;
+    width: 1300px;
+
   }
 
   .user-profile-container {
     background-color: #C6D5CF ;
-    height: 70vh;
-    width: 30%;
-    margin-top: 30px;
+    height: 66vh;
+    width: 350px;
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
   }
+
+  .leaf {
+    position: absolute;
+    z-index: 10;
+
+    &#top {
+      height: 350px;
+      left: -50px;
+      top: -90px;
+      transform: rotate(18deg);
+      width: 200px;
+    }
+
+    &#bottom {
+      height: 350px;
+      left: 180px;
+      bottom: -90px;
+      transform: rotate(60deg);
+      width: 200px;
+    }
+  }
+
 
   .profile-icon {
     width: 120px;
@@ -59,6 +84,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 90px;
   }
 
   .user-profile-info h2 {
@@ -69,20 +95,18 @@
 
   .user-options-container {
     display: flex;
-    display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 30px;
-    // width: 66.6%;
   }
 
   .user-options-boxes {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    justify-content: end;
     flex-flow: row wrap;
     margin: 5px;
-
+    width: 900px;
   }
 
   .user-options-info {
@@ -91,9 +115,10 @@
     justify-content: center;
     background-color: $blue;
     border-radius: 10px;
-    width: 45%;
-    margin: 13px;
-    height: 33vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 370px;
+    margin: 50px 20px 19px 20px;
+    height: 29vh;
   }
 
   .user-options-info {
