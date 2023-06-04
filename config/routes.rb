@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create]
   end
 
+  resources :contacts, only: [:new, :create]
+
   patch "/bookings/:id/cancel", to: "bookings#cancel", as: :cancel_booking
 end

@@ -9,9 +9,11 @@
       <span>✾</span>
       <a href="#">Sessions</a>
       <span>✾</span>
-      <a href="#">Contact</a>
+      <a href="#" id="contact-btn">Contact</a>
       <span>✾</span>
-
+      <div class="contact-button">
+        <a href="#" id="mail-contact-btn" onclick="changeIcon(event)"><i class="fas fa-envelope"></i></a>
+      </div>
       <% if current_user %>
         <%= link_to "Account", dashboard_path %>
       <% else %>
@@ -20,3 +22,73 @@
     </nav>
   </div>
 </div>
+
+<!-- I know, bad style. Should be moved to js-file later -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+  function changeIcon(event) {
+  event.preventDefault();
+  var iconElement = event.currentTarget.querySelector('i');
+  iconElement.className = 'fas fa-envelope-open';
+
+  setTimeout(function () {
+    var popup = $("#contact-popup");
+    var closeBtn = $("#contact-popup .close");
+    var contactButtonDiv = $(".contact-button");
+
+    popup.css({ "display": "block", "height": "0" }).animate({ height: "40%" }, 500);
+    contactButtonDiv.hide();
+
+    closeBtn.click(function () {
+      popup.animate({ height: "0" }, 500, function () {
+        popup.css("display", "none");
+        contactButtonDiv.show();
+      });
+    });
+  }, 1000);
+}
+
+$(document).ready(function () {
+  var contactBtn = $("#contact-btn");
+  var mailContactBtn = $("#mail-contact-btn");
+  contactBtn.click(function (event) {
+    event.preventDefault();
+    var popup = $("#contact-popup");
+    var closeBtn = $("#contact-popup .close");
+    var contactButtonDiv = $(".contact-button");
+
+    popup.css({ "display": "block", "height": "0" }).animate({ height: "40%" }, 500);
+    contactButtonDiv.hide();
+
+    closeBtn.click(function () {
+      popup.animate({ height: "0" }, 500, function () {
+        popup.css("display", "none");
+        contactButtonDiv.show();
+      });
+    });
+  });
+
+  mailContactBtn.click(changeIcon);
+
+  var popup = $("#contact-popup");
+  var closeBtn = $("#contact-popup .close");
+  var contactButtonDiv = $(".contact-button");
+
+  closeBtn.click(function () {
+    popup.animate({ height: "0" }, 500, function () {
+      popup.css("display", "none");
+      contactButtonDiv.show();
+    });
+  });
+
+  $(window).click(function (event) {
+    if ($(event.target).is(popup)) {
+      popup.animate({ height: "0" }, 500, function () {
+        popup.css("display", "none");
+        contactButtonDiv.show();
+      });
+    }
+  });
+});
+</script>
