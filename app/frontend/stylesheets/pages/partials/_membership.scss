@@ -79,3 +79,28 @@
     position: relative;
   }
 }
+
+@media (max-width: 560px) {
+  #membership {
+    gap: 0px;
+
+    .membership-cards {
+      display: flex;
+      flex-direction: column;
+      margin: 70px 0;
+
+      #left {
+        left: -80px;
+      }
+
+      #middle {
+        display: none;
+      }
+
+      #right {
+        top: 440px;
+        right: -100px;
+      }
+    }
+  }
+}
