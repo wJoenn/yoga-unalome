@@ -18,7 +18,7 @@
   }
 
   .background {
-    opacity: 0.7;
+    opacity: 0.9;
     position: absolute;
     right: 50%;
     top: 30%;
@@ -41,12 +41,12 @@
     background-color: #C6D5CF ;
     height: 66vh;
     width: 350px;
-    margin-top: 90px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border-radius: 20px;
+    border-radius: 35px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
   }
@@ -56,20 +56,20 @@
     z-index: 10;
 
     &#top {
-      height: 350px;
-      left: -50px;
+      height: 400px;
+      left: -40px;
       top: -90px;
-      transform: rotate(18deg);
-      width: 200px;
+      transform: rotateY(180deg) rotate(-15deg);
+      width: 250px;
     }
 
-    &#bottom {
-      height: 350px;
-      left: 180px;
-      bottom: -90px;
-      transform: rotate(60deg);
-      width: 200px;
-    }
+    // &#bottom {
+    //   height: 350px;
+    //   left: 180px;
+    //   bottom: -90px;
+    //   transform: rotate(60deg);
+    //   width: 200px;
+    // }
   }
 
 
@@ -84,19 +84,25 @@
     align-items: center;
     justify-content: center;
     padding-top: 90px;
-  }
 
-  .user-profile-info h2 {
-    font-size: 30px;
-    width: 50%;
-    text-align: center;
+
+    h2 {
+      font-size: 30px;
+      width: 50%;
+      text-align: center;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
   }
 
   .user-options-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 30px;;
   }
 
   .user-options-boxes {
@@ -104,20 +110,25 @@
     align-items: end;
     justify-content: end;
     flex-flow: row wrap;
-    margin: 5px;
     width: 900px;
+    margin-left: 15px;
+
+    .box-top {
+      margin-top: 70px;
+      margin-bottom: 90px;
+    }
   }
 
   .user-options-info {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $blue;
-    border-radius: 20px;
+    background-color: #99ABB8;
+    border-radius: 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 370px;
-    margin: 50px 20px 19px 20px;
-    height: 29vh;
+    margin: 0 auto;
+    height: 27vh;
   }
 
   .user-options-info {
@@ -125,10 +136,11 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: 20px;
   }
 
-  .fa-solid {
-    font-size: 50px;
+  .fa-regular {
+    font-size: 70px;
     padding-bottom: 20px;
   }
 

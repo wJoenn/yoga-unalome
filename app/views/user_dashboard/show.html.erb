@@ -28,7 +28,7 @@
 
   <div class="user-dashboard-container">
     <div class="user-profile-container">
-      <%= vite_image_tag "images/illustrations/37.png", id: "top", class: "leaf" %>
+      <%= vite_image_tag "images/illustrations/33.png", id: "top", class: "leaf" %>
       <%
 =begin%>
  <%= vite_image_tag "images/illustrations/33.png", id: "bottom", class: "leaf" %>
@@ -36,28 +36,28 @@
 =end%>
       <div class="user-profile-info">
         <h2>Hello, <%= current_user.first_name %></h2>
-        <%= vite_image_tag "images/illustrations/yogi-icon.png", class: "profile-icon" %>
-        <h3>10 classes attended</h3>
+        <%= vite_image_tag "images/illustrations/yogi.svg", class: "profile-icon" %>
+        <p>10 classes attended</p>
       </div>
     </div>
 
     <div class="user-options-container">
       <div class="user-options-boxes">
-        <div class="user-options-info">
-          <i class="fa-solid fa-calendar-days"></i>
-          <h3>Upcoming Classes</h3>
+        <div class="user-options-info box-top">
+          <i class="fa-regular fa-calendar-days"></i>
+          <p>Upcoming Classes</p>
         </div>
-        <div class="user-options-info">
-          <i class="fa-solid fa-clock-rotate-left"></i>
-          <h3>Past Bookings</h3>
+        <div class="user-options-info box-top">
+          <i class="fa-regular fa-clock-rotate-left"></i>
+          <p>Past Bookings</p>
         </div>
-        <div class="user-options-info">
-          <i class="fa-solid fa-pen-to-square"></i>
-          <h3>Edit Profile</h3>
+        <div class="user-options-info box-bottom">
+          <i class="fa-regular fa-pen-to-square"></i>
+          <p>Edit Profile</p>
         </div>
-        <div class="user-options-info">
-          <i class="fa-solid fa-gear"></i>
-          <h3>Account Settings</h3>
+        <div class="user-options-info box-bottom">
+          <i class="fa-regular fa-gear"></i>
+          <p>Account Settings</p>
         </div>
       </div>
     </div>
