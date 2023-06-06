@@ -29,10 +29,14 @@
   <div class="user-dashboard-container">
     <div class="user-profile-container">
       <%= vite_image_tag "images/illustrations/37.png", id: "top", class: "leaf" %>
-      <%= vite_image_tag "images/illustrations/33.png", id: "bottom", class: "leaf" %>
+      <%
+=begin%>
+ <%= vite_image_tag "images/illustrations/33.png", id: "bottom", class: "leaf" %>
+<%
+=end%>
       <div class="user-profile-info">
         <h2>Hello, <%= current_user.first_name %></h2>
-        <%= vite_image_tag "images/illustrations/10.png", class: "profile-icon" %>
+        <%= vite_image_tag "images/illustrations/yogi-icon.png", class: "profile-icon" %>
         <h3>10 classes attended</h3>
       </div>
     </div>
@@ -59,6 +63,6 @@
     </div>
   </div>
 
-  <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
+  <%= vite_image_tag "images/illustrations/user-dashboard-background@2x.png", class: "background" %>
 
 </div>
