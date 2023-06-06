@@ -16,7 +16,7 @@ class StripeCheckoutSessionService
     payer = User.find_by(email: @checkout_session.customer_details.email)
     amount_cents = @checkout_session.amount_total
     amount_net_cents = amount_net(amount_cents)
-    communication = "Payment done the #{Time.at(@event.created)}"
+    communication = "Payment done the #{Time.zone.at(@event.created)}"
 
     Transaction.create(
       recipient:,
@@ -32,7 +32,7 @@ class StripeCheckoutSessionService
   def amount_net(amount_cents)
     payment_intent = Stripe::PaymentIntent.retrieve({
       id: @checkout_session.payment_intent,
-      expand: ['latest_charge.balance_transaction'],
+      expand: ["ltest_charge.balance_transaction"]
     })
 
     fee_cents = payment_intent.latest_charge.balance_transaction.fee
