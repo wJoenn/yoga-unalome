@@ -37,18 +37,21 @@ gem "bootsnap", require: false
 gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
+# Using fork until PR is merged https://github.com/hotwired/stimulus-rails/pull/119
+gem "stimulus-rails", github: "wJoenn/stimulus-rails", branch: "main"
 
 # Vite.js integration in Ruby web apps [https://vite-ruby.netlify.app/]
 gem "vite_rails"
 
 gem "devise"
 
-gem 'omniauth-facebook'
+gem "omniauth-facebook"
 
 gem "omniauth-rails_csrf_protection"
 
-gem 'money-rails', '~> 1.12'
+gem "money-rails", "~> 1.12"
+
+gem "stripe"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

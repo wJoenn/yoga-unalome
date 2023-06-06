@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_25_181423) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_31_120502) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_181423) do
     t.boolean "canceled", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.string "status", default: "pending"
+    t.string "checkout_session_id"
     t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -33,6 +36,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_181423) do
     t.integer "duration"
     t.string "title"
     t.integer "price_cents", default: 0, null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "recipient_id"
+    t.bigint "payer_id"
+    t.string "recipient_name"
+    t.string "payer_name"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
+    t.string "communication"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payer_id"], name: "index_transactions_on_payer_id"
+    t.index ["recipient_id"], name: "index_transactions_on_recipient_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,4 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_181423) do
 
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users"
+  add_foreign_key "transactions", "users", column: "payer_id"
+  add_foreign_key "transactions", "users", column: "recipient_id"
 end
