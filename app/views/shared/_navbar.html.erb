@@ -1,22 +1,24 @@
-<div class="navbar">
-  <div class="logo">
-    <%= vite_image_tag "images/logos/logo_text_white.png" %>
-  </div>
+<div class="navbar" data-controller="navbar-toggle">
+  <%= vite_image_tag "images/logos/logo_text_white.png", class: "logo" %>
 
-  <div class="links">
-    <nav>
-      <a href="#">About</a>
-      <span>✾</span>
-      <a href="#">Sessions</a>
-      <span>✾</span>
-      <a href="#">Contact</a>
-      <span>✾</span>
+  <nav class="navbar-links" data-navbar-toggle-target="links">
+    <a href="#">About</a>
+    <span>✾</span>
+    <a href="#">Sessions</a>
+    <span>✾</span>
+    <a href="#">Contact</a>
+    <span>✾</span>
 
-      <% if current_user %>
-        <%= link_to "Account", dashboard_path %>
-      <% else %>
-        <%= link_to "Log in", new_user_session_path %>
-      <% end %>
-    </nav>
-  </div>
+    <% if current_user %>
+      <%= link_to "Account", dashboard_path %>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path %>
+    <% end %>
+  </nav>
+
+  <a href="#" class="toggle-button" data-action="click->navbar-toggle#toggleNavbar" data-navbar-toggle-target="button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
 </div>
