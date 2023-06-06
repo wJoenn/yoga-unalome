@@ -5,16 +5,16 @@ class StripeCheckoutSessionService
     booking = Booking.find_by(checkout_session_id: checkout_session.id)
     booking.update(status: "confirmed")
 
-    create_transaction(evebt, checkout_session)
+    create_transaction(event, checkout_session)
   end
 
   private
 
-  def create_transaction
+  def create_transaction(event, checkout_session)
     recipient = User.find(checkout_session.metadata.recipient_id.to_s)
     payer = User.find_by(email: checkout_session.customer_details.email)
     amount_cents = checkout_session.amount_total
-    amount_net_cents = amount_net(amount_cents)
+    amount_net_cents = amount_net(checkout_session, amount_cents)
     communication = "Payment done the #{Time.zone.at(event.created)}"
 
     Transaction.create(
@@ -28,10 +28,10 @@ class StripeCheckoutSessionService
     )
   end
 
-  def amount_net(amount_cents)
+  def amount_net(checkout_session, amount_cents)
     payment_intent = Stripe::PaymentIntent.retrieve({
       id: checkout_session.payment_intent,
-      expand: ["ltest_charge.balance_transaction"]
+      expand: ["latest_charge.balance_transaction"]
     })
 
     fee_cents = payment_intent.latest_charge.balance_transaction.fee
