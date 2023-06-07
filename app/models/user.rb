@@ -9,9 +9,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable,
     :omniauthable, omniauth_providers: %i[facebook]
 
-  before_save :capitalize_name
+  before_save :capitalize_name, unless: :admin?
 
-  validates :first_name, :last_name, presence: true
+  validates :first_name, :last_name, presence: true, unless: :admin?
 
   def admin?
     admin

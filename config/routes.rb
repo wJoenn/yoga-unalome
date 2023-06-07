@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root to: "pages#home"
 
-  mount StripeEvent::Engine, at: "stripe-webhook"
-
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
     sessions: "users/sessions"
