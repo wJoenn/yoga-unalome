@@ -6,15 +6,15 @@
 
     <%= render "pages/partials/membership" %>
 
-    <%# <section id="planning"> %>
-      <%# <h2>Planning</h2> %>
+    <section id="planning">
+      <h2>Planning</h2>
 
-      <%# <div class="cal-event-cards" data-controller="calendar" data-calendar-events-value="<%= @events_dates %>"> %>
-        <%#= render "pages/partials/calendar" %>
-        <%#= render "pages/partials/events_cards" %>
-      <%# </div> %>
-    <%# </section> %>
+      <div class="cal-event-cards" data-controller="calendar" data-calendar-events-value="<%= @events_dates %>">
+        <%= render "pages/partials/calendar" %>
+        <%= render "pages/partials/events_cards" %>
+      </div>
+    </section>
   </div>
-</div>
 
-<%= render "pages/partials/footer" %>
+  <%= render "pages/partials/footer" %>
+</div>
