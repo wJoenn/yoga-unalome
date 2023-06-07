@@ -13,15 +13,6 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true, unless: :admin?
 
-  def admin?
-    admin
-  end
-
-  def capitalize_name
-    self.first_name = first_name.capitalize
-    self.last_name = last_name.capitalize
-  end
-
   def self.from_omniauth(auth)
     uid = auth.uid
     email = auth.info.email
@@ -37,7 +28,16 @@ class User < ApplicationRecord
     User.create!(email:, password:, first_name:, last_name: last_name.join(" "), provider: auth.provider, uid:)
   end
 
+  def capitalize_name
+    self.first_name = first_name.capitalize
+    self.last_name = last_name.capitalize
+  end
+
   def full_name
     "#{first_name} #{last_name}"
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 end
