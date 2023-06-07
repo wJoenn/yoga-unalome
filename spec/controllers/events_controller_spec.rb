@@ -30,6 +30,7 @@ RSpec.describe EventsController, type: :request do
 
   describe "#create" do
     before do
+      user.confirm
       sign_in user
     end
 
