@@ -49,6 +49,9 @@ class BookingsController < ApplicationController
         },
         quantity: 1
       }],
+      metadata: {
+        recipient_id: User.find_by(admin: true)&.id
+      },
       mode: "payment",
       success_url: successful_payment_url,
       cancel_url: canceled_payment_url

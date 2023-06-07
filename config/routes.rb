@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     mount GoodJob::Engine => "good_job"
   end
 
+  mount StripeEvent::Engine, at: "stripe-webhook"
+
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
     sessions: "users/sessions"

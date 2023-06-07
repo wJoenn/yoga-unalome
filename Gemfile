@@ -53,6 +53,8 @@ gem "money-rails", "~> 1.12"
 
 gem "stripe"
 
+gem 'stripe_event'
+
 gem "good_job"
 
 group :development, :test do
