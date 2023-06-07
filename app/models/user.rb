@@ -5,9 +5,9 @@ class User < ApplicationRecord
     inverse_of: :recipient
 
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable,
-    omniauth_providers: %i[facebook]
+  # :lockable, :timeoutable, :trackable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable,
+    :omniauthable, omniauth_providers: %i[facebook]
 
   before_save :capitalize_name, unless: :admin?
 

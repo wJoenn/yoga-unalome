@@ -1,16 +1,29 @@
-<h2>Resend confirmation instructions</h2>
+<div class="banner">
+  <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
+    <div class="form">
+      <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
+      <h2>Resend confirmation instructions</h2>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_with model: resource, scope: resource_name, url: confirmation_path(resource_name), data: { turbo: false } do |f| %>
+        <% if alert %>
+          <p class="form-alert"><i class="fa-solid fa-triangle-exclamation"></i><%= alert %></p>
+        <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+        </div>
+
+        <%= f.submit "Resend confirmation instructions", class: "btn btn-green" %>
+      <% end %>
+
+      <% if false %> <!-- Disabled until facebook business verification is complete -->
+        <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
+          <i class="fa-brands fa-square-facebook"></i> Login with Facebook
+        <% end %>
+      <% end %>
+
+      <p class="redirect"><%= link_to "Back to login screen", new_user_session_path %></p>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
