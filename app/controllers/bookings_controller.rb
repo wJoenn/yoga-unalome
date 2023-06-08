@@ -44,11 +44,17 @@ class BookingsController < ApplicationController
           currency: "eur",
           unit_amount: booking.amount_cents,
           product_data: {
-            name: event.title
+            name: event.title,
+            description: "#{event.address}, #{event.start_time.strftime("%I:%M")} - #{event.end_time.strftime("%I:%M")}",
+            images: ["https://i.imgur.com/NUuUUQF.png"]
           }
         },
         quantity: 1
       }],
+      submit_type: "book",
+      custom_text: {
+        submit: { message: "Once the payment is approved you will receive a confirmation by mail or via facebook messenger" }
+      },
       metadata: {
         recipient_id: User.find_by(admin: true)&.id
       },
