@@ -28,6 +28,6 @@
     "object-curly-newline": "off",
     "prefer-destructuring": "off",
     "quotes": ["error", "double"],
-    "semi": "off"
+    "semi": ["error", "never"]
   }
 }
