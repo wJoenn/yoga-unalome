@@ -36,6 +36,7 @@ class BookingsController < ApplicationController
   end
 
   def stripe_checkout_session(event, booking, customer)
+    description = "#{event.address}, #{event.start_time.strftime('%I:%M')} - #{event.end_time.strftime('%I:%M')}"
     Stripe::Checkout::Session.create(
       customer:,
       payment_method_types: ["card"],
@@ -45,7 +46,7 @@ class BookingsController < ApplicationController
           unit_amount: booking.amount_cents,
           product_data: {
             name: event.title,
-            description: "#{event.address}, #{event.start_time.strftime("%I:%M")} - #{event.end_time.strftime("%I:%M")}",
+            description:,
             images: ["https://i.imgur.com/NUuUUQF.png"]
           }
         },
@@ -53,7 +54,9 @@ class BookingsController < ApplicationController
       }],
       submit_type: "book",
       custom_text: {
-        submit: { message: "Once the payment is approved you will receive a confirmation by mail or via facebook messenger" }
+        submit: {
+          message: "Once the payment is approved you will receive a confirmation by mail or via facebook messenger"
+        }
       },
       metadata: {
         recipient_id: User.find_by(admin: true)&.id
