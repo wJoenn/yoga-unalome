@@ -1,4 +1,10 @@
 if Rails.env.development?
+  admin = User.create(email: "info@yogaunalome.com", password: "password", first_name: "admin", last_name: "admin", admin: true)
+  admin.confirm
+
+  user = User.create(email: "user@example.com", password: "password", first_name: "user", last_name: "user")
+  user.confirm
+
   Event.destroy_all
 
   address = "Louvain La Neuve"
