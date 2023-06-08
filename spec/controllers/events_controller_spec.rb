@@ -9,7 +9,9 @@ RSpec.describe EventsController, type: :request do
   let!(:title) { "Vinyasa Flow" }
   let!(:event) { Event.create(start_time:, duration:, address:, capacity:, price:, title:) }
   let!(:count) { Event.count }
-  let!(:user) { User.create(email: "user@example.com", password: "password", admin: true) }
+  let!(:user) do
+    User.create(email: "user@example.com", password: "password", first_name: "Chloe", last_name: "Aberg", admin: true)
+  end
 
   describe "#authenticate_user!" do
     it "requires authentification for #create" do
