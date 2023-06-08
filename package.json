@@ -16,7 +16,7 @@
     "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
-    "sass": "^1.62.0",
+    "sass": "^1.63.2",
     "vite": "^4.2.0",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-ruby": "^3.2.2",
