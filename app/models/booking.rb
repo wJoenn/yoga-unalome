@@ -6,7 +6,7 @@ class Booking < ApplicationRecord
 
   before_create :set_amount
 
-  validates :status, inclusion: { in: ["pending", "confirmed", "canceled"] }
+  validates :status, inclusion: { in: %w[pending confirmed canceled] }
 
   def canceled?
     status == "canceled"
