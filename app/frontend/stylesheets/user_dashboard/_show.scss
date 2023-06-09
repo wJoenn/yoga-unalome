@@ -2,16 +2,6 @@
   height: 100vh;
   margin: 0;
 
-  .log-out {
-    margin-left: 20px;
-    text-align: right;
-  }
-
-  .navbar {
-    margin-top: 25px;
-    height: 100px;
-  }
-
   .logo {
     padding-top: 15px;
     filter: invert(100%);
@@ -21,114 +11,84 @@
     opacity: 0.9;
     position: absolute;
     right: 50%;
-    top: 30%;
+    top:37%;
     translate: 50% -25%;
-    width: 170%;
+    width: 100%;
     height: 100%;
     z-index: -20;
   }
 
   .user-dashboard-container {
     display: flex;
-    // align-items: center;
     justify-content: center;
     margin: auto;
-    width: 1300px;
+    width: cover;
+    margin-top: 70px;
 
-  }
+    .user-profile-container {
+      background-color: #C6D5CF ;
+      height: 500px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      border-radius: 35px;
+      box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
 
-  .user-profile-container {
-    background-color: #C6D5CF ;
-    height: 500px;
-    width: 350px;
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 35px;
-    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
+      .leaf {
+        position: absolute;
+        z-index: 10;
 
-  .leaf {
-    position: absolute;
-    z-index: 10;
+        &#top {
+          height: 400px;
+          left: -40px;
+          top: -90px;
+          transform: rotateY(180deg) rotate(-15deg);
+          width: 250px;
+        }
 
-    &#top {
-      height: 400px;
-      left: -40px;
-      top: -90px;
-      transform: rotateY(180deg) rotate(-15deg);
-      width: 250px;
+        &#bottom {
+          height: 350px;
+          left: 260px;
+          bottom: -60px;
+          width: 130px;
+        }
+      }
+
+
+      img {
+        width: 110px;
+        padding: 35px 0 35px 0;
+      }
+
+      .user-profile-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 90px;
+
+
+        h2 {
+          font-size: 28px;
+          width: 50%;
+          text-align: center;
+        }
+
+        p {
+          font-size: 18px;
+        }
+      }
     }
-
-    // &#bottom {
-    //   height: 350px;
-    //   left: 180px;
-    //   bottom: -90px;
-    //   transform: rotate(60deg);
-    //   width: 200px;
-    // }
-  }
-
-
-  .profile-icon {
-    width: 120px;
-    padding: 40px 0 50px 0;
-  }
-
-  .user-profile-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 90px;
-
-
-    h2 {
-      font-size: 30px;
-      width: 50%;
-      text-align: center;
-    }
-
-    p {
-      font-size: 20px;
-    }
-
   }
 
   .user-options-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;;
-  }
-
-  .user-options-boxes {
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    flex-flow: row wrap;
-    width: 900px;
-    margin-left: 15px;
-
-    .box-top {
-      margin-top: 70px;
-      margin-bottom: 90px;
-    }
-  }
-
-  .user-options-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #99ABB8;
-    border-radius: 30px;
-    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
-    width: 370px;
-    margin: 0 auto;
-    height: 205px;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 50px;
   }
 
   .user-options-info {
@@ -136,18 +96,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #99ABB8;
     font-size: 20px;
+    border-radius: 40px;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    height: 210px;
 
-    .options-icon {
-      margin-bottom: 15px;
+    img {
+      margin-bottom: 20px;
+      width: 90px;
     }
   }
-
-
-  .fa-regular {
-    font-size: 70px;
-    padding-bottom: 20px;
-  }
-
-
 }
