@@ -7,23 +7,12 @@
     filter: invert(100%);
   }
 
-  .background {
-    opacity: 0.9;
-    position: absolute;
-    right: 50%;
-    top:37%;
-    translate: 50% -25%;
-    width: 100%;
-    height: 100%;
-    z-index: -20;
-  }
-
   .user-dashboard-container {
     display: flex;
     justify-content: center;
     margin: auto;
     width: cover;
-    margin-top: 70px;
+    margin-top: 30px;
 
     .user-profile-container {
       background-color: #C6D5CF ;
@@ -57,7 +46,6 @@
         }
       }
 
-
       img {
         width: 110px;
         padding: 35px 0 35px 0;
@@ -89,25 +77,49 @@
     grid-gap: 2rem;
     grid-template-columns: 1fr 1fr;
     margin-left: 50px;
+
+    .user-options-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: #99ABB8;
+      font-size: 20px;
+      border-radius: 40px;
+      box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+      width: 350px;
+      margin: 0 auto;
+      margin-bottom: 48px;
+      height: 210px;
+
+      img {
+        margin-bottom: 20px;
+        width: 90px;
+      }
+    }
   }
 
-  .user-options-info {
+  .btn-delete {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #99ABB8;
-    font-size: 20px;
-    border-radius: 40px;
-    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
-    width: 350px;
-    margin: 0 auto;
-    margin-bottom: 48px;
-    height: 210px;
+    margin-right: 60px;
+    margin-bottom: 40px;
 
-    img {
-      margin-bottom: 20px;
-      width: 90px;
+    button{
+      background-color: #C68B5A;
+      margin-left: 20px;
+      color: black;
     }
+  }
+  .background {
+    opacity: 0.9;
+    position: absolute;
+    right: 50%;
+    top:37%;
+    translate: 50% -25%;
+    width: 100%;
+    height: 92%;
+    z-index: -20;
   }
 }
