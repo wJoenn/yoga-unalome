@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<main>
+  <p>Welcome <%= @resource.first_name %> !</p>
 
-<p>You can confirm your account email through the link below:</p>
+  <p>Please click in the button below to confirm your account's email address.<br>
+  Your email needs to be confirmed for me to ba able to send you bookings confirmation and other kind of informational email<br>
+  Rest assured that you will not receive adds or unwanted messages on this address though.</p>
+  <p>See you soon !<br>Chloé</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), class: "btn-green" %>
+</main>
