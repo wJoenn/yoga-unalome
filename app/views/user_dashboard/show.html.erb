@@ -5,11 +5,9 @@
     <div class="user-profile-container">
       <%= vite_image_tag "images/illustrations/33.png", id: "top", class: "leaf" %>
       <%= vite_image_tag "images/illustrations/34.png", id: "bottom", class: "leaf" %>
-      <div class="user-profile-info">
-        <h2>Hello, <%= current_user.first_name %></h2>
-        <%= vite_image_tag "images/illustrations/yogi.svg", class: "profile-icon" %>
-        <p>10 classes attended</p>
-      </div>
+      <h2>Hello, <%= current_user.first_name %></h2>
+      <%= vite_image_tag "images/illustrations/yogi.svg", class: "profile-icon" %>
+      <p>10 classes attended</p>
     </div>
 
     <div class="user-options-container">
@@ -36,7 +34,5 @@
     <p>Click here to remove your account</p>
     <button>Delete Account</button>
   </div>
-
   <%= vite_image_tag "images/illustrations/user-dashboard-background@2x.png", class: "background" %>
-
 </div>
