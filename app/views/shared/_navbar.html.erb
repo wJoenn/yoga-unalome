@@ -5,18 +5,20 @@
 
   <div class="links">
     <nav>
-      <a href="#">About</a>
+      <a href="#"><%= t("shared.navbar.about")%></a>
       <span>✾</span>
-      <a href="#">Sessions</a>
+      <a href="#"><%= t("shared.navbar.sessions")%></a>
       <span>✾</span>
-      <a href="#">Contact</a>
-      <span>✾</span>
+      <a href="https://www.facebook.com/yoga.unalome.lln" target="_blank"><%= t("shared.navbar.facebook")%></a>
 
+      <!--
+      <span>✾</span>
       <% if current_user %>
         <%= link_to "Account", dashboard_path %>
       <% else %>
         <%= link_to "Log in", new_user_session_path %>
       <% end %>
+      -->
     </nav>
   </div>
 </div>
