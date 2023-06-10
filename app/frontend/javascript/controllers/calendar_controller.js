@@ -5,7 +5,8 @@ export default class extends Controller {
   static targets = ["month", "days", "previous", "next", "card"]
 
   static values = {
-    events: Array
+    events: Array,
+    locale: String
   }
 
   connect() {
@@ -27,7 +28,7 @@ export default class extends Controller {
 
     this.cardTargets.forEach(cardTarget => cardTarget.classList.remove("active"))
     card.classList.add("active")
-    card.scrollIntoView({ behavior: "smooth" })
+    card.scrollIntoView({ behavior: "smooth", block: "nearest" })
   }
 
   switchMonth(event) {
@@ -46,6 +47,10 @@ export default class extends Controller {
     this.#updateDays(date)
 
     this.#updateButtons()
+  }
+
+  #capitalize(month) {
+    return month[0].toUpperCase() + month.slice(1)
   }
 
   #createHtml(numberOfDays, previousMonth, date) {
@@ -144,8 +149,8 @@ export default class extends Controller {
   #updateMonth(offset) {
     this.month += offset
     const date = new Date(this.today.getFullYear(), this.month, 1)
-    const month = date.toLocaleDateString("en-UK", { month: "long" })
-    this.monthTarget.innerText = month
+    const month = date.toLocaleDateString(this.localeValue, { month: "long" })
+    this.monthTarget.innerText = this.#capitalize(month)
 
     return date
   }

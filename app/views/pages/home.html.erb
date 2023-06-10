@@ -4,18 +4,9 @@
   <div class="container">
     <%= render "pages/partials/about" %>
 
-    <%= render "pages/partials/membership" %>
+    <%# render "pages/partials/membership" %>
 
-    <section id="planning">
-      <h2>Planning</h2>
-
-      <div class="cal-event-cards" data-controller="calendar booking-confirmation" data-calendar-events-value="<%= @events_dates %>">
-        <%= render "pages/partials/calendar" %>
-        <%= render "pages/partials/events_cards" %>
-
-        <div data-booking-confirmation-target="booking"></div>
-      </div>
-    </section>
+    <%= render "pages/partials/planning" %>
   </div>
 </div>
 

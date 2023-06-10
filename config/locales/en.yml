@@ -26,11 +26,22 @@ en:
           why: "Why practice yoga ?"
           yoga_description: "Yoga is more than a just a physical practice. Of course you'll improve your muscular capacity and flexibility, but beyond that it calms the nervous system, it improves our respiration, it protects ourselves from injuries and it helps us let go of old energies that are stuck inside you."
           conclusion: "Yoga is also a way for us to find comfort in discomfort and to learn how to let go of what does not belong in oneself anymore but to focus on what is trully necessary. You'll likely rediscover your own body and more."
+      planing:
+        planning_title: "Planing"
+        calendar_locale: "en-UK"
+        monday: "M"
+        tuesday: "Tu"
+        wednesday: "W"
+        thursday: "Th"
+        friday: "F"
+        saturday: "Sa"
+        sunday: "Su"
+
 
   shared:
     navbar:
       about: "About"
-      sessions: "Sessions"
+      planning: "Planning"
       facebook: "Facebook"
 
 # Files in the config/locales directory are used for internationalization
