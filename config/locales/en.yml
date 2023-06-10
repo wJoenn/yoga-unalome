@@ -4,6 +4,12 @@ en:
       cancel: "The payment was canceled"
     payment_successful:
       success: "Event booked successfully"
+  pages:
+    home:
+      banner:
+        your_body: "Your Body, Your Practice"
+        discover: "DISCOVER YOURSELF, DISCOVER YOGA"
+        start_now: "Start now"
   shared:
     navbar:
       about: "About"
