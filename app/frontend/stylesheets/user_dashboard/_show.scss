@@ -8,13 +8,18 @@
   }
 
   .user-dashboard-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: end;
+    align-items: stretch;
+    width: 85%;
+    gap: 1.5rem;
     margin: auto;
-    width: cover;
-    margin-top: 30px;
+    margin-top: 20px;
 
     .user-profile-container {
+      grid-row: span 2;
+      justify-self: start;
       background-color: #C6D5CF ;
       height: 500px;
       width: 350px;
@@ -22,7 +27,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding-top: 40px;
+      padding-top: 15px;
       border-radius: 35px;
       box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
       position: relative;
@@ -64,45 +69,38 @@
     }
   }
 
-  .user-options-container {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: 1fr 1fr;
-    margin-left: 50px;
-
-    .user-options-info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      background-color: #99ABB8;
-      font-size: 20px;
-      border-radius: 40px;
-      box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
-      width: 350px;
-      margin: 0 auto;
-      margin-bottom: 48px;
-      height: 210px;
-
-      img {
-        margin-bottom: 20px;
-        width: 90px;
-      }
-    }
-  }
-
-  .btn-delete {
+  .user-options-info {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    margin-right: 60px;
-    margin-bottom: 40px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #99ABB8;
+    font-size: 20px;
+    border-radius: 40px;
+    box-shadow: 18px 18px 9px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    height: 220px;
 
-    button{
-      background-color: #C68B5A;
-      margin-left: 20px;
+    img {
+      margin-bottom: 20px;
+      width: 90px;
     }
   }
+
+  .box-bottom {
+    align-self: end;
+  }
+
+
+  button{
+    background-color: #C68B5A;
+    grid-column: 3;
+    width: 120px;
+    border-radius: 15px;
+    box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+
   .background {
     opacity: 0.9;
     position: absolute;

@@ -10,12 +10,11 @@
       <p>10 classes attended</p>
     </div>
 
-    <div class="user-options-container">
-      <div class="user-options-info box-top">
+      <div class="user-options-info">
         <%= vite_image_tag "images/illustrations/calendar-icon.svg", class: "options-icon" %>
         <p>Upcoming Classes</p>
       </div>
-      <div class="user-options-info box-top">
+      <div class="user-options-info">
         <%= vite_image_tag "images/illustrations/history-icon.svg", class: "options-icon" %>
         <p>Past Bookings</p>
       </div>
@@ -27,12 +26,7 @@
         <%= vite_image_tag "images/illustrations/settings-icon.svg", class: "options-icon" %>
         <p>Account Settings</p>
       </div>
-    </div>
-  </div>
-
-  <div class="btn-delete">
-    <p>Click here to remove your account</p>
-    <button>Delete Account</button>
+      <button> <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %> </button>
   </div>
   <%= vite_image_tag "images/illustrations/user-dashboard-background@2x.png", class: "background" %>
 </div>
