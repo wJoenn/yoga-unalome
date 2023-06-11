@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
   def create
     event = Event.find(params[:event_id])
-    booking = event.bookings.new(amount: event.price, user: current_user)
+    booking = event.bookings.new(user: current_user)
 
     if booking.save
       customer = stripe_customer
@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def cancel
-    @booking.update(canceled: true)
+    @booking.update(status: "canceled")
     redirect_back fallback_location: root_path
   end
 
