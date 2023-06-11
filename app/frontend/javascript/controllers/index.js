@@ -18,3 +18,6 @@ application.register("toggle-hidden-password", ToggleHiddenPasswordController)
 
 import UserFormModalController from "./user_form_modal_controller"
 application.register("user-form-modal", UserFormModalController)
+
+import ContactController from "./contact_controller"
+application.register("contact", ContactController)

@@ -11,12 +11,15 @@
     <%= vite_javascript_tag 'application' %>
   </head>
 
-  <body>
+  <body data-controller="contact">
+    <%= render 'shared/navbar' %>
+
     <%= link_to "new event", new_event_path if admin_user? %>
     <%= render "shared/flashes" %>
 
     <%= yield %>
-    <div id="contact-popup">
+    <div id="contact-popup" data-contact-target="popup">
       <%= render 'contacts/form' %>
-    </body>
+    </div>
+  </body>
 </html>
