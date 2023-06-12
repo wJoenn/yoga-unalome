@@ -4,9 +4,17 @@ class Booking < ApplicationRecord
 
   monetize :amount_cents
 
-  validates :canceled, inclusion: { in: [true, false] }
+  before_create :set_amount
+
+  validates :status, inclusion: { in: %w[pending confirmed canceled] }
 
   def canceled?
-    canceled
+    status == "canceled"
+  end
+
+  private
+
+  def set_amount
+    self.amount_cents = event.price_cents
   end
 end
