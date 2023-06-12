@@ -24,6 +24,18 @@ en:
     are_you: "Are you"
     confirm_identity: "To confirm your identity please provide the password of your existing account"
     change_password: "Change your password"
+    mailer:
+      confirmation:
+        welcome: "Welcome"
+        instructions: "Please click in the button below to confirm your account's email address."
+        see_you_soon: "See you soon !"
+        confirm_account: "Confirm your account"
+      reset_password:
+        hello: "Hello"
+        request_to_reset: "A request to reset your password has been received."
+        did_not_request: "If you didn't request a new password, please let me know by replying to this email."
+        wont_change: "Your password won't change until you access the link below."
+
   pages:
     home:
       banner:
