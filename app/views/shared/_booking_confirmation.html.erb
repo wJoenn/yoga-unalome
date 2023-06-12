@@ -7,18 +7,22 @@
       <h2><%= humanized_money_with_symbol event.price %></h2>
     </div>
 
-    <span><span>10€</span> with memberhsip</span>
+    <!--<span><span>10€</span> with memberhsip</span>-->
   </div>
 
   <div class="date">
-    <p><%= event.day.strftime("%A %d %b") %></p>
+    <p><%= l(event.start_time, format: "%A %d %b") %></p>
     <p><%= "#{event.start_time.strftime("%I:%M")} - #{event.end_time.strftime("%I:%M")}" %></p>
   </div>
 
-  <p><%= event.capacity - event.bookings.count %> spots left</p>
+  <!--<p><%= event.capacity - event.bookings.count %> spots left</p>-->
 
   <div class="buttons">
+    <!--
     <%= button_to "Book now", event_bookings_path(event.id), class: "btn btn-blue", data: { turbo: false } %>
     <button class="btn-green">Become a member</button>
+    -->
+    <a href="https://www.facebook.com/yoga.unalome.lln" target="_blank" class="btn btn-auth"><i class="fa-brands fa-square-facebook"></i> <%= t("pages.home.planing.book_facebook") %></a>
+    <button class="btn-green"><%= t("pages.home.planing.book_mail") %></button>
   </div>
 </div>

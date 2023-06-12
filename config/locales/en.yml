@@ -36,6 +36,8 @@ en:
         friday: "F"
         saturday: "Sa"
         sunday: "Su"
+        book_facebook: "Book with Facebook"
+        book_mail: "Book with mail"
 
 
   shared:
