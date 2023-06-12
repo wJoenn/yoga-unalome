@@ -1,1 +1,31 @@
-<%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
+<div id="user-dashboard">
+  <%= render "shared/navbar" %>
+
+  <div class="user-dashboard-container">
+    <div class="user-profile-container">
+      <%= vite_image_tag "images/illustrations/33.png", id: "top", class: "leaf" %>
+      <%= vite_image_tag "images/illustrations/34.png", id: "bottom", class: "leaf" %>
+      <h2>Hello, <%= current_user.first_name %></h2>
+      <%= vite_image_tag "images/illustrations/yogi.svg", class: "profile-icon" %>
+      <p>10 classes attended</p>
+    </div>
+      <div class="user-options-info">
+        <%= vite_image_tag "images/illustrations/calendar-icon.svg", class: "options-icon" %>
+        <p>Upcoming Classes</p>
+      </div>
+      <div class="user-options-info">
+        <%= vite_image_tag "images/illustrations/history-icon.svg", class: "options-icon" %>
+        <p>Past Bookings</p>
+      </div>
+      <div class="user-options-info box-bottom">
+        <%= vite_image_tag "images/illustrations/edit-icon.svg", class: "options-icon" %>
+        <p>Edit Profile</p>
+      </div>
+      <div class="user-options-info box-bottom">
+        <%= vite_image_tag "images/illustrations/settings-icon.svg", class: "options-icon" %>
+        <p>Account Settings</p>
+      </div>
+      <button> <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %> </button>
+  </div>
+  <%= vite_image_tag "images/illustrations/user-dashboard-background.png", class: "background" %>
+</div>

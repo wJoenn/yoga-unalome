@@ -1,0 +1,115 @@
+#user-dashboard {
+  height: 100vh;
+  margin: 0;
+
+  .logo {
+    padding-top: 15px;
+    filter: invert(100%);
+  }
+
+  .user-dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: end;
+    align-items: stretch;
+    width: 85%;
+    gap: 1.5rem;
+    margin: auto;
+    margin-top: 20px;
+
+    .user-profile-container {
+      grid-row: span 2;
+      justify-self: start;
+      background-color: $green ;
+      height: 500px;
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 15px;
+      border-radius: 35px;
+      box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+
+      h2 {
+        font-size: 28px;
+        width: 50%;
+        text-align: center;
+      }
+
+      img {
+        width: 110px;
+        padding: 35px 0 35px 0;
+      }
+
+      p {
+        font-size: 18px;
+      }
+
+      .leaf {
+        position: absolute;
+        z-index: 10;
+
+        &#top {
+          height: 400px;
+          left: -40px;
+          top: -90px;
+          transform: rotateY(180deg) rotate(-15deg);
+          width: 250px;
+        }
+
+        &#bottom {
+          height: 350px;
+          left: 260px;
+          bottom: -60px;
+          width: 130px;
+        }
+      }
+    }
+  }
+
+  .user-options-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $blue;
+    font-size: 20px;
+    border-radius: 40px;
+    box-shadow: 18px 18px 9px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    height: 220px;
+
+    img {
+      margin-bottom: 20px;
+      width: 90px;
+    }
+  }
+
+  .box-bottom {
+    align-self: end;
+  }
+
+
+  button{
+    background-color: $red;
+    grid-column: 3;
+    width: 120px;
+    border-radius: 15px;
+    box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .background {
+    opacity: 0.9;
+    position: absolute;
+    right: 50%;
+    top:30%;
+    translate: 50% -25%;
+    width: 99%;
+    height: 95%;
+    z-index: -20;
+  }
+}
