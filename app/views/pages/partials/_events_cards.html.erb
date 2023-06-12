@@ -1,6 +1,6 @@
 <ul id="events-cards">
   <% @events.each do |event| %>
-    <li id="<%= event.day %>" class="event-card" data-calendar-target="card" data-action="click->booking-confirmation#showBookingConfirmation" data-id="<%= event.id %>">
+    <li id="<%= event.day %>" class="event-card" data-calendar-target="card" data-booking-confirmation-target="card" data-action="click->booking-confirmation#showBookingConfirmation" data-id="<%= event.id %>">
       <h3><%= event.day.day %></h3>
 
       <div>

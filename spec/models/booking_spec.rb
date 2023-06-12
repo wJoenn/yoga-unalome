@@ -19,6 +19,14 @@ RSpec.describe Booking, type: :model do
       test_wrong_booking(event:)
       test_wrong_booking(user:)
     end
+
+    it "has an amount equivalent to its event's price" do
+      expect(booking.amount).to eq event.price
+    end
+
+    it "had a default status of pending" do
+      expect(booking.status).to eq "pending"
+    end
   end
 
   describe "association" do
@@ -31,9 +39,12 @@ RSpec.describe Booking, type: :model do
     end
   end
 
-  describe "instance methods" do
-    it "sets the booking as not canceled by default" do
+  describe "#canceled?" do
+    it "states whether a booking is canceled or not" do
       expect(booking.canceled?).to be_falsy
+
+      booking.update(status: "canceled")
+      expect(booking.canceled?).to be_truthy
     end
   end
 end
