@@ -12,6 +12,7 @@
         <div class="field">
           <%= f.label :email %>
           <%= f.email_field :email, autocomplete: "email" %>
+          <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Email") } %></span>
         </div>
 
         <%= f.submit t("devise.send_reset_password"), class: "btn btn-green" %>

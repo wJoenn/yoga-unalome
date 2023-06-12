@@ -12,6 +12,7 @@
         <div class="field">
           <%= f.label :email %>
           <%= f.email_field :email, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+          <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("Email") } %></span>
         </div>
 
         <%= f.submit t("devise.resend_confirmation"), class: "btn btn-green" %>
