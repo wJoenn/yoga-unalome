@@ -93,21 +93,22 @@
 
 
   button{
-    background-color: #C68B5A;
+    background-color: $red;
     grid-column: 3;
     width: 120px;
     border-radius: 15px;
     box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .background {
     opacity: 0.9;
     position: absolute;
     right: 50%;
-    top:37%;
+    top:30%;
     translate: 50% -25%;
-    width: 100%;
+    width: 99%;
     height: 92%;
     z-index: -20;
   }
