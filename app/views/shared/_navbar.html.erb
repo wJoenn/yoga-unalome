@@ -11,14 +11,12 @@
       <span>✾</span>
       <a href="https://www.facebook.com/yoga.unalome.lln" target="_blank"><%= t("shared.navbar.facebook")%></a>
 
-      <!--
       <span>✾</span>
       <% if current_user %>
-        <%= link_to "Account", dashboard_path %>
+        <%= link_to t("shared.navbar.account"), dashboard_path %>
       <% else %>
-        <%= link_to "Log in", new_user_session_path %>
+        <%= link_to t("shared.navbar.login"), new_user_session_path %>
       <% end %>
-      -->
     </nav>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <section id="planning">
-  <h2><%= t("pages.home.planing.planing_title") %></h2>
+  <h2><%= t("pages.home.planning.planning_title") %></h2>
 
-  <div class="cal-event-cards" data-controller="calendar booking-confirmation" data-calendar-events-value="<%= @events_dates %>" data-calendar-locale-value="<%= t("pages.home.planing.calendar_locale") %>">
+  <div class="cal-event-cards" data-controller="calendar booking-confirmation" data-calendar-events-value="<%= @events_dates %>" data-calendar-locale-value="<%= t("pages.home.planning.calendar_locale") %>">
     <div id="calendar">
       <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
 
@@ -18,13 +18,13 @@
       </div>
 
       <ul class="week">
-        <li><%= t("pages.home.planing.monday") %></li>
-        <li><%= t("pages.home.planing.tuesday") %></li>
-        <li><%= t("pages.home.planing.wednesday") %></li>
-        <li><%= t("pages.home.planing.thursday") %></li>
-        <li><%= t("pages.home.planing.friday") %></li>
-        <li><%= t("pages.home.planing.saturday") %></li>
-        <li><%= t("pages.home.planing.sunday") %></li>
+        <li><%= t("pages.home.planning.monday") %></li>
+        <li><%= t("pages.home.planning.tuesday") %></li>
+        <li><%= t("pages.home.planning.wednesday") %></li>
+        <li><%= t("pages.home.planning.thursday") %></li>
+        <li><%= t("pages.home.planning.friday") %></li>
+        <li><%= t("pages.home.planning.saturday") %></li>
+        <li><%= t("pages.home.planning.sunday") %></li>
       </ul>
 
       <ul class="days" data-calendar-target="days"></ul>
