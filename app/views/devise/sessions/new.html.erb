@@ -2,7 +2,7 @@
   <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
     <div class="form">
       <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
-      <h2>Welcome back</h2>
+      <h2><%= t("devise.welcome_back") %></h2>
 
       <%= form_with model: resource, scope: resource_name, url: session_path(resource_name), data: { turbo: false } do |f| %>
         <% if alert %>
@@ -15,7 +15,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password, t("devise.password") %>
 
           <div class="password" data-controller="toggle-hidden-password">
             <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
@@ -25,25 +25,23 @@
 
         <div class="check">
           <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.label :remember_me, t("devise.remember_me") %>
         </div>
 
-        <%= f.submit "Log in", class: "btn btn-green" %>
+        <%= f.submit t("shared.navbar.login"), class: "btn btn-green" %>
       <% end %>
 
-      <% if false %> <!-- Disabled until facebook business verification is complete -->
-        <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
-          <i class="fa-brands fa-square-facebook"></i> Login with Facebook
-        <% end %>
+      <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
+        <i class="fa-brands fa-square-facebook"></i> <%= t("devise.login_facebook") %>
       <% end %>
 
       <% if alert&.match?("confirm") %>
-        <p class="redirect"><%= link_to "Resend confirmation instructions", new_confirmation_path(resource_name) %></p>
+        <p class="redirect"><%= link_to t("devise.resend_confirmation"), new_confirmation_path(resource_name) %></p>
       <% else %>
-        <p class="redirect"><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
+        <p class="redirect"><%= link_to t("devise.forgot_password"), new_password_path(resource_name) %></p>
       <% end %>
 
-      <p class="redirect">Don't have an account yet ? <%= link_to "Sign up", new_user_registration_path %></p>
+      <p class="redirect"><%= t("devise.no_account") %> <%= link_to t("devise.signup"), new_user_registration_path %></p>
     </div>
   </div>
 </div>

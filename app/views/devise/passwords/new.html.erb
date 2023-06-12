@@ -2,7 +2,7 @@
   <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
     <div class="form">
       <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
-      <h2>Forgot your password ?</h2>
+      <h2><%= t("devise.forgot_password") %></h2>
 
       <%= form_with model: resource, scope: resource_name, url: password_path(resource_name), data: { turbo: false } do |f| %>
         <% if alert %>
@@ -14,16 +14,14 @@
           <%= f.email_field :email, autocomplete: "email" %>
         </div>
 
-        <%= f.submit "Send reset password instructions", class: "btn btn-green" %>
+        <%= f.submit t("devise.send_reset_password"), class: "btn btn-green" %>
       <% end %>
 
-      <% if false %> <!-- Disabled until facebook business verification is complete -->
-        <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
-          <i class="fa-brands fa-square-facebook"></i> Login with Facebook
-        <% end %>
+      <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
+        <i class="fa-brands fa-square-facebook"></i> <%= t("devise.login_facebook") %>
       <% end %>
 
-      <p class="redirect"><%= link_to "Back to login screen", new_user_session_path %></p>
+      <p class="redirect"><%= link_to t("devise.back_to_login"), new_user_session_path %></p>
     </div>
   </div>
 </div>

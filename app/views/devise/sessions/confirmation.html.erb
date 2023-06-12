@@ -2,14 +2,12 @@
   <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
     <div class="form">
       <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
-      <h2>Are you <%= @user.full_name %> ?</h2>
+      <h2><%= "#{t("devise.are_you")} #{@user.full_name} ?" %></h2>
 
-
-      <p>To confirm your identity please provide the password of your existing account</p>
+      <p><%= t("devise.confirm_identity") %></p>
 
       <%= form_with model: resource, scope: resource_name, url: session_path(resource_name), method: :post, data: { turbo: false } do |f| %>
         <%= f.hidden_field :uid, value: uid %>
-
 
         <div class="field">
           <%= f.label :email %>
@@ -17,7 +15,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password, t("devise.password") %>
 
           <div class="password" data-controller="toggle-hidden-password">
             <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
@@ -25,10 +23,10 @@
           </div>
         </div>
 
-        <%= f.submit "Log in", class: "btn btn-green" %>
+        <%= f.submit t("shared.navbar.login"), class: "btn btn-green" %>
       <% end %>
 
-      <p class="redirect">This is not you ? <%= link_to "Back to homepage", root_path %></p>
+      <p class="redirect"><%= t("devise.not_you") %> <%= link_to t("devise.back_to_homepage"), root_path %></p>
     </div>
   </div>
 </div>
