@@ -38,8 +38,8 @@ en:
         sunday: "Su"
         book_facebook: "Book with Facebook"
         book_mail: "Book with mail"
-
-
+      footer:
+        follow: "Follow me"
   shared:
     navbar:
       about: "About"
