@@ -1,0 +1,10 @@
+Welcome <%= @resource.first_name %> !
+
+Please click in the button below to confirm your account's email address.
+Your email needs to be confirmed for me to ba able to send you bookings confirmation and other kind of informational email
+Rest assured that you will not receive adds or unwanted messages on this address though.
+
+See you soon !
+Chloé
+
+<%= confirmation_url(@resource, confirmation_token: @token) %>
