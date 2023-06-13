@@ -17,8 +17,10 @@ class BookingsController < ApplicationController
   end
 
   def cancel
+    RefundBookingJob.perform_later(@booking)
+
     @booking.update(status: "canceled")
-    redirect_back fallback_location: root_path
+    redirect_back fallback_location: root_path, notice: t(".canceled")
   end
 
   def payment_canceled
