@@ -93,3 +93,45 @@ footer {
     }
   }
 }
+
+@media (max-width: 560px) {
+  footer {
+    .container {
+      .footer-contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #black-logo {
+          display: none;
+        }
+
+        .footer-links {
+          z-index: 1;
+
+          nav {
+            gap: 25px;
+          }
+          .socials {
+            width: 100%;
+
+            h4 {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+
+      .footer-bottom {
+        h4 {
+          z-index: 1;
+          position: relative;
+        }
+
+        #plant-bottom {
+          z-index: 0;
+        }
+      }
+    }
+  }
+}

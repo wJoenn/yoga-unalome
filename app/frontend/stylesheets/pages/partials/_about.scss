@@ -62,3 +62,22 @@
     }
   }
 }
+
+@media (max-width: 560px) {
+  #about {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 50px 0;
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .brighter {
+        order: 2;
+      }
+    }
+  }
+}

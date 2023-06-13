@@ -25,3 +25,14 @@
     }
   }
 }
+
+@media (max-width: 560px) {
+  #home {
+
+    .cal-event-cards {
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+    }
+  }
+}

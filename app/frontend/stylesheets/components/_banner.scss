@@ -37,3 +37,26 @@
     }
   }
 }
+
+@media (max-width: 560px) {
+
+  html, body {
+    min-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .banner {
+
+    .container {
+
+      .text {
+        font-size: 1.2rem;
+        gap: 40px;
+
+        h1 {
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}

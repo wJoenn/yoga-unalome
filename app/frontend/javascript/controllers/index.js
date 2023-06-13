@@ -16,6 +16,9 @@ application.register("flashes", FlashesController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import NavbarToggleController from "./navbar_toggle_controller"
+application.register("navbar-toggle", NavbarToggleController)
+
 import ToggleHiddenPasswordController from "./toggle_hidden_password_controller"
 application.register("toggle-hidden-password", ToggleHiddenPasswordController)
 

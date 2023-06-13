@@ -53,3 +53,11 @@
     }
   }
 }
+
+@media (max-width: 560px) {
+  #events-cards {
+    height: 350px;
+    gap: 5px;
+    width: 80%;
+  }
+}
