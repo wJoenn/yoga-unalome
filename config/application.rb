@@ -25,5 +25,7 @@ module YogaUnalome
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.active_job.queue_adapter = :good_job
+
+    I18n.available_locales = %i[en fr]
   end
 end

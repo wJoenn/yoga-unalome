@@ -1,0 +1,8 @@
+<%= "#{t("devise.mailer.confirmation.welcome")} #{@resource.first_name} !" %>
+
+<%= t("devise.mailer.confirmation.instructions") %>
+
+<%= t("devise.mailer.confirmation.see_you_soon") %>
+Chloé
+
+<%= confirmation_url(@resource, confirmation_token: @token) %>

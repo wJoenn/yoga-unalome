@@ -2,12 +2,24 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
+    <%= render "shared/mailer_style" %>
   </head>
 
   <body>
     <%= yield %>
+    <footer>
+      <a href="https://www.yogaunalome.com" target="_blank">
+        <%= email_image_tag "images/logos/logo_text_black_clipped.png" %>
+      </a>
+
+      <div>
+        <div>
+          <h2>Chloé Aberg</h2>
+          <p>Yoga Unalome</p>
+        </div>
+
+        <a href="mailto: info@yogaunalome.com">info@yogaunalome.com</a>
+      </div>
+    </footer>
   </body>
 </html>

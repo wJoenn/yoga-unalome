@@ -19,8 +19,15 @@ button, .btn {
   border: 1px solid black;
   color: black;
 
+  &:hover {
+    color: rgba(99,133,203)
+  }
+
   i {
-    color: #0071bb;
+    background: $facebook-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 

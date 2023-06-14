@@ -2,9 +2,9 @@
   <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
     <div class="form">
       <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
-      <h2>Change your password</h2>
+      <h2><%= t("devise.change_password") %></h2>
 
-      <%= form_with model: resource, scope: resource_name, url: password_path(resource_name), data: { turbo: false } do |f| %>
+      <%= form_with model: resource, scope: resource_name, url: password_path(resource_name), data: { turbo: false }, method: :put do |f| %>
         <% if alert %>
           <p class="form-alert"><i class="fa-solid fa-triangle-exclamation"></i><%= alert %></p>
         <% end %>
@@ -12,7 +12,7 @@
         <%= f.hidden_field :reset_password_token %>
 
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password, t("devise.password") %>
 
           <div class="password" data-controller="toggle-hidden-password">
             <%= f.password_field :password, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, "Confirm password" %>
+          <%= f.label :password_confirmation, t("devise.confirm_password") %>
 
           <div class="password" data-controller="toggle-hidden-password">
             <%= f.password_field :password_confirmation, autocomplete: "current-password", data: { toggle_hidden_password_target: "input" } %>
@@ -33,16 +33,10 @@
           <span class="error"><%= resource.errors.full_messages.find { |m| m.match?("confirmation") } %></span>
         </div>
 
-        <%= f.submit "Change my password", class: "btn btn-green" %>
+        <%= f.submit t("devise.change_password"), class: "btn btn-green" %>
       <% end %>
 
-      <% if false %> <!-- Disabled until facebook business verification is complete -->
-        <%= button_to user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false }, class: "btn btn-auth" do %>
-          <i class="fa-brands fa-square-facebook"></i> Login with Facebook
-        <% end %>
-      <% end %>
-
-      <p class="redirect"><%= link_to "Back to login screen", new_user_session_path %></p>
+      <p class="redirect"><%= link_to t("devise.back_to_login"), new_user_session_path %></p>
     </div>
   </div>
 </div>

@@ -1,0 +1,50 @@
+<section id="planning">
+  <h2><%= t("pages.home.planning.planning_title") %></h2>
+
+  <div class="cal-event-cards" data-controller="calendar booking-confirmation" data-calendar-events-value="<%= @events_dates %>" data-calendar-locale-value="<%= t("pages.home.planning.calendar_locale") %>">
+    <div id="calendar">
+      <%= vite_image_tag "images/illustrations/210.png", class: "background" %>
+
+      <div class="month">
+        <div></div>
+        <button class="left" data-action="click->calendar#switchMonth" data-calendar-target="previous" data-offset="-1">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <span data-calendar-target="month"></span>
+        <button class="right" data-action="click->calendar#switchMonth" data-calendar-target="next" data-offset="1">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <div></div>
+      </div>
+
+      <ul class="week">
+        <li><%= t("pages.home.planning.monday") %></li>
+        <li><%= t("pages.home.planning.tuesday") %></li>
+        <li><%= t("pages.home.planning.wednesday") %></li>
+        <li><%= t("pages.home.planning.thursday") %></li>
+        <li><%= t("pages.home.planning.friday") %></li>
+        <li><%= t("pages.home.planning.saturday") %></li>
+        <li><%= t("pages.home.planning.sunday") %></li>
+      </ul>
+
+      <ul class="days" data-calendar-target="days"></ul>
+    </div>
+
+    <ul id="events-cards">
+      <% @events.each do |event| %>
+        <li id="<%= event.day %>" class="event-card" data-calendar-target="card" data-action="click->booking-confirmation#showBookingConfirmation" data-id="<%= event.id %>">
+          <h3><%= event.day.day %></h3>
+
+          <div>
+            <h3><%= event.title %></h3>
+            <p><%= "#{l(event.start_time, format: "%a %I:%M")} - #{event.end_time.strftime("%I:%M")}" %></p>
+          </div>
+
+          <i class="fa-solid fa-circle-arrow-right"></i>
+        </li>
+      <% end %>
+    </ul>
+
+    <div data-booking-confirmation-target="booking"></div>
+  </div>
+</section>
