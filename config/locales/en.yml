@@ -1,3 +1,87 @@
+en:
+  bookings:
+    cancel:
+      canceled: "Your booking has been canceled. You'll receive a refund confirmation soon"
+    payment_canceled:
+      cancel: "The payment was canceled"
+    payment_successful:
+      success: "Event booked successfully"
+  devise:
+    welcome_back: "Welcome back"
+    password: "Password"
+    remember_me: "Remember me"
+    login_facebook: "Login with Facebook"
+    forgot_password: "Forgot your password ?"
+    no_account: "Don't have an account yet ?"
+    signup: "Sign up"
+    first_name: "First name"
+    last_name: "Last name"
+    confirm_password: "Confirm password"
+    have_account: "Already have an account ?"
+    send_reset_password: "Send reset password instructions"
+    back_to_login: "Back to login screen"
+    resend_confirmation: "Resend confirmation instructions"
+    not_you: "This isn't you ?"
+    back_to_homepage: "Back to homepage"
+    are_you: "Are you"
+    confirm_identity: "To confirm your identity please provide the password of your existing account"
+    change_password: "Change your password"
+    mailer:
+      confirmation:
+        welcome: "Welcome"
+        instructions: "Please click in the button below to confirm your account's email address."
+        see_you_soon: "See you soon !"
+        confirm_account: "Confirm your account"
+      reset_password:
+        hello: "Hello"
+        request_to_reset: "A request to reset your password has been received."
+        did_not_request: "If you didn't request a new password, please let me know by replying to this email."
+        wont_change: "Your password won't change until you access the link below."
+
+  pages:
+    home:
+      banner:
+        your_body: "Your Body, Your Practice"
+        discover: "DISCOVER YOURSELF, DISCOVER YOGA"
+        start_now: "Start now"
+      about:
+        me:
+          about_me: "About me"
+          welcome: "Hi, I am Chloé, welcome on my little digital footprint."
+          introduction: "I first started Yoga at the age of 20. It started as an on and off activity for me but I eventually started to include its practice in my daily life, as a ritual to recenter and reconnect."
+          formations: "One day, I took a flight and landed in Madeira, Portugal and this is when my life changed.There I graduated as a 200h Integral Yoga teacher but I wanted to learn more and, 2 years later, I flew to Rishikesh, the Yoga capital of the world in India, and finally got my 500 hours YTT in Vinyasa and Ashtanga Yoga."
+          conclusion: "Now, I am delighted for the opportunity to share my practice with you. Together may we amplify the understandings and promises of yoga: intention, devotion, adaptability, gratitude and listening."
+          aum_shanti: "Aum Shanti"
+          peace: "May you find peace within you."
+        vinyasa:
+          about_vinyasa: "About Vinyasa"
+          vinyasa_introduction: "Vinyasa Yoga is a fluid practice that enhance our creativity. We move from one pose to the next in coordination with our breath, this flow is like a dance between your body and the air itself."
+          vinyasa_description: "Flowing through movements means that we are cultivating mindfulness between one moment and the next. Vinyasa shows us that all forms are temporary and that all movements have a beginning, a middle and an end."
+          why: "Why practice yoga ?"
+          yoga_description: "Yoga is more than a just a physical practice. Of course you'll improve your muscular capacity and flexibility, but beyond that it calms the nervous system, it improves our respiration, it protects ourselves from injuries and it helps us let go of old energies that are stuck inside you."
+          conclusion: "Yoga is also a way for us to find comfort in discomfort and to learn how to let go of what does not belong in oneself anymore but to focus on what is trully necessary. You'll likely rediscover your own body and more."
+      planning:
+        planning_title: "Planning"
+        calendar_locale: "en-UK"
+        monday: "M"
+        tuesday: "Tu"
+        wednesday: "W"
+        thursday: "Th"
+        friday: "F"
+        saturday: "Sa"
+        sunday: "Su"
+        spots: "spots left"
+        book_now: "Book now"
+      footer:
+        follow: "Follow me"
+  shared:
+    navbar:
+      about: "About"
+      planning: "Planning"
+      facebook: "Facebook"
+      account: "Account"
+      login: "Log in"
+
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -28,12 +112,3 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
-
-en:
-  bookings:
-    cancel:
-      canceled: "Your booking has been canceled. You'll receive a refund confirmation soon"
-    payment_canceled:
-      cancel: "The payment was canceled"
-    payment_successful:
-      success: "Event booked successfully"
