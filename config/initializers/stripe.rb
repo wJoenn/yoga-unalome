@@ -1,3 +1,4 @@
+require_relative "../../app/services/stripe_charge_refund_service"
 require_relative "../../app/services/stripe_checkout_session_service"
 
 Rails.configuration.stripe = {
@@ -11,4 +12,5 @@ StripeEvent.signing_secret = Rails.configuration.stripe[:signing_secret]
 
 StripeEvent.configure do |events|
   events.subscribe "checkout.session.completed", StripeCheckoutSessionService.new
+  events.subscribe "charge.refunded", StripeChargeRefundService.new
 end

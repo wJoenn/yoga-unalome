@@ -1,5 +1,7 @@
 en:
   bookings:
+    cancel:
+      canceled: "Your booking has been canceled. You'll receive a refund confirmation soon"
     payment_canceled:
       cancel: "The payment was canceled"
     payment_successful:
