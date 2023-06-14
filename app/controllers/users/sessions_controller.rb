@@ -9,15 +9,15 @@ class Users::SessionsController < Devise::SessionsController
     yield resource if block_given?
     respond_with resource, location: after_sign_in_path_for(resource)
   end
-end
 
-private
+  private
 
-def add_uid_to_user(resource)
-  user_params = params.require(:user).permit(:uid)
-  resource.update(uid: user_params[:uid], provider: "facebook")
-end
+  def add_uid_to_user(resource)
+    user_params = params.require(:user).permit(:uid)
+    resource.update(uid: user_params[:uid], provider: "facebook")
+  end
 
-def uid?
-  params[:user].key?(:uid)
+  def uid?
+    params[:user].key?(:uid)
+  end
 end
