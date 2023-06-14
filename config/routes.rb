@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: "pages#home"
 
+  authenticate :user, ->(user) { user.admin? } do
+    mount GoodJob::Engine => "good_job"
+  end
+
   mount StripeEvent::Engine, at: "stripe-webhook"
 
   devise_for :users, controllers: {

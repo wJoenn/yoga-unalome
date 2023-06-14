@@ -55,6 +55,8 @@ gem "stripe"
 
 gem 'stripe_event'
 
+gem "good_job"
+
 gem "rails-i18n", "~> 7.0.0"
 
 group :development, :test do
