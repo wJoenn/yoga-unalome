@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  authenticate :user, ->(user) { user.admin? } do
+    mount GoodJob::Engine => "good_job"
+  end
+
   mount StripeEvent::Engine, at: "stripe-webhook"
 
   devise_for :users, only: :omniauth_callbacks, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }

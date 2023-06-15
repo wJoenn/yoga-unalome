@@ -6,10 +6,18 @@ class Booking < ApplicationRecord
 
   before_create :set_amount
 
-  validates :status, inclusion: { in: %w[pending confirmed canceled] }
+  validates :status, inclusion: { in: %w[pending confirmed canceled refunded] }
 
   def canceled?
     status == "canceled"
+  end
+
+  def refunded?
+    status == "refunded"
+  end
+
+  def upcoming?
+    event.start_time > Time.current
   end
 
   private

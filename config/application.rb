@@ -27,5 +27,7 @@ module YogaUnalome
     config.i18n.load_path += Dir[Rails.root.join("config/locales/*.yml")]
     config.i18n.default_locale = :en
     config.i18n.available_locales = %i[en fr]
+
+    config.active_job.queue_adapter = :good_job
   end
 end

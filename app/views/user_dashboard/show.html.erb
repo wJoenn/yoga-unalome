@@ -1,1 +1,10 @@
 <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete } %>
+
+<% @bookings.each do |booking| %>
+  <div>
+    <h2><%= booking.event.title %></h2>
+    <p><%= booking.checkout_session_id %></p>
+    <p><%= booking.event.day %></p>
+    <%= link_to "Refund", cancel_booking_path(booking), data: { turbo_method: :patch } %>
+  </div>
+<% end %>
