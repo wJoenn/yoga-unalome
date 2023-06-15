@@ -1,5 +1,7 @@
 fr:
   bookings:
+    cancel:
+      canceled: "Ta réservation a été annulé. Tu recevras bientot un mail de confirmation du remboursement."
     payment_canceled:
       cancel: "Le payement a été annulé"
     payment_successful:
