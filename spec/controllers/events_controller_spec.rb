@@ -20,12 +20,12 @@ RSpec.describe EventsController, type: :request do
     end
 
     it "requires authentification for #update" do
-      put event_path(event)
+      put event_path(I18n.locale, event)
       expect(response).to have_http_status(:found)
     end
 
     it "requires authentification for #destroy" do
-      delete event_path(event)
+      delete event_path(I18n.locale, event)
       expect(response).to have_http_status(:found)
     end
   end
@@ -57,14 +57,14 @@ RSpec.describe EventsController, type: :request do
     end
 
     it "updates an instance of Event with proper params" do
-      patch(event_path(event), params: { event: { capacity: 10 } })
+      patch(event_path(I18n.locale, event), params: { event: { capacity: 10 } })
       updated_event = Event.find(event.id)
 
       expect(updated_event.capacity).to eq(10)
     end
 
     it "returns a http status of 422 with unproper params" do
-      patch(event_path(event), params: { event: { start_time: 1.hour.ago } })
+      patch(event_path(I18n.locale, event), params: { event: { start_time: 1.hour.ago } })
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
@@ -72,7 +72,7 @@ RSpec.describe EventsController, type: :request do
   describe "#destroy" do
     it "destroys the Event instance" do
       sign_in user
-      delete(event_path(event))
+      delete(event_path(I18n.locale, event))
 
       expect(Event.count).to eq(count - 1)
     end

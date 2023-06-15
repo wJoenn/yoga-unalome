@@ -4,6 +4,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["modal", "form"]
 
+  static values = {
+    locale: String
+  }
+
   connect() {
     window.addEventListener("keyup", event => {
       if (event.key === "Escape") window.location.href = "/"
@@ -12,7 +16,7 @@ export default class extends Controller {
 
   hideForm(event) {
     if (event.target === event.currentTarget) {
-      window.location.href = "/"
+      window.location.href = `/${this.localeValue}`
     }
   }
 }

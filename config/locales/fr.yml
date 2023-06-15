@@ -1,0 +1,83 @@
+fr:
+  bookings:
+    cancel:
+      canceled: "Ta réservation a été annulé. Tu recevras bientot un mail de confirmation du remboursement."
+    payment_canceled:
+      cancel: "Le payement a été annulé"
+    payment_successful:
+      success: "Evenement réservé avec succès"
+  devise:
+    welcome_back: "Content de te revoir"
+    password: "Mot de passe"
+    remember_me: "Souvenez vous de moi"
+    login_facebook: "Se connecter avec Facebook"
+    forgot_password: "Mot de passe oublié ?"
+    no_account: "Pas encore de compte ?"
+    signup: "S'inscrire'"
+    first_name: "Prénom"
+    last_name: "Nom"
+    confirm_password: "Confirmé le mot de passe"
+    have_account: "Déjà un compte ?"
+    send_reset_password: "Envoyer les instructions de changement de mot de passe"
+    back_to_login: "Retour à l'écran de connexion"
+    resend_confirmation: "Renvoyer les instructions de confirmation"
+    not_you: "Ce n'est pas toi ?"
+    back_to_homepage: "Retour à la page d'acceuil"
+    are_you: "Es tu"
+    confirm_identity: "Pour confirmer ton identité entre le mot de passe de ton compte existant"
+    change_password: "Change ton mot de passe"
+    mailer:
+      confirmation:
+        welcome: "Bienvenu"
+        instructions: "S'il te plait clique sur le bouton ci-dessous pour confirmer ton addresse email."
+        see_you_soon: "A bientot !"
+        confirm_account: "Confirmer ton compte"
+      reset_password:
+        hello: "Bonjour"
+        request_to_reset: "Une demande de changement de mot de passe a été recu."
+        did_not_request: "Si tu n'as pas fais cette demande préviens moi en répondant a ce mail."
+        wont_change: "Ton mot de passe ne changeras pas tant que tu clique pas sur le lien ci-dessous."
+
+  pages:
+    home:
+      banner:
+        your_body: "Ton Corps, Ta Pratique"
+        discover: "DECOUVRE TOI, DECOUVRE LE YOGA"
+        start_now: "Commence maintenant"
+      about:
+        me:
+          about_me: "A propos de moi"
+          welcome: "Bonjour, je m'appel Chloé, bienvenu.e sur ma petite empreinte digitale."
+          introduction: "J'ai commencé le yoga a 20 ans. Ca a commencé comme une simple activité que je faisais de temps en temps mais petit à petit j'ai commencé à le pratiqué quotidiennement. C'est devenu pour moi un rituel pour me recentrer et me reconneter à moi meme."
+          formations: "Un jour j'ai pris un vol pour l'ile de Madeire au Portugal, ca a changé ma vie. A cet endroit j'ai accomplis une formation en Yoga Integral de 200h mais je ne m'en contentais pas. C'est pourquoi quelques années plus tard je suis allé à Rishikesh, la capitale mondiale du Yoga, en Inde, et j'ai finalement completé ma formation en ajoutant 300h de Vinyasa et Ashtanga."
+          conclusion: "Dorénavant je me régale de l'opportunité de pouvoir partagé ma pratique avec toi. Ensemble nous pouvons accroitre notre comprehension des preceptes du Yoga; l'intention, la devotion, l'adaptabilité, la gratitutde et l'écoute."
+          aum_shanti: "Aum Shanti"
+          peace: "Puisse-tu trouver la paix en toi."
+        vinyasa:
+          about_vinyasa: "A propos du Vinyasa"
+          vinyasa_introduction: "Le Yoga Vinyasa est une pratique fluide qui améliore la créativité. Nous bougeons de pose en pose en coordination avec notre souffle, cette harmonie est comme une danse entre notre corps et l'air lui meme."
+          vinyasa_description: "Bouger en harmonie avec notre souffle signifie que nous cultivons notre pleine conscience entre un instant et le suivant. Le Vonyasa nous montre que toute forme est temporaire et que chaque mouvement a un début, un milieu et une fin."
+          why: "Pourquoi pratiquer le Yoga ?"
+          yoga_description: "Le Yoga est plus qu'une simple pratique physique. Biensur il améliore notre capacité musculaire et notre fléxibilité, mais au delà de cela il calme notre système nerveux, il améliore notre réspiration, il nous protège de blessures et il nous aide à nous délaisser de vieilles énergies bloqué en nous."
+          conclusion: "Le Yoga est aussi une facon pour nous de trouver du confort dans de l'inconfort et d'apprendre à ne pas s'encombrer de ce qui n'a plus rien à faire en nous mais de nous concentrer ce qui est vraiment important. Tu redécouvriras probablement ton propre corps et plus encore."
+      planning:
+        planning_title: "Horaire"
+        calendar_locale: "fr-BE"
+        monday: "L"
+        tuesday: "Ma"
+        wednesday: "Me"
+        thursday: "J"
+        friday: "V"
+        saturday: "S"
+        sunday: "D"
+        spots: "places de libre"
+        book_now: "Reserve maintenant"
+      footer:
+        follow: "Suis moi"
+  shared:
+    navbar:
+      about: "A propos"
+      planning: "Horaire"
+      facebook: "Facebook"
+      account: "Compte"
+      login: "Connecte toi"

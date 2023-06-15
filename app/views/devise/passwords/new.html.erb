@@ -1,5 +1,5 @@
 <div class="banner">
-  <div class="modal" data-controller="user-form-modal" data-action="mousedown->user-form-modal#hideForm">
+  <div class="modal" data-controller="user-form-modal" data-user-form-modal-locale-value="<%= I18n.locale %>" data-action="mousedown->user-form-modal#hideForm">
     <div class="form">
       <i class="fa-solid fa-xmark close" data-action="mousedown->user-form-modal#hideForm"></i>
       <h2><%= t("devise.forgot_password") %></h2>
