@@ -5,6 +5,6 @@
     <h2><%= booking.event.title %></h2>
     <p><%= booking.checkout_session_id %></p>
     <p><%= booking.event.day %></p>
-    <%= link_to "Refund", cancel_booking_path(booking), data: { turbo_method: :patch } %>
+    <%= link_to "Refund", cancel_booking_path(I18n.locale, booking), data: { turbo_method: :patch } %>
   </div>
 <% end %>
