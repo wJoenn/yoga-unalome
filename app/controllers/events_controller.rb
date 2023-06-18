@@ -13,7 +13,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      redirect_to root_path
+      redirect_to root_path, status: :ok
     else
       render "events/new", status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to root_path
+      redirect_to root_path, status: :ok
     else
       render "events/edit", status: :unprocessable_entity
     end
