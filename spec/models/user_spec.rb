@@ -46,6 +46,31 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe "self.from_omniauth" do
+    it "creates a new User" do
+      auth = OmniAuth::AuthHash.new(
+        provider: "facebook",
+        uid: "10",
+        info: { email: "omni@example.com", name: "First Last" }
+      )
+
+      User.from_omniauth(auth)
+      expect(User.last.uid).to eq "10"
+    end
+
+    it "returns an existing User and a uid" do
+      auth = OmniAuth::AuthHash.new(
+        provider: "facebook",
+        uid: "10",
+        info: { email: "user@example.com", name: "First Last" }
+      )
+
+      omniauth_user, uid = User.from_omniauth(auth)
+      expect(omniauth_user).to eq user
+      expect(uid).to eq "10"
+    end
+  end
+
   describe "instance methods" do
     it "sets the value of admin to false by default" do
       expect(user.admin?).to be_falsy
