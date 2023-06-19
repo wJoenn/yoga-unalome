@@ -47,4 +47,19 @@ RSpec.describe Booking, type: :model do
       expect(booking.canceled?).to be_truthy
     end
   end
+
+  describe "#refunded?" do
+    it "states whether a booking is refunded or not" do
+      expect(booking.refunded?).to be_falsy
+
+      booking.update(status: "refunded")
+      expect(booking.refunded?).to be_truthy
+    end
+  end
+
+  describe "#upcoming?" do
+    it "states whether a booking is upcoming or not" do
+      expect(booking.upcoming?).to be_truthy
+    end
+  end
 end

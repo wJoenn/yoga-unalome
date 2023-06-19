@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
     password = Devise.friendly_token[0, 20]
     first_name, *last_name = auth.info.name.split
-    User.create!(email:, password:, first_name:, last_name: last_name.join(" "), provider: auth.provider, uid:)
+    User.create(email:, password:, first_name:, last_name: last_name.join(" "), provider: auth.provider, uid:)
   end
 
   def capitalize_name
