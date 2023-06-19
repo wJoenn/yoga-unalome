@@ -1,5 +1,5 @@
 require "rails_helper"
 
-RSpec.describe BookingsController, type: :request do
+RSpec.describe MailerHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
 end
